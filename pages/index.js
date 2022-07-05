@@ -8,17 +8,21 @@ import { createClient } from "contentful";
 import { Composition, Slot } from "@uniformdev/canvas-react";
 import { useLivePreviewNextStaticProps } from "../hooks/useLivePreviewNextStaticProps";
 import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
+import RecipeHero from "../components/recipehero";
+import MainNavigation from "../components/mainnavigation";
 
-function PromoComponent({ name }) {
-  return <h1>Promo name: {name}</h1>;
-}
 
 const resolveRenderer = (component) => {
   // choose the component based on the Canvas component type
   // (you can also use a Map, switch, next/dynamic, etc here)
-  if (component.type === "promo") {
-    return PromoComponent;
+  if (component.type === "recipeHero") {
+    return RecipeHero;
   }
+
+  if (component.type === "mainNavigation") {
+    return MainNavigation;
+  }
+
 
   return null;
 };
@@ -26,17 +30,20 @@ const resolveRenderer = (component) => {
 export default function Home({ composition }) {
   useLivePreviewNextStaticProps({
     compositionId: composition?._id,
-    projectId: "TODO: specify the id of your uniform project here",
+    projectId: process.env.UNIFORM_PROJECT_ID,
   });
   return (
     <Composition data={composition} resolveRenderer={resolveRenderer}>
-      {({ greeting, contentfulEntry }) => (
-        <article>
-          <h1>{greeting}</h1>
-          <h2>{contentfulEntry?.fields?.title}</h2>
-          {/* add slot component */}
-          <Slot name="promos" />
-        </article>
+      {({ title }) => (
+        <>
+          <Slot name="mainNavigation" />
+
+          <article>
+              <h1 className="text-3xl font-bold underline">{title}</h1>
+              {/* add slot component */}
+              <Slot name="mainHero" />
+            </article>
+        </>
       )}
     </Composition>
   );
@@ -62,13 +69,13 @@ export async function getStaticProps({ preview }) {
 
   const contentfulClient = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
-    environment: "master",
+    environment: process.env.CONTENTFUL_ENVIRONMENT,
     accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
   });
 
   const contentfulPreviewClient = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
-    environment: "master",
+    environment: process.env.CONTENTFUL_ENVIRONMENT,
     accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
     host: "preview.contentful.com",
   });
@@ -79,7 +86,7 @@ export async function getStaticProps({ preview }) {
   const clientList = new ContentfulClientList([
     {
       spaceId: process.env.CONTENTFUL_SPACE_ID,
-      environmentId: "master",
+      environment: process.env.CONTENTFUL_ENVIRONMENT,
       client: contentfulClient,
       previewClient: contentfulPreviewClient,
     },
