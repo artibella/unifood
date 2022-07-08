@@ -1,7 +1,11 @@
 import {
   createContentfulEnhancer,
+  createContentfulMultiEnhancer,
+  createContentfulQueryEnhancer,
   ContentfulClientList,
   CANVAS_CONTENTFUL_PARAMETER_TYPES,
+  CANVAS_CONTENTFUL_MULTI_PARAMETER_TYPES,
+  CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES,
 } from "@uniformdev/canvas-contentful";
 import { enhance, CanvasClient, EnhancerBuilder } from "@uniformdev/canvas";
 import { createClient } from "contentful";
@@ -10,6 +14,7 @@ import { useLivePreviewNextStaticProps } from "../hooks/useLivePreviewNextStatic
 import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
 import RecipeHero from "../components/recipehero";
 import MainNavigation from "../components/mainnavigation";
+import RecipeList from "../components/recipe-list";
 
 
 const resolveRenderer = (component) => {
@@ -21,6 +26,10 @@ const resolveRenderer = (component) => {
 
   if (component.type === "mainNavigation") {
     return MainNavigation;
+  }
+
+  if (component.type === "recipeList") {
+    return RecipeList;
   }
 
 
@@ -35,15 +44,19 @@ export default function Home({ composition }) {
   return (
     <Composition data={composition} resolveRenderer={resolveRenderer}>
       {({ title }) => (
-        <>
+        <div className="container mx-auto px-16">
           <Slot name="mainNavigation" />
 
-          <article>
-              <h1 className="text-3xl font-bold underline">{title}</h1>
+          <section>
+              <h1 className="text-8xl font-bold text-center mb-16">{title}</h1>
               {/* add slot component */}
               <Slot name="mainHero" />
-            </article>
-        </>
+          </section>
+
+          <section>
+            <Slot name="sections" />
+          </section>
+        </div>
       )}
     </Composition>
   );
@@ -91,8 +104,11 @@ export async function getStaticProps({ preview }) {
       previewClient: contentfulPreviewClient,
     },
   ]);
-  // create the Contentful enhancer with client list
+
+  // create the Contentful enhancers with client list
   const contentfulEnhancer = createContentfulEnhancer({ client: clientList });
+  const contentfulMultiEnhancer = createContentfulMultiEnhancer({ clients: clientList });
+  const contentfulQueryEnhancer = createContentfulQueryEnhancer({ clients: clientList });
 
   // apply the enhancers to the composition data, enhancing it with external data
   // in this case, the _value_ of the Contentful parameter you created is enhanced
@@ -103,6 +119,14 @@ export async function getStaticProps({ preview }) {
     enhancers: new EnhancerBuilder().parameterType(
       CANVAS_CONTENTFUL_PARAMETER_TYPES,
       contentfulEnhancer
+    )
+    .parameterType(
+      CANVAS_CONTENTFUL_MULTI_PARAMETER_TYPES,
+      contentfulMultiEnhancer
+    )
+    .parameterType(
+      CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES,
+      contentfulQueryEnhancer
     ),
     // make sure to set the preview context
     context: { preview },
