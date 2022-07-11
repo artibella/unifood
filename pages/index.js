@@ -31,8 +31,6 @@ const resolveRenderer = (component) => {
   if (component.type === "recipeList") {
     return RecipeList;
   }
-
-
   return null;
 };
 
