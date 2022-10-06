@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 export default function RecipeHero({ title, byline, recipe }) {
-    const recipeImage = `${recipe.fields?.image?.fields.file.url}?w=1000&h=800&fit=thumb&f=center`;
-    const recipeImageAlt = `${recipe.fields?.name}`
+    const recipeImage = `${recipe.fields?.image?.fields?.file.url}?w=1000&h=800&fit=thumb&f=center`;
+
     return (
         <article>
             <h2 className="mb-16 text-6xl font-bold text-center ">
