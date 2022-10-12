@@ -69,6 +69,7 @@ export async function getStaticProps({ preview }) {
     apiKey: process.env.UNIFORM_API_KEY,
     // if this weren't a tutorial, ↙ should be in an environment variable :)
     projectId: process.env.UNIFORM_PROJECT_ID,
+    apiHost: process.env.UNIFORM_CLI_BASE_URL
   });
 
   // fetch the composition from Canvas
