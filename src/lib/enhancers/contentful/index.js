@@ -5,24 +5,29 @@ import {
   ContentfulClientList
 } from "@uniformdev/canvas-contentful";
 import { createClient } from "contentful";
+import getConfig from "next/config";
+const {
+  publicRuntimeConfig: { contentfulSpaceId, contentfulEnvironment, contentfulDeliveryToken, contentfulPreviewToken },
+} = getConfig();
+
 
 const contentfulClient = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  environment: process.env.CONTENTFUL_ENVIRONMENT,
-  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
+  space: contentfulSpaceId,
+  environment: contentfulEnvironment,
+  accessToken: contentfulDeliveryToken,
 });
 
 const contentfulPreviewClient = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  environment: process.env.CONTENTFUL_ENVIRONMENT,
-  accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
+  space: contentfulSpaceId,
+  environment: contentfulEnvironment,
+  accessToken: contentfulPreviewToken,
   host: "preview.contentful.com",
 });
 
 const clientList = new ContentfulClientList([
   {
-    spaceId: process.env.CONTENTFUL_SPACE_ID,
-    environment: process.env.CONTENTFUL_ENVIRONMENT,
+    spaceId: contentfulSpaceId,
+    environment: contentfulEnvironment,
     client: contentfulClient,
     previewClient: contentfulPreviewClient,
   },

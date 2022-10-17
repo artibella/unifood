@@ -23,7 +23,10 @@ const config = {
     canvasApiHost: process.env.UNIFORM_CLI_BASE_URL,
     canvasApiKey: process.env.UNIFORM_API_KEY,
     previewSecret: process.env.UNIFORM_PREVIEW_SECRET,    
-    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
+    contentfulSpaceId: process.env.CONTENTFUL_SPACE_ID,
+    contentfulEnvironment: process.env.CONTENTFUL_ENVIRONMENT,
+    contentfulDeliveryToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
+    contentfulPreviewToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
     uniformContextOutputType: process.env.UNIFORM_CONTEXT_OUTPUT_TYPE || 'standard'
   },
   serverRuntimeConfig: {
@@ -31,6 +34,10 @@ const config = {
     apiKey: process.env.UNIFORM_API_KEY,
     bigCommerceStoreHash: process.env.BIGCOMMERCE_STORE_HASH,
     bigCommerceToken: process.env.BIGCOMMERCE_TOKEN,
+    contentfulSpaceId: process.env.CONTENTFUL_SPACE_ID,
+    contentfulEnvironment: process.env.CONTENTFUL_ENVIRONMENT,
+    contentfulDeliveryToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
+    contentfulPreviewToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
     canvasApiHost: process.env.UNIFORM_CLI_BASE_URL,
     previewSecret: process.env.UNIFORM_PREVIEW_SECRET,
   },
