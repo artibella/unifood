@@ -5,9 +5,6 @@ const withPackages = require('next-transpile-modules')(['react-daisyui']);
 
 const config = {
   reactStrictMode: true,
-  experimental: {
-    optimizeCss: true,
-  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
@@ -15,7 +12,7 @@ const config = {
     loader: 'cloudinary',
     domains: ['res.cloudinary.com'],
     deviceSizes: [320, 420, 768, 1024, 1280],
-    path: 'https://res.cloudinary.com/uniformdev/image/fetch',
+    path: 'https://res.cloudinary.com/contentops/image/fetch',
   },
   publicRuntimeConfig: {
     appVersion: process.env.npm_package_version,
