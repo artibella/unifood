@@ -1,14 +1,5 @@
-import {
-  createContentfulEnhancer,
-  createContentfulMultiEnhancer,
-  createContentfulQueryEnhancer,
-  ContentfulClientList,
-  CANVAS_CONTENTFUL_PARAMETER_TYPES,
-  CANVAS_CONTENTFUL_MULTI_PARAMETER_TYPES,
-  CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES,
-} from "@uniformdev/canvas-contentful";
+import { getEnhancers } from "../lib/enhancers/enhancers";
 import { enhance, CanvasClient, EnhancerBuilder } from "@uniformdev/canvas";
-import { createClient } from "contentful";
 import { Composition, Slot } from "@uniformdev/canvas-react";
 import { useLivePreviewNextStaticProps } from "../hooks/useLivePreviewNextStaticProps";
 import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
@@ -62,71 +53,22 @@ export default function Home({ composition }) {
 
 // read the value of preview from the Next.js context
 export async function getStaticProps({ preview }) {
-  console.log({ preview });
   // create the Canvas client
   const client = new CanvasClient({
-    // if this weren't a tutorial, ↙ should be in an environment variable :)
     apiKey: process.env.UNIFORM_API_KEY,
-    // if this weren't a tutorial, ↙ should be in an environment variable :)
     projectId: process.env.UNIFORM_PROJECT_ID,
     apiHost: process.env.UNIFORM_CLI_BASE_URL
   });
 
   // fetch the composition from Canvas
   const { composition } = await client.getCompositionBySlug({
-    // if you used something else as your slug, use that here instead
     slug: "/",
     state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
   });
 
-  const contentfulClient = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    environment: process.env.CONTENTFUL_ENVIRONMENT,
-    accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
-  });
-
-  const contentfulPreviewClient = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    environment: process.env.CONTENTFUL_ENVIRONMENT,
-    accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
-    host: "preview.contentful.com",
-  });
-
-  // ADD: the previewClient to the ContentfulClientList
-  // NOTE: the ContentfulClientList allows you to use Canvas data that references multiple spaces / environments
-  // by providing a Contentful client for each space / environment.
-  const clientList = new ContentfulClientList([
-    {
-      spaceId: process.env.CONTENTFUL_SPACE_ID,
-      environment: process.env.CONTENTFUL_ENVIRONMENT,
-      client: contentfulClient,
-      previewClient: contentfulPreviewClient,
-    },
-  ]);
-
-  // create the Contentful enhancers with client list
-  const contentfulEnhancer = createContentfulEnhancer({ client: clientList });
-  const contentfulMultiEnhancer = createContentfulMultiEnhancer({ clients: clientList });
-  const contentfulQueryEnhancer = createContentfulQueryEnhancer({ clients: clientList });
-
-  // apply the enhancers to the composition data, enhancing it with external data
-  // in this case, the _value_ of the Contentful parameter you created is enhanced
-  // from the entry ID it is linked to, to the Contentful entry REST API response
-  // for that entry. You can create your own enhancers easily; they are a simple function.
   await enhance({
     composition,
-    enhancers: new EnhancerBuilder().parameterType(
-      CANVAS_CONTENTFUL_PARAMETER_TYPES,
-      contentfulEnhancer
-    )
-    .parameterType(
-      CANVAS_CONTENTFUL_MULTI_PARAMETER_TYPES,
-      contentfulMultiEnhancer
-    )
-    .parameterType(
-      CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES,
-      contentfulQueryEnhancer
-    ),
+    enhancers: getEnhancers(),
     // make sure to set the preview context
     context: { preview },
   });
