@@ -21,6 +21,9 @@ export default function CanvasComposition ({ composition }) {
   return (
     <Composition data={compositionInstance} resolveRenderer={appRenderer}>
       <section>
+      <Slot name="hero" />
+      </section>
+      <section>
         <Slot name="sections" />
       </section>
     </Composition>
