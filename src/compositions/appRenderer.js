@@ -3,13 +3,15 @@ import RecipeHero from '../components/RecipeHero';
 import MainNavigation from '../components/MainNavigation';
 import RecipeList from '../components/RecipeList';
 import Card from '../components/GenericCard';
+import GenericHero from '../components/hero';
 
 
 const ComponentsMap = {
   mainNavigation: MainNavigation,
   recipeHero: RecipeHero,
   recipeList: RecipeList,
-  genericCard: Card
+  genericCard: Card,
+  hero: GenericHero
  
 };
 
