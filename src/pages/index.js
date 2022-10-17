@@ -1,37 +1,25 @@
 import { getEnhancers } from "../lib/enhancers/enhancers";
-import { enhance, CanvasClient, EnhancerBuilder } from "@uniformdev/canvas";
-import { Composition, Slot } from "@uniformdev/canvas-react";
+import { enhance } from "@uniformdev/canvas";
+import { Composition, createApiEnhancer, Slot, useCompositionInstance } from "@uniformdev/canvas-react";
 import { useLivePreviewNextStaticProps } from "../hooks/useLivePreviewNextStaticProps";
 import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
-import RecipeHero from "../components/recipehero";
-import MainNavigation from "../components/mainnavigation";
-import RecipeList from "../components/recipe-list";
+import { canvasClient } from "../lib/canvas";
+import appRenderer from "../compositions/appRenderer";
 
-
-const resolveRenderer = (component) => {
-  // choose the component based on the Canvas component type
-  // (you can also use a Map, switch, next/dynamic, etc here)
-  if (component.type === "recipeHero") {
-    return RecipeHero;
-  }
-
-  if (component.type === "mainNavigation") {
-    return MainNavigation;
-  }
-
-  if (component.type === "recipeList") {
-    return RecipeList;
-  }
-  return null;
-};
 
 export default function Home({ composition }) {
   useLivePreviewNextStaticProps({
     compositionId: composition?._id,
     projectId: process.env.UNIFORM_PROJECT_ID,
   });
+  const { composition: compositionInstance } = useCompositionInstance({
+    composition,
+    enhance: createApiEnhancer({
+      apiUrl: '/api/preview',
+    }),
+  });
   return (
-    <Composition data={composition} resolveRenderer={resolveRenderer}>
+    <Composition data={compositionInstance} resolveRenderer={appRenderer}>
       {({ title }) => (
         <div className="container mx-auto px-16">
           <Slot name="mainNavigation" />
@@ -54,11 +42,7 @@ export default function Home({ composition }) {
 // read the value of preview from the Next.js context
 export async function getStaticProps({ preview }) {
   // create the Canvas client
-  const client = new CanvasClient({
-    apiKey: process.env.UNIFORM_API_KEY,
-    projectId: process.env.UNIFORM_PROJECT_ID,
-    apiHost: process.env.UNIFORM_CLI_BASE_URL
-  });
+  const client = canvasClient;
 
   // fetch the composition from Canvas
   const { composition } = await client.getCompositionBySlug({

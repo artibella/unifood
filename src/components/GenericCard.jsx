@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Card } from 'react-daisyui';
 
-export default function Card ({title, image, body, link='#'}) {
+export default function GenericCard ({title, image, body, link='#'}) {
 
     return (
         <Card className='bg-white'>
