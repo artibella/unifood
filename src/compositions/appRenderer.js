@@ -3,7 +3,7 @@ import RecipeHero from '../components/RecipeHero';
 import MainNavigation from '../components/MainNavigation';
 import RecipeList from '../components/RecipeList';
 import Card from '../components/GenericCard';
-import GenericHero from '../components/hero';
+import GenericHero from '../components/GenericHero';
 
 
 const ComponentsMap = {
