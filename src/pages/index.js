@@ -53,7 +53,6 @@ export async function getStaticProps({ preview }) {
   await enhance({
     composition,
     enhancers: getEnhancers(),
-    // make sure to set the preview context
     context: { preview },
   });
 

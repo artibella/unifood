@@ -20,6 +20,9 @@ const config = {
   publicRuntimeConfig: {
     appVersion: process.env.npm_package_version,
     projectId: process.env.UNIFORM_PROJECT_ID,
+    canvasApiHost: process.env.UNIFORM_CLI_BASE_URL,
+    canvasApiKey: process.env.UNIFORM_API_KEY,
+    previewSecret: process.env.UNIFORM_PREVIEW_SECRET,    
     googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
     uniformContextOutputType: process.env.UNIFORM_CONTEXT_OUTPUT_TYPE || 'standard'
   },

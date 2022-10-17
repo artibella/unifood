@@ -36,18 +36,12 @@ export default function CanvasComposition({ composition }) {
 };
 
 export const getStaticProps = async context => {
-  const slug = context?.params?.slug;
   const { preview } = context;
-
-  // create the Canvas client
-  const client = canvasClient;
-
   // fetch the composition from Canvas
   const { composition } = await edgeCanvasClient.getCompositionBySlug({
     slug: `/reviews/restaurants`,
     state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
   });
-
 
   await enhance({
     composition,
@@ -61,22 +55,3 @@ export const getStaticProps = async context => {
   };
 
 };
-
-// export async function getStaticPaths() {
-//   const compositions = await getCompositionList({ type: 'restaurantReview' });
-//   const pages = compositions || [];
-
-//   const paths = pages.filter((c) => {
-//     // eslint-disable-next-line no-underscore-dangle
-//     const slug = c.composition._slug;
-//     const isPattern = c.pattern;
-//     const hasSlug = slug && slug.length > 0
-//     return hasSlug && !isPattern;
-//   })
-
-//   // eslint-disable-next-line no-underscore-dangle
-//   const staticPaths = paths.map((p) => {
-//     return `${p.composition._slug}`;
-//   });
-//   return { paths: staticPaths, fallback: false };
-// }

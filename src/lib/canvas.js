@@ -1,15 +1,19 @@
 import { CanvasClient, EdgeCanvasClient, CANVAS_PUBLISHED_STATE, CANVAS_DRAFT_STATE } from "@uniformdev/canvas";
+import getConfig from "next/config";
+const {
+  publicRuntimeConfig: { projectId, canvasApiHost, canvasApiKey },
+} = getConfig();
 
 export const canvasClient = new CanvasClient({
-  apiKey: process.env.UNIFORM_API_KEY,
-  projectId: process.env.UNIFORM_PROJECT_ID,
-  apiHost: process.env.UNIFORM_CLI_BASE_URL
+  apiKey: canvasApiKey,
+  projectId: projectId,
+  apiHost: canvasApiHost
 });
 
 export const edgeCanvasClient = new EdgeCanvasClient({
-  apiKey: process.env.UNIFORM_API_KEY,
-  projectId: process.env.UNIFORM_PROJECT_ID,
-  apiHost: process.env.UNIFORM_CLI_BASE_URL
+  apiKey: canvasApiKey,
+  projectId: projectId,
+  apiHost: canvasApiHost
 });
 
 export const getCompositionList = async ({ type } = {}) => {
