@@ -1,6 +1,6 @@
-export default function ContributerList({byline, contributers}) {
+export default function ContributorList({byline, contributors}) {
 
-    const avatars = contributers.map(({name, image, link}, index) => (
+    const avatars = contributors.map(({name, image, link}, index) => (
         <img
           className="inline-block h-10 w-10 rounded-full ring-2 ring-white overflow-hidden"
           src={image}
@@ -9,11 +9,11 @@ export default function ContributerList({byline, contributers}) {
         )
     );
 
-    const nameWithLinks = contributers.map(({name, link}, index) => {
+    const nameWithLinks = contributors.map(({name, link}, index) => {
         let nameLink = <span className="font-bold">{name}</span>;
         if(link) {
             nameLink = (
-                <a href={link} className="hover:underline" key={`contributer-${index}`}>{nameLink}</a>
+                <a href={link} className="hover:underline" key={`contributor-${name}`}>{nameLink}</a>
             )
         }
         return nameLink;
@@ -26,7 +26,7 @@ export default function ContributerList({byline, contributers}) {
         }
     );
 
-    const avatarSpacing = contributers.length > 1 ? '-space-x-2' : '';
+    const avatarSpacing = contributors.length > 1 ? '-space-x-2' : '';
 
     return (
       <div className="flex gap-x-5 items-center">
@@ -35,9 +35,9 @@ export default function ContributerList({byline, contributers}) {
                 {avatars}
             </div>
         </div>
-        <div className="contributers">
+        <div className="contributors">
             <span className="text-base">{byline}</span>
-            <div className="contributer-names">{names}</div>
+            <div className="contributor-names">{names}</div>
         </div>
       </div>
     )

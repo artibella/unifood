@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ContributerList from './ContributerList';
+import ContributorList from './ContributorList';
 
 
-const contributersData = [
+const contributorsData = [
     {
         name: "Bella Tucker",
         image: "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
@@ -23,8 +23,8 @@ const contributersData = [
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'ContributerList',
-  component: ContributerList,
+  title: 'ContributorList',
+  component: ContributorList,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     byline: { control: 'text' },
@@ -33,16 +33,16 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <ContributerList {...args} />;
+const Template = (args) => <ContributorList {...args} />;
 
 export const Single = Template.bind({});
 Single.args = {
   byline: 'Written by',
-  contributers: [contributersData[0]]
+  contributors: [contributorsData[0]]
 };
 
 export const Multiple = Template.bind({});
 Multiple.args = {
   byline: 'Written by',
-  contributers: contributersData
+  contributors: contributorsData
 };
