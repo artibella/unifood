@@ -26,6 +26,7 @@ Primary.args = {
   body: 'This is the body text of the hero',
   ctas: [
       {title: 'Read more', link: '#'},
+      {title: 'Sign up', link: '#'},
     ]
 };
 
