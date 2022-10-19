@@ -4,6 +4,7 @@ import MainNavigation from '../components/MainNavigation';
 import RecipeList from '../components/RecipeList';
 import Card from '../components/GenericCard';
 import GenericHero from '../components/GenericHero';
+import SectionContainer from '../components/SectionContainer';
 
 
 const ComponentsMap = {
@@ -11,7 +12,8 @@ const ComponentsMap = {
   recipeHero: RecipeHero,
   recipeList: RecipeList,
   genericCard: Card,
-  hero: GenericHero
+  hero: GenericHero,
+  sectionContainer: SectionContainer
  
 };
 
