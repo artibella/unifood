@@ -1,0 +1,34 @@
+id: unsplashPhotoSearch
+displayName: Unsplash Photo Search
+body: ''
+path: /search/photos
+method: GET
+archetype: default
+variables:
+  page:
+    type: number
+    setBy: static
+    default: '1'
+    displayName: Page number
+  query:
+    type: text
+    setBy: static
+    default: food
+    displayName: Search term
+  per_page:
+    type: number
+    setBy: static
+    default: '10'
+    displayName: Photos per page
+  orientation:
+    type: text
+    setBy: static
+    default: landscape
+    displayName: Orientation (landscape | portrait| squarish)
+parameters:
+  page: ${page}
+  query: ${query}
+  per_page: ${per_page}
+  orientation: ${orientation}
+dataSourceId: unsplash
+allowedOnComponents: []

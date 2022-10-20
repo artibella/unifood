@@ -1,0 +1,49 @@
+composition:
+  _name: Global Nav
+  _id: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+  type: mainNavigation
+  parameters:
+    title:
+      type: text
+      value: Global nav
+  slots:
+    items:
+      - _id: 094883a6-0baa-4bd1-ad55-4cef93b6e1f7
+        type: navigationItem
+        parameters:
+          url:
+            type: text
+            value: /
+          link:
+            type: sitemap_link
+            value: /
+          title:
+            type: text
+            value: Home
+      - _id: 8d112dc0-3b6f-46cd-a772-115f2bb19e45
+        type: navigationItem
+        parameters:
+          url:
+            type: text
+            value: /reviews/restaurants
+          link:
+            type: sitemap_link
+            value: /reviews/restaurants
+          title:
+            type: text
+            value: Reviews
+      - _id: d42cf2a4-dfcf-409b-ad21-5b68e0b76baa
+        type: navigationItem
+        parameters:
+          url:
+            type: text
+            value: /recipes
+          link:
+            type: sitemap_link
+            value: /recipes
+          title:
+            type: text
+            value: Recipes
+created: '2022-09-15T08:38:31.50963+00:00'
+modified: '2022-10-17T23:46:57.671931+00:00'
+pattern: true

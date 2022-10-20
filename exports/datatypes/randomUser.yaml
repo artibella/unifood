@@ -1,0 +1,15 @@
+id: randomUser
+displayName: Random User
+path: /api/
+method: GET
+archetype: default
+variables:
+  seed:
+    type: text
+    setBy: static
+    default: bentobento
+    displayName: Seed string (for stable results)
+parameters:
+  seed: ${seed}
+dataSourceId: randomUsers
+allowedOnComponents: []

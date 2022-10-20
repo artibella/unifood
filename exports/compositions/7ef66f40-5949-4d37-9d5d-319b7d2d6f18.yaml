@@ -1,0 +1,26 @@
+composition:
+  _name: Cheeses pizza
+  _id: 7ef66f40-5949-4d37-9d5d-319b7d2d6f18
+  _slug: /recipes/cheeses-pizza
+  type: recipe
+  parameters:
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Cheese pizza/fields/title
+        required: false
+  slots:
+    mainNavigation:
+      - _id: 4c0e309d-719b-4600-9f61-5a0daa294cf1
+        type: mainNavigation
+        _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+  _dataResources:
+    Cheese pizza:
+      type: recipeByIdrest
+      variables:
+        recipeID: 63zkW3nAH7z36PCRdewyeE
+created: '2022-09-22T09:24:14.532655+00:00'
+modified: '2022-10-17T15:03:11.767312+00:00'
+pattern: false

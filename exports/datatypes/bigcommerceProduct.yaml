@@ -1,0 +1,14 @@
+id: bigcommerceProduct
+displayName: BigCommerce Product
+body: ''
+path: /catalog/products/${product_id}?include=primary_image,images
+method: GET
+archetype: default
+variables:
+  product_id:
+    type: text
+    setBy: static
+    default: '88'
+    displayName: Product ID
+dataSourceId: bigcommerce
+allowedOnComponents: []

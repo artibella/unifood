@@ -1,0 +1,124 @@
+composition:
+  _name: Burgermeister
+  _id: fa603f6a-f087-45cb-be4a-12af800e903d
+  _slug: burgermeister-friedrichshain
+  type: restaurantReview
+  parameters:
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review/entry/title
+        required: false
+    rating:
+      type: number
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review/entry/rating
+        required: false
+  slots:
+    hero:
+      - _id: a2be6c85-76de-4c16-89d5-a4628173663d
+        type: hero
+        parameters:
+          title:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/title
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/featured_image/url
+              required: false
+    review:
+      - _id: 4c1b7e80-8d77-49f6-8c95-abaefe9b00bc
+        type: textBlock
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/review_html
+              required: false
+      - _id: 79cbfd2b-2248-4eb9-9ccb-9453de22ec69
+        type: imageBlock
+        parameters:
+          caption:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/teaser_text
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/featured_image/url
+              required: false
+    authors:
+      - _id: 69b00d62-f0c4-4cf5-8428-052546285a72
+        type: contributorList
+        slots:
+          contributors:
+            - _id: fb4f794b-67a5-4817-89eb-7456c22c5145
+              type: $loop
+              slots:
+                body:
+                  - _id: 9458481f-dced-472b-82f8-dcab02acb545
+                    type: contributor
+                    parameters:
+                      name:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /authors/name
+                          required: false
+                      image:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /authors/image/url
+                          required: false
+              _dataResources:
+                authors:
+                  type: sys-reserved-loop
+                  variables:
+                    connectedData: /Review/entry/authors
+        parameters:
+          byline:
+            type: text
+            value: Written by
+    restaurantDetails:
+      - _id: 8d6d6edc-28f2-4fa9-b8f9-b1bd0818f30f
+        type: restaurantDetails
+        _pattern: 50b710a6-1715-4754-ab72-9e42acd4772c
+        _dataResources:
+          Restaurant:
+            type: restaurantByIdcontentstack
+            variables:
+              restaurantID: bltdae356c21cdef963
+            isPatternParameter: true
+  _dataResources:
+    Review:
+      type: restaurantReviewByIdContentstack
+      variables:
+        reviewID: bltd8850fde127a69d0
+    Restaurant:
+      type: restaurantByIdcontentstack
+      variables:
+        restaurantID: blt7e36a1246dbd8d06
+created: '2022-10-20T12:15:10.426197+00:00'
+modified: '2022-10-20T12:21:55.3663+00:00'
+pattern: false

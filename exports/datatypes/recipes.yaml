@@ -1,0 +1,12 @@
+id: recipes
+displayName: Recipes
+body: ''
+path: /entries
+method: GET
+archetype: contentfulQuery
+parameters:
+  limit: '100'
+  order: title
+  content_type: recipe
+dataSourceId: unifood
+allowedOnComponents: []

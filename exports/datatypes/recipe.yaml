@@ -1,0 +1,9 @@
+id: recipe
+displayName: Recipe
+path: /entries
+method: GET
+archetype: contentfulEntry
+parameters:
+  content_type: recipe
+dataSourceId: unifood
+allowedOnComponents: []

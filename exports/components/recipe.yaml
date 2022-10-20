@@ -1,0 +1,116 @@
+id: recipe
+name: Recipe Template
+icon: bowl
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig:
+      required: true
+  - id: subtitle
+    name: Subtitle
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: introText
+    name: Intro text
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: description
+    name: Description
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: yield
+    name: Yield
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: recipe
+    name: Recipe
+    type: contentfulEntry
+    helpText: Select
+    typeConfig:
+      source: default
+      allowedContentTypes:
+        recipe:
+          id: recipe
+          name: Recipe
+  - id: image
+    name: Image
+    type: text
+    helpText: ''
+    typeConfig: null
+useTeamPermissions: true
+slots:
+  - id: mainNavigation
+    name: Main navigation
+    maxComponents: 1
+    minComponents: 1
+    allowedComponents:
+      - mainNavigation
+    inheritAllowedComponents: false
+  - id: relatedProducts
+    name: Related products
+    maxComponents: 5
+    allowedComponents:
+      - productCard
+    inheritAllowedComponents: false
+  - id: instructions
+    name: Instructions
+    allowedComponents:
+      - sectionContainer
+    inheritAllowedComponents: false
+  - id: ingredients
+    name: Ingredients
+    allowedComponents: []
+    inheritAllowedComponents: false
+  - id: recipeTips
+    name: Recipe tips
+    allowedComponents: []
+    inheritAllowedComponents: false
+  - id: relatedRecipes
+    name: Related recipes
+    allowedComponents:
+      - genericCard
+      - $loop
+      - $localization
+      - $test
+      - $personalization
+      - sectionContainer
+      - gridContainer
+    inheritAllowedComponents: false
+defaults:
+  type: recipe
+  slots:
+    mainNavigation:
+      - type: mainNavigation
+        slots:
+          items:
+            - type: navigationItem
+              parameters:
+                url:
+                  type: text
+                  value: /
+                title:
+                  type: text
+                  value: Home
+            - type: navigationItem
+              parameters:
+                url:
+                  type: text
+                  value: /recipes
+                title:
+                  type: text
+                  value: Reipes
+        _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+        parameters:
+          title:
+            type: text
+            value: Global nav
+titleParameter: title
+canBeComposition: true
+created: '2022-09-15T08:38:28.920599+00:00'
+updated: '2022-10-19T15:34:46.40592+00:00'

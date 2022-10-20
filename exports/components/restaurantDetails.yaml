@@ -1,0 +1,55 @@
+id: restaurantDetails
+name: Restaurant details
+icon: bowl
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: priceRange
+    name: Price range
+    type: number
+    helpText: 1 = cheap, 5 = really really expensive
+    typeConfig:
+      max: '5'
+      min: '1'
+  - id: website
+    name: Website
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: telephone
+    name: Telephone
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: reservationLink
+    name: Reservation Link
+    type: sitemap_link
+    helpText: e.g. Opentable link
+    typeConfig: null
+useTeamPermissions: true
+slots:
+  - id: openingHours
+    name: Opening hours
+    allowedComponents:
+      - $loop
+      - openingHours
+    inheritAllowedComponents: false
+  - id: cuisines
+    name: Cuisines
+    allowedComponents:
+      - tag
+      - $loop
+    inheritAllowedComponents: false
+  - id: diets
+    name: Diets
+    allowedComponents:
+      - tag
+      - $loop
+    inheritAllowedComponents: false
+titleParameter: title
+canBeComposition: false
+created: '2022-09-30T12:09:05.076485+00:00'
+updated: '2022-10-05T10:16:51.450219+00:00'

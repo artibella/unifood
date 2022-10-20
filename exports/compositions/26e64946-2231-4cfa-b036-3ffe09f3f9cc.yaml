@@ -1,0 +1,11 @@
+composition:
+  _name: Burgermeister
+  _id: 26e64946-2231-4cfa-b036-3ffe09f3f9cc
+  type: restaurantReview
+  parameters:
+    title:
+      type: text
+      value: Burgermeister
+created: '2022-10-20T12:14:31.412969+00:00'
+modified: '2022-10-20T12:14:50.294391+00:00'
+pattern: false

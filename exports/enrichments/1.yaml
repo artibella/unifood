@@ -1,0 +1,6 @@
+id: '1'
+name: Vegan
+cap: 100
+values:
+  - id: '1'
+    value: vegan

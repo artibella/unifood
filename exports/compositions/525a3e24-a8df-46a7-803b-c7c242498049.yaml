@@ -1,0 +1,37 @@
+composition:
+  _name: Author card
+  _id: 525a3e24-a8df-46a7-803b-c7c242498049
+  type: genericCard
+  parameters:
+    body:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Author/bio
+        required: false
+    image:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Author/picture/medium
+        required: false
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Author/name/fullname
+        required: false
+    byline:
+      type: text
+      value: Reviewed by
+  _dataResources:
+    Author:
+      type: fakeUser
+      variables: {}
+      isPatternParameter: true
+created: '2022-09-29T17:43:42.485654+00:00'
+modified: '2022-10-12T15:12:40.089885+00:00'
+pattern: true

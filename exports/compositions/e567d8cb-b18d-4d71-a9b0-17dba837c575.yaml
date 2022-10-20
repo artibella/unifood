@@ -1,0 +1,32 @@
+composition:
+  _name: Cuisines (copy)
+  _id: e567d8cb-b18d-4d71-a9b0-17dba837c575
+  _slug: /cuisines-copy
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - type: recipeHero
+        parameters:
+          recipe:
+            type: contentfulEntry
+            value:
+              source: default
+              entryId: 63zkW3nAH7z36PCRdewyeE
+    sections:
+      - type: recipeList
+        parameters:
+          titel:
+            type: text
+            value: Easy Recipes
+          recipes:
+            type: contentfulQuery
+            value:
+              count: 5
+              sortBy: fields.difficulty
+              source: default
+              sortOrder: asc
+              contentType: recipe
+created: '2022-10-18T16:43:31.646217+00:00'
+modified: '2022-10-18T16:43:31.646217+00:00'
+pattern: false

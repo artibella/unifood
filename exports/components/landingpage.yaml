@@ -1,0 +1,44 @@
+id: landingpage
+name: Landingpage
+icon: screen
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig: null
+useTeamPermissions: true
+slots:
+  - id: hero
+    name: Hero
+    allowedComponents:
+      - recipeHero
+      - $personalization
+      - $test
+      - $localization
+      - hero
+    inheritAllowedComponents: false
+  - id: sections
+    name: Sections
+    allowedComponents:
+      - productList
+      - recipeList
+      - recipeHero
+      - dynamicRecipeList
+      - productCard
+      - $personalization
+      - $test
+      - $localization
+      - $loop
+      - genericCard
+      - hero
+      - restaurantDetails
+      - imageBlock
+      - textBlock
+      - sectionContainer
+      - contributorList
+      - gridContainer
+    inheritAllowedComponents: false
+canBeComposition: true
+created: '2022-09-15T08:38:28.644659+00:00'
+updated: '2022-10-19T15:34:02.027529+00:00'

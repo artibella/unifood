@@ -1,0 +1,40 @@
+id: recipeList
+name: Recipe List
+icon: view-list
+parameters:
+  - id: titel
+    name: Titel
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: recipes
+    name: Recipes
+    type: contentfulQuery
+    helpText: ''
+    typeConfig:
+      source: default
+      allowedContentTypes:
+        recipe:
+          id: recipe
+          name: Recipe
+  - id: selectedRecipes
+    name: Selected Recipes
+    type: contentfulMultiEntry
+    helpText: Choose which recipes should be displayed
+    typeConfig:
+      source: default
+      allowedContentTypes:
+        recipe:
+          id: recipe
+          name: Recipe
+useTeamPermissions: true
+slots:
+  - id: recipeQuery
+    name: Recipe Query
+    allowedComponents:
+      - dynamicRecipeList
+    inheritAllowedComponents: false
+titleParameter: titel
+canBeComposition: false
+created: '2022-09-15T08:38:28.835557+00:00'
+updated: '2022-09-15T08:38:28.835557+00:00'

@@ -1,0 +1,26 @@
+id: productCard
+name: Product Card
+icon: card-diamonds
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig:
+      required: true
+  - id: product
+    name: Product
+    type: bigcommerceProduct
+    helpText: ''
+    typeConfig: null
+  - id: ctaLink
+    name: CTA link
+    type: text
+    helpText: ''
+    typeConfig:
+      regex: ''
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2022-09-15T08:38:28.57071+00:00'
+updated: '2022-09-21T17:29:49.987485+00:00'

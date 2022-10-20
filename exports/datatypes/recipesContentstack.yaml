@@ -1,0 +1,8 @@
+id: recipesContentstack
+displayName: Recipes (Contentstack)
+body: ''
+path: /content_types/recipe/entries/
+method: GET
+archetype: default
+dataSourceId: contentstackUnifood
+allowedOnComponents: []

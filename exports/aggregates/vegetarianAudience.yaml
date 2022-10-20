@@ -1,0 +1,7 @@
+id: vegetarianAudience
+name: Vegetarian Audience
+description: ''
+type: 0
+inputs:
+  - dim: vegetarian
+    sign: +

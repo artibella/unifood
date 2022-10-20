@@ -1,0 +1,60 @@
+id: fakeUser
+displayName: Fake User
+body: ''
+path: /staticdata
+custom:
+  json:
+    id:
+      name: INSEE
+      value: 1480492212446 12
+    bio: >-
+      Tom's from LA, but he’s been living in New York City long enough to
+      remember when the M train had a brown logo. Over the years, Tom has worked
+      at various bars and restaurants, and he has also dropped out of several of
+      the city’s finest universities.
+    dob:
+      age: 74
+      date: '1948-05-05T07:23:08.946Z'
+    nat: FR
+    cell: 06-10-13-68-34
+    name:
+      last: Boyer
+      first: Tom
+      title: Mr
+      fullname: Tom Boyer
+    email: tom.boyer@example.com
+    login:
+      md5: c58c869077eed245582170db1c00cac6
+      salt: sE8r95eu
+      sha1: 4cbe54cc20d49a4ec203c0b8b19ea4adfc251963
+      uuid: f19fabc3-47f4-4fe1-9dfa-91123c04b6db
+      sha256: 3a8d07986cd84361745e9e6b7c8063f57ede616edf6dd22776375b28caf65429
+      password: spitfire
+      username: yellowmouse608
+    phone: 02-70-27-48-71
+    gender: male
+    picture:
+      large: https://randomuser.me/api/portraits/men/17.jpg
+      medium: https://randomuser.me/api/portraits/med/men/17.jpg
+      thumbnail: https://randomuser.me/api/portraits/thumb/men/17.jpg
+    location:
+      city: Reims
+      state: Pas-de-Calais
+      street:
+        name: Rue de la Barre
+        number: 9479
+      country: France
+      postcode: 29818
+      timezone:
+        offset: '+4:00'
+        description: Abu Dhabi, Muscat, Baku, Tbilisi
+      coordinates:
+        latitude: '-20.5726'
+        longitude: '-105.2556'
+    registered:
+      age: 18
+      date: '2004-05-10T19:56:41.879Z'
+method: GET
+archetype: staticData
+dataSourceId: fakeUserJson
+allowedOnComponents: []

@@ -1,0 +1,71 @@
+id: homepage
+name: Homepage
+icon: screen
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig:
+      required: true
+useTeamPermissions: true
+slots:
+  - id: mainNavigation
+    name: Main Navigation
+    maxComponents: 1
+    minComponents: 1
+    allowedComponents:
+      - mainNavigation
+    inheritAllowedComponents: false
+  - id: mainHero
+    name: Main Hero
+    maxComponents: 1
+    minComponents: 0
+    allowedComponents:
+      - recipeHero
+      - $personalization
+      - $test
+      - $localization
+    inheritAllowedComponents: false
+  - id: sections
+    name: Sections
+    allowedComponents:
+      - recipeList
+      - recipeHero
+      - productList
+      - genericCard
+      - sectionContainer
+      - gridContainer
+    inheritAllowedComponents: false
+defaults:
+  type: homepage
+  slots:
+    mainNavigation:
+      - type: mainNavigation
+        slots:
+          items:
+            - type: navigationItem
+              parameters:
+                url:
+                  type: text
+                  value: /
+                title:
+                  type: text
+                  value: Home
+            - type: navigationItem
+              parameters:
+                url:
+                  type: text
+                  value: /recipes
+                title:
+                  type: text
+                  value: Reipes
+        _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+        parameters:
+          title:
+            type: text
+            value: Global nav
+titleParameter: title
+canBeComposition: true
+created: '2022-09-15T08:38:28.317895+00:00'
+updated: '2022-10-19T15:34:16.971313+00:00'

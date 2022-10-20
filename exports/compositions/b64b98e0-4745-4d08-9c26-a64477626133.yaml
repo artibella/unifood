@@ -1,0 +1,124 @@
+composition:
+  _name: Getting hot at chilli madness
+  _id: b64b98e0-4745-4d08-9c26-a64477626133
+  _slug: /review-chili-madness
+  type: restaurantReview
+  parameters:
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review/entry/title
+        required: false
+    rating:
+      type: number
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review/entry/rating
+        required: false
+  slots:
+    hero:
+      - _id: df6e1ed2-ab71-4ae3-ba7a-2d520ad0f8cd
+        type: hero
+        parameters:
+          title:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/title
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/featured_image/url
+              required: false
+    review:
+      - _id: 275069b7-38e2-4ad9-8638-23177f5472a8
+        type: textBlock
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/review_html
+              required: false
+      - _id: f38fac81-89a4-42b9-a2a7-c98f45b590d1
+        type: imageBlock
+        parameters:
+          caption:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/teaser_text
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/featured_image/url
+              required: false
+    authors:
+      - _id: b2501d32-efbc-464e-83d9-8074e35aff10
+        type: contributorList
+        slots:
+          contributors:
+            - _id: 732b3f99-8f77-4af0-add5-e2adefa3dcc9
+              type: $loop
+              slots:
+                body:
+                  - _id: 88c3957f-88b6-43d2-977e-908ebb180c1d
+                    type: contributor
+                    parameters:
+                      name:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /authors/name
+                          required: false
+                      image:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /authors/image/url
+                          required: false
+              _dataResources:
+                authors:
+                  type: sys-reserved-loop
+                  variables:
+                    connectedData: /Review/entry/authors
+        parameters:
+          byline:
+            type: text
+            value: Written by
+    restaurantDetails:
+      - _id: 13ac920a-c573-4320-b1e2-6fbccaf9ce15
+        type: restaurantDetails
+        _pattern: 50b710a6-1715-4754-ab72-9e42acd4772c
+        _dataResources:
+          Restaurant:
+            type: restaurantByIdcontentstack
+            variables:
+              restaurantID: blt6fbd5b438ab4189f
+            isPatternParameter: true
+  _dataResources:
+    Review:
+      type: restaurantReviewByIdContentstack
+      variables:
+        reviewID: blt11a0103e6ce9e9db
+    Restaurant:
+      type: restaurantByIdcontentstack
+      variables:
+        restaurantID: blt6fbd5b438ab4189f
+created: '2022-09-30T12:43:45.985835+00:00'
+modified: '2022-10-17T15:03:32.410664+00:00'
+pattern: false

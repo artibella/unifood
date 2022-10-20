@@ -1,0 +1,57 @@
+id: restaurantReview
+name: Restaurant Review
+icon: awards
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig:
+      required: true
+  - id: rating
+    name: Rating
+    type: number
+    helpText: ''
+    typeConfig:
+      max: '10'
+      min: '0'
+      decimal: true
+      decimalPlaces: '1'
+  - id: priceRange
+    name: Price range
+    type: number
+    helpText: ''
+    typeConfig:
+      max: '5'
+      min: '1'
+useTeamPermissions: true
+slots:
+  - id: hero
+    name: Hero
+    allowedComponents:
+      - hero
+    inheritAllowedComponents: false
+  - id: authors
+    name: Authors
+    allowedComponents:
+      - genericCard
+      - $loop
+      - contributorList
+      - contributor
+    inheritAllowedComponents: false
+  - id: restaurantDetails
+    name: Restaurant details
+    allowedComponents:
+      - restaurantDetails
+    inheritAllowedComponents: false
+  - id: review
+    name: Review
+    allowedComponents:
+      - textBlock
+      - imageBlock
+      - sectionContainer
+      - gridContainer
+    inheritAllowedComponents: false
+canBeComposition: true
+created: '2022-09-29T10:57:17.714371+00:00'
+updated: '2022-10-19T15:34:29.730393+00:00'

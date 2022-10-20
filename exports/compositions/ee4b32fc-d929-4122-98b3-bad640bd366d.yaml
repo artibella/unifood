@@ -1,0 +1,60 @@
+composition:
+  _name: Watermelon salad with mint and feta
+  _id: ee4b32fc-d929-4122-98b3-bad640bd366d
+  _slug: watermelon-salad-with-mint-and-feta
+  type: recipe
+  parameters:
+    image:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Feta salad/entry/featuredimage/url
+        required: false
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Feta salad/entry/title
+        required: false
+    subtitle:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Feta salad/entry/subtitle
+        required: false
+    introText:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Feta salad/entry/intro
+        required: false
+    description:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Feta salad/entry/description
+        required: false
+  slots:
+    mainNavigation:
+      - _id: 2f57abf6-8ab5-453c-817a-27245d94c864
+        type: mainNavigation
+        _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+  _dataResources:
+    recipes:
+      type: recipesContentstack
+      variables: {}
+    Feta salad:
+      type: recipeByIdcontentstack
+      variables:
+        recipeID: bltd58bc990b6e94759
+    All recipes:
+      type: recipesContentstack
+      variables: {}
+created: '2022-09-28T08:58:17.731987+00:00'
+modified: '2022-10-12T15:12:39.819211+00:00'
+pattern: false

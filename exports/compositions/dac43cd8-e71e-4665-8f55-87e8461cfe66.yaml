@@ -1,0 +1,124 @@
+composition:
+  _name: Burger joint review
+  _id: dac43cd8-e71e-4665-8f55-87e8461cfe66
+  _slug: /burger-joint-review
+  type: restaurantReview
+  parameters:
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review/entry/title
+        required: false
+    rating:
+      type: number
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review/entry/rating
+        required: false
+  slots:
+    hero:
+      - _id: 2f58cde8-f98d-4b34-b99c-ae887c53b6e3
+        type: hero
+        parameters:
+          title:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/title
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/featured_image/url
+              required: false
+    review:
+      - _id: 74d71dce-b044-43e8-bf4e-ad9dfac71748
+        type: textBlock
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/review_html
+              required: false
+      - _id: 897d9f9b-3815-4c5b-8392-367aa44eb877
+        type: imageBlock
+        parameters:
+          caption:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/teaser_text
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/featured_image/url
+              required: false
+    authors:
+      - _id: 42e884c0-540d-4266-bfdd-45033342a2d1
+        type: contributorList
+        slots:
+          contributors:
+            - _id: 40033973-231f-4884-b6c6-aa5764b0c827
+              type: $loop
+              slots:
+                body:
+                  - _id: cb423a04-046c-4e3f-a109-5dfaa021f21e
+                    type: contributor
+                    parameters:
+                      name:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /authors/name
+                          required: false
+                      image:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /authors/image/url
+                          required: false
+              _dataResources:
+                authors:
+                  type: sys-reserved-loop
+                  variables:
+                    connectedData: /Review/entry/authors
+        parameters:
+          byline:
+            type: text
+            value: Written by
+    restaurantDetails:
+      - _id: dc650ec7-cc64-4d1e-9595-0293502a460e
+        type: restaurantDetails
+        _pattern: 50b710a6-1715-4754-ab72-9e42acd4772c
+        _dataResources:
+          Restaurant:
+            type: restaurantByIdcontentstack
+            variables:
+              restaurantID: blt918a81027408e2f2
+            isPatternParameter: true
+  _dataResources:
+    Review:
+      type: restaurantReviewByIdContentstack
+      variables:
+        reviewID: blt1099b2dfba71e3c0
+    Restaurant:
+      type: restaurantByIdcontentstack
+      variables:
+        restaurantID: blt918a81027408e2f2
+created: '2022-09-30T16:36:59.939103+00:00'
+modified: '2022-10-17T16:04:25.616958+00:00'
+pattern: false

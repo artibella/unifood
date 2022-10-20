@@ -1,0 +1,65 @@
+id: dynamicRecipeList
+name: Dynamic Recipe list
+icon: card
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: cuisineSelection
+    name: Cuisine Selection
+    type: contentfulEntry
+    helpText: ''
+    typeConfig:
+      source: default
+      allowedContentTypes:
+        cuisine:
+          id: cuisine
+          name: 🏷  - Cuisine
+  - id: dietSelection
+    name: Diet Selection
+    type: contentfulEntry
+    helpText: ''
+    typeConfig:
+      source: default
+      allowedContentTypes:
+        diet:
+          id: diet
+          name: 🏷  - Diet
+  - id: dishTypeSelection
+    name: Dish type selection
+    type: contentfulEntry
+    helpText: ''
+    typeConfig:
+      source: default
+      allowedContentTypes:
+        dishType:
+          id: dishType
+          name: 🏷  - Dish type
+  - id: occasionSelection
+    name: Occasion selection
+    type: contentfulMultiEntry
+    helpText: ''
+    typeConfig:
+      source: default
+      allowedContentTypes:
+        occasion:
+          id: occasion
+          name: 🏷  - Occasion
+  - id: searchQuery
+    name: Search Query
+    type: algoliaQuery
+    helpText: Search for recipes using Algolia
+    typeConfig:
+      facets: {}
+      source: Unifood
+      titleFieldName: fields.en-US.title
+      subtitleFieldName: fields.en-US.subtitle
+      updatedDateFieldName: sys.updatedAt
+useTeamPermissions: true
+slots: []
+titleParameter: title
+canBeComposition: false
+created: '2022-09-15T08:38:28.302627+00:00'
+updated: '2022-09-22T08:55:53.451465+00:00'

@@ -1,0 +1,14 @@
+id: restaurantReviewByIdContentstack
+displayName: Restaurant Review by ID (Contentstack)
+path: >-
+  /content_types/restaurant_review/entries/${reviewID}?include[]=restaurants&include[]=restaurants.cuisines&include[]=restaurants.diets&include[]=authors
+method: GET
+archetype: default
+variables:
+  reviewID:
+    type: text
+    setBy: static
+    default: blt11a0103e6ce9e9db
+    displayName: Review ID
+dataSourceId: contentstackUnifood
+allowedOnComponents: []

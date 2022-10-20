@@ -1,0 +1,124 @@
+composition:
+  _name: Yakitori Totto
+  _id: 9d957dff-4eec-4e09-8493-f9518487a4ac
+  _slug: yakitori-totto
+  type: restaurantReview
+  parameters:
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review/entry/title
+        required: false
+    rating:
+      type: number
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review/entry/rating
+        required: false
+  slots:
+    hero:
+      - _id: 04c0a04e-fe19-4ed2-8de8-801017d29ffd
+        type: hero
+        parameters:
+          title:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/title
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/featured_image/url
+              required: false
+    review:
+      - _id: 2c734025-9b2b-47e8-8bb1-84314a2c4830
+        type: textBlock
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/review_html
+              required: false
+      - _id: 02453fc0-d33a-4fe9-b3d7-121a299f66c3
+        type: imageBlock
+        parameters:
+          caption:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/teaser_text
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Review/entry/featured_image/url
+              required: false
+    authors:
+      - _id: e4369e15-e1ad-4632-903e-b7d5e81cd36e
+        type: contributorList
+        slots:
+          contributors:
+            - _id: bd27b25f-2d78-408d-a5b6-c68c3fbd6da6
+              type: $loop
+              slots:
+                body:
+                  - _id: 858d07f9-e453-4e8e-9143-c76f18adeefc
+                    type: contributor
+                    parameters:
+                      name:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /authors/name
+                          required: false
+                      image:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /authors/image/url
+                          required: false
+              _dataResources:
+                authors:
+                  type: sys-reserved-loop
+                  variables:
+                    connectedData: /Review/entry/authors
+        parameters:
+          byline:
+            type: text
+            value: Written by
+    restaurantDetails:
+      - _id: 6a9a3cbc-127c-4e4c-9bc8-325628360938
+        type: restaurantDetails
+        _pattern: 50b710a6-1715-4754-ab72-9e42acd4772c
+        _dataResources:
+          Restaurant:
+            type: restaurantByIdcontentstack
+            variables:
+              restaurantID: blt7e36a1246dbd8d06
+            isPatternParameter: true
+  _dataResources:
+    Review:
+      type: restaurantReviewByIdContentstack
+      variables:
+        reviewID: blt7990b866a55e83e0
+    Restaurant:
+      type: restaurantByIdcontentstack
+      variables:
+        restaurantID: blt7e36a1246dbd8d06
+created: '2022-09-30T17:56:15.551399+00:00'
+modified: '2022-10-12T15:12:38.838373+00:00'
+pattern: false

@@ -1,0 +1,13 @@
+composition:
+  _name: Cheesecake
+  _id: 6a83353e-5404-4d74-97aa-232f7e69f9e6
+  _slug: cheesecake
+  type: recipe
+  parameters: {}
+  slots:
+    mainNavigation:
+      - type: mainNavigation
+        _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+created: '2022-09-20T11:39:07.271081+00:00'
+modified: '2022-09-20T11:39:07.271081+00:00'
+pattern: false

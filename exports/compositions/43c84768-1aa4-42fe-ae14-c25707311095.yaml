@@ -1,0 +1,43 @@
+composition:
+  _name: Review Contributors
+  _id: 43c84768-1aa4-42fe-ae14-c25707311095
+  type: contributorList
+  parameters: {}
+  slots:
+    contributors:
+      - _id: cde746ac-2df3-4130-a4cb-97228a885f9d
+        type: $loop
+        slots:
+          body:
+            - _id: 4c2aaad0-cf06-4e3e-865f-ee48d8dac91b
+              type: contributor
+              parameters:
+                name:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /authors/name/last
+                    required: false
+                image:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /authors/picture/thumbnail
+                    required: false
+        _dataResources:
+          authors:
+            type: sys-reserved-loop
+            variables:
+              connectedData: /Authors/results
+  _dataResources:
+    Authors:
+      type: users
+      variables:
+        seed: authors
+        results: '2'
+      isPatternParameter: true
+created: '2022-09-30T13:11:21.102343+00:00'
+modified: '2022-10-12T15:12:40.087077+00:00'
+pattern: true

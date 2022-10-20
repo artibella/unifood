@@ -1,0 +1,9 @@
+composition:
+  _name: Ingredients
+  _id: 5c1ff2a4-69e2-46cd-a22a-e87902e6d312
+  _slug: ingredients
+  type: landingpage
+  parameters: {}
+created: '2022-09-19T08:27:07.858954+00:00'
+modified: '2022-09-19T08:27:07.858954+00:00'
+pattern: false

@@ -1,0 +1,7 @@
+id: vegetarian
+name: Vegetarian
+description: ''
+type: 1
+inputs:
+  - dim: vegetarianQuerystring
+    sign: +

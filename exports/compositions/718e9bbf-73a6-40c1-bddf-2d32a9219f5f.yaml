@@ -1,0 +1,9 @@
+composition:
+  _name: Cuisines
+  _id: 718e9bbf-73a6-40c1-bddf-2d32a9219f5f
+  _slug: cuisines
+  type: landingpage
+  parameters: {}
+created: '2022-09-19T08:26:58.018618+00:00'
+modified: '2022-09-19T08:26:58.018618+00:00'
+pattern: false

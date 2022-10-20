@@ -1,0 +1,23 @@
+id: productList
+name: Product list
+icon: view-list
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig:
+      required: true
+useTeamPermissions: true
+slots:
+  - id: products
+    name: Products
+    allowedComponents:
+      - productCard
+      - $personalization
+      - $test
+      - $localization
+    inheritAllowedComponents: false
+canBeComposition: false
+created: '2022-09-15T08:38:28.667213+00:00'
+updated: '2022-09-15T08:38:28.667213+00:00'

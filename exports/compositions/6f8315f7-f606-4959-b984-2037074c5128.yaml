@@ -1,0 +1,8 @@
+composition:
+  _name: Recipe
+  _id: 6f8315f7-f606-4959-b984-2037074c5128
+  type: recipe
+  parameters: {}
+created: '2022-06-03T14:44:26.181843+00:00'
+modified: '2022-06-03T14:44:26.181843+00:00'
+pattern: true

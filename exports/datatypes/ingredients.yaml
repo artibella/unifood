@@ -1,0 +1,12 @@
+id: ingredients
+displayName: Ingredients
+body: ''
+path: /entries
+method: GET
+archetype: contentfulQuery
+parameters:
+  limit: '100'
+  order: name
+  content_type: ingredient
+dataSourceId: unifood
+allowedOnComponents: []

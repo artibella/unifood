@@ -1,0 +1,7 @@
+id: meatLovers
+name: Meat Lovers
+description: ''
+type: 0
+inputs:
+  - dim: meatLoverQuerystring
+    sign: +

@@ -1,0 +1,213 @@
+composition:
+  _name: Recipes
+  _id: eb64283a-b308-4cba-90ae-36fcf8da1ce7
+  _slug: /recipes
+  type: landingpage
+  parameters:
+    title:
+      type: text
+      value: Recipes
+  slots:
+    hero:
+      - _id: e974c67d-78c8-4679-8362-57b5da486583
+        type: $personalization
+        slots:
+          pz:
+            - _id: 30dfc117-ed7b-47d2-ba1e-a08e239dc4e2
+              type: hero
+              parameters:
+                body:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /CF Recipe/fields/subtitle
+                    required: false
+                title:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /CF Recipe/fields/title
+                    required: false
+                $pzCrit:
+                  type: $pzCrit
+                  value:
+                    crit:
+                      - l: vegetarianAudience
+                        r: '20'
+                        op: '>'
+                    name: 'Hero: Ghost pepper mango hot sauce'
+                imageUrl:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /CF Recipe/fields/image/fields/file/url
+                    required: false
+                imageAltText:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /CF Recipe/fields/title
+                    required: false
+            - _id: 12782ea8-3423-4052-9732-b5c83924d797
+              type: hero
+              slots:
+                ctas:
+                  - _id: 3f695ff0-362d-4813-9124-e56532638ae2
+                    type: callToAction
+                    parameters:
+                      link:
+                        type: text
+                        value: '#'
+                      title:
+                        type: text
+                        value: Read more
+              parameters:
+                body:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /CF Recipe Meat/fields/intro/content/0/content/0/value
+                    required: false
+                title:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /CF Recipe Meat/fields/title
+                    required: false
+                imageUrl:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /CF Recipe Meat/fields/image/fields/file/url
+                    required: false
+                imageAltText:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /CF Recipe Meat/fields/title
+                    required: false
+        parameters:
+          trackingEventName:
+            type: text
+            value: recipeHero
+      - _id: 95036a6b-7e42-42f5-b035-51ab05dec056
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /CF Recipe/fields/subtitle
+              required: false
+          title:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /CF Recipe/fields/title
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /CF Recipe/fields/image/fields/file/url
+              required: false
+    sections:
+      - _id: 8186df0e-1a5b-44fd-a1ad-6fa02ce60de2
+        type: sectionContainer
+        slots:
+          content:
+            - _id: 34b1f112-ba9c-4652-84e3-8948d768b69d
+              type: gridContainer
+              slots:
+                items:
+                  - _id: 7f3ac768-8f14-4f64-8dba-f2c9f363ff43
+                    type: $loop
+                    slots:
+                      body:
+                        - _id: 63ea251b-db7e-4428-b50f-4058110d5234
+                          type: genericCard
+                          parameters:
+                            body:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /recipes entries Loop Item/subtitle
+                                required: false
+                            image:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /recipes entries Loop Item/featuredimage/url
+                                required: false
+                            title:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /recipes entries Loop Item/title
+                                required: false
+                    _dataResources:
+                      recipes entries Loop Item:
+                        type: sys-reserved-loop
+                        variables:
+                          connectedData: /recipes/entries
+                          connectedDataRequired: 'false'
+              parameters:
+                columns:
+                  type: number
+                  value: '3'
+        parameters:
+          title:
+            type: text
+            value: Recipes from Contentstack
+      - _id: b05d254b-5be1-4a03-8d42-4c5351487dee
+        type: recipeList
+        parameters:
+          titel:
+            type: text
+            value: Latest recipes
+          recipes:
+            type: contentfulQuery
+            value:
+              count: 16
+              sortBy: sys.createdAt
+              source: default
+              sortOrder: desc
+              contentType: recipe
+  _dataResources:
+    recipes:
+      type: recipesContentstack
+      variables: {}
+    CF Recipe:
+      type: recipecontentful
+      variables:
+        entryIds: SDBHzJ4LmFG7ctvtLAo3H
+    CF Recipe Meat:
+      type: recipecontentful
+      variables:
+        entryIds: 2pyAzjhMZ2z8Zvw4gE6t0D
+    Featured Recipe:
+      type: recipeByIdcontentstack
+      variables:
+        recipeID: bltd58bc990b6e94759
+    'Recipe in Recipe Card ':
+      type: recipeByIdcontentstack
+      variables:
+        recipeID: bltc0e29f5dc145e52e
+      isPatternParameter: true
+created: '2022-09-19T08:25:54.222034+00:00'
+modified: '2022-10-20T11:13:43.714103+00:00'
+pattern: false

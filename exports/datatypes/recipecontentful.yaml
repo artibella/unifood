@@ -1,0 +1,19 @@
+id: recipecontentful
+displayName: Recipe (Contentful)
+path: /entries
+custom:
+  allowedContentTypes:
+    recipe:
+      id: recipe
+      name: Recipe
+method: GET
+archetype: contentfulEntry
+variables:
+  entryIds:
+    type: string
+    setBy: static
+    default: n/a
+parameters:
+  sys.id[in]: ${entryIds}
+dataSourceId: contentful
+allowedOnComponents: []

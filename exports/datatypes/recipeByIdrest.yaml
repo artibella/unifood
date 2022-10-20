@@ -1,0 +1,15 @@
+id: recipeByIdrest
+displayName: Recipe by ID (REST)
+path: /entries/${recipeID}
+method: GET
+archetype: default
+variables:
+  recipeID:
+    type: text
+    setBy: static
+    default: 63zkW3nAH7z36PCRdewyeE
+    displayName: Recipe ID
+parameters:
+  content_type: recipe
+dataSourceId: contentfulRest
+allowedOnComponents: []

@@ -1,0 +1,42 @@
+composition:
+  _name: Recipe Hero
+  _id: ab7535cf-e770-4a9f-a96a-cdd3412b6234
+  type: hero
+  parameters:
+    body:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Recipe in Recipe Card /entry/subtitle
+        required: false
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Recipe in Recipe Card /entry/title
+        required: false
+    imageUrl:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Recipe in Recipe Card /entry/featuredimage/url
+        required: false
+    imageAltText:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Recipe in Recipe Card /entry/title
+        required: false
+  _dataResources:
+    'Recipe in Recipe Card ':
+      type: recipeByIdcontentstack
+      variables:
+        recipeID: bltd58bc990b6e94759
+      isPatternParameter: true
+created: '2022-10-18T17:24:06.888534+00:00'
+modified: '2022-10-18T17:25:50.026017+00:00'
+pattern: true

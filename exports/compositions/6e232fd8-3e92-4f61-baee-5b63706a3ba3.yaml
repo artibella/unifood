@@ -1,0 +1,13 @@
+composition:
+  _name: Burger
+  _id: 6e232fd8-3e92-4f61-baee-5b63706a3ba3
+  _slug: burger
+  type: recipe
+  parameters: {}
+  slots:
+    mainNavigation:
+      - type: mainNavigation
+        _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+created: '2022-09-23T16:55:24.10429+00:00'
+modified: '2022-09-23T16:55:24.10429+00:00'
+pattern: false

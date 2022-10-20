@@ -1,0 +1,9 @@
+id: ee67133d-4cd7-43f8-8365-7645c0e0974f
+name: Burger
+type: composition
+parentPath: /recipes
+path: /recipes/burger
+urlSegment: burger
+isLeaf: false
+sitemapId: cf722c59-5fe4-433a-a7e1-32d580d77269
+projectId: 9b7308e8-0eac-4a75-8011-b3a199dd4d15

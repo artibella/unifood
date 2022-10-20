@@ -1,0 +1,23 @@
+id: users
+displayName: Random Users
+path: /api
+method: GET
+headers: {}
+archetype: default
+variables:
+  seed:
+    type: text
+    setBy: static
+    default: bentobento
+    displayName: Seed string (for stable results)
+  results:
+    type: number
+    setBy: static
+    default: '100'
+    displayName: Number of results
+parameters:
+  inc: name,picture,gender,nat
+  seed: ${seed}
+  results: ${results}
+dataSourceId: randomUsers
+allowedOnComponents: []

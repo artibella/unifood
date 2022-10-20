@@ -1,0 +1,7 @@
+id: restaurants
+displayName: Restaurants (Contentstack)
+path: /content_types/restaurant/entries?include[]=cuisines&include[]=diets
+method: GET
+archetype: default
+dataSourceId: contentstackUnifood
+allowedOnComponents: []

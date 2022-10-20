@@ -1,0 +1,21 @@
+composition:
+  _name: Cheese Cake
+  _id: 38603dd6-7f06-4367-8f60-e2b8a012430f
+  _slug: perfect-cheesecake
+  type: recipe
+  parameters:
+    title:
+      type: text
+      value: Perfect Chessecake
+    recipe:
+      type: contentfulEntry
+      value:
+        source: default
+        entryId: 5zzUu4hpMQ4ld3MYVzEAbU
+  slots:
+    mainNavigation:
+      - type: mainNavigation
+        _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+created: '2022-06-30T19:04:55.029995+00:00'
+modified: '2022-06-30T19:05:30.938957+00:00'
+pattern: false

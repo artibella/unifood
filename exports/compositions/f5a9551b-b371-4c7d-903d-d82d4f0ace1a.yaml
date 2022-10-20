@@ -1,0 +1,8 @@
+composition:
+  _name: My test
+  _id: f5a9551b-b371-4c7d-903d-d82d4f0ace1a
+  type: restaurantReview
+  parameters: {}
+created: '2022-10-18T13:12:46.179955+00:00'
+modified: '2022-10-18T13:12:46.179955+00:00'
+pattern: false

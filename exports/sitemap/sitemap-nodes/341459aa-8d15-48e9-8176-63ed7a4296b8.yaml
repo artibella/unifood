@@ -1,0 +1,10 @@
+id: 341459aa-8d15-48e9-8176-63ed7a4296b8
+name: Cheeses pizza
+type: composition
+parentPath: /recipes
+path: /recipes/cheeses-pizza
+urlSegment: cheeses-pizza
+compositionId: 7ef66f40-5949-4d37-9d5d-319b7d2d6f18
+isLeaf: true
+sitemapId: cf722c59-5fe4-433a-a7e1-32d580d77269
+projectId: 9b7308e8-0eac-4a75-8011-b3a199dd4d15

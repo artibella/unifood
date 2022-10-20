@@ -1,0 +1,20 @@
+id: tag
+name: Tag
+icon: tag
+parameters:
+  - id: label
+    name: Label
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: link
+    name: Link
+    type: sitemap_link
+    helpText: ''
+    typeConfig: null
+useTeamPermissions: true
+slots: []
+titleParameter: label
+canBeComposition: false
+created: '2022-09-30T12:22:35.793238+00:00'
+updated: '2022-09-30T13:44:59.538535+00:00'

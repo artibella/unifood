@@ -1,0 +1,55 @@
+composition:
+  _name: Hello
+  _id: c093fcbc-b3eb-43f7-8b9f-f905524c60ea
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - _id: 1fc57861-025a-432e-92b0-869086df004d
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: >-
+              Legendary airfield in the center  of Berlin that was used for the
+              Berlin Airlift between 1948 and 1949. 
+
+
+              The airport was closed in 2008 and the airfield is now a public
+              park.
+          title:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Photos/results/8/urls/regular
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Photos/results/8/urls/small
+              required: false
+          imageAltText:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Photos/results/8/alt_description
+              required: false
+  _dataResources:
+    Photos:
+      type: unsplashPhotoSearch
+      variables:
+        page: '1'
+        query: Berlin
+        per_page: '10'
+        orientation: landscape
+    Product:
+      type: bigcommerceProduct
+      variables:
+        product_id: '88'
+created: '2022-10-12T17:50:47.645378+00:00'
+modified: '2022-10-14T15:18:32.288833+00:00'
+pattern: false

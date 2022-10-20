@@ -1,0 +1,40 @@
+id: gridContainer
+name: Grid Container
+icon: view-cols
+parameters:
+  - id: columns
+    name: Columns
+    type: number
+    helpText: ''
+    typeConfig:
+      max: '10'
+      min: '1'
+      required: true
+useTeamPermissions: true
+slots:
+  - id: items
+    name: Items
+    allowedComponents:
+      - dynamicRecipeList
+      - genericCard
+      - hero
+      - imageBlock
+      - sectionContainer
+      - textBlock
+      - $personalization
+      - $test
+      - $localization
+      - $loop
+      - recipeHero
+      - productCard
+      - tag
+    inheritAllowedComponents: false
+defaults:
+  type: gridContainer
+  parameters:
+    columns:
+      type: number
+      value: '2'
+canBeComposition: false
+created: '2022-10-19T14:44:39.794772+00:00'
+updated: '2022-10-19T15:37:33.609908+00:00'

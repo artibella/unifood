@@ -1,0 +1,15 @@
+id: restaurantByIdcontentstack
+displayName: Restaurant by ID (Contentstack)
+body: ''
+path: >-
+  /content_types/restaurant/entries/${restaurantID}?include[]=cuisines&include[]=diets
+method: GET
+archetype: default
+variables:
+  restaurantID:
+    type: text
+    setBy: static
+    default: blt918a81027408e2f2
+    displayName: Restaurant ID
+dataSourceId: contentstackUnifood
+allowedOnComponents: []

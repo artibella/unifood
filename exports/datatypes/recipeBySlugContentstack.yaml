@@ -1,0 +1,13 @@
+id: recipeBySlugContentstack
+displayName: Recipe by Slug (Contentstack)
+path: '/content_types/recipe/entries/?query={"url": "${slug}"}'
+method: GET
+archetype: default
+variables:
+  slug:
+    type: text
+    setBy: static
+    default: /watermelon-salad-with-mint-and-feta
+    displayName: Recipe slug
+dataSourceId: contentstackUnifood
+allowedOnComponents: []

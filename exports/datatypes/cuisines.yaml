@@ -1,0 +1,31 @@
+id: cuisines
+displayName: Cuisines
+body: ''
+path: /entries
+custom:
+  allowedContentTypes:
+    cuisine:
+      id: cuisine
+      name: 🏷  - Cuisine
+method: GET
+archetype: contentfulQuery
+variables:
+  limit:
+    type: string
+    setBy: static
+    default: '5'
+  order:
+    type: string
+    setBy: static
+    default: '-sys.updatedAt'
+  contentType:
+    type: string
+    setBy: static
+    default: __any__
+parameters:
+  limit: ${limit}
+  order: ${order}
+  content_type: ${contentType}
+dataSourceId: contentful
+allowedOnComponents:
+  - cuisinePage

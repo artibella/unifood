@@ -1,0 +1,10 @@
+id: a10c6747-139c-4319-9028-6a5fc0c6c6dc
+name: Burgermeister
+type: composition
+parentPath: /reviews/restaurants
+path: /reviews/restaurants/burgermeister
+urlSegment: burgermeister
+compositionId: 26e64946-2231-4cfa-b036-3ffe09f3f9cc
+isLeaf: true
+sitemapId: cf722c59-5fe4-433a-a7e1-32d580d77269
+projectId: 9b7308e8-0eac-4a75-8011-b3a199dd4d15

@@ -1,0 +1,10 @@
+id: recipesrest
+displayName: Recipes (REST)
+path: /entries
+method: GET
+archetype: default
+parameters:
+  include: '10'
+  content_type: recipe
+dataSourceId: contentfulRest
+allowedOnComponents: []

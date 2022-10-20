@@ -1,0 +1,157 @@
+composition:
+  _name: Homepage
+  _id: 70c0dd36-63ff-4d4c-b2c6-8d085a0689b1
+  _slug: /
+  type: homepage
+  parameters:
+    title:
+      type: text
+      value: Unifood
+  slots:
+    mainHero:
+      - _id: 758e072a-4d04-4ab4-9bf8-a7367ebb480c
+        type: $personalization
+        slots:
+          pz:
+            - _id: 907ed7d3-57c9-4d24-a939-f7e8eb058f09
+              type: recipeHero
+              parameters:
+                title:
+                  type: text
+                  value: Best risotto
+                byline:
+                  type: text
+                  value: Featured
+                recipe:
+                  type: contentfulEntry
+                  value:
+                    source: default
+                    entryId: 7hB32KS4oiLpPAB81Rw0TA
+                $pzCrit:
+                  type: $pzCrit
+                  value:
+                    crit:
+                      - l: vegetarianAudience
+                        r: '30'
+                        op: '>'
+                    name: 'Recipe Hero: Best risotto'
+            - _id: 025039dd-b8a7-4b2f-a89d-71c09754b67a
+              type: recipeHero
+              parameters:
+                title:
+                  type: text
+                  value: For meat lovers
+                byline:
+                  type: text
+                  value: Featured
+                recipe:
+                  type: contentfulEntry
+                  value:
+                    source: default
+                    entryId: 6noZkJ3t9vpuTug4peSftT
+                $pzCrit:
+                  type: $pzCrit
+                  value:
+                    crit:
+                      - l: meatLoverQuerystring
+                        r: '30'
+                        op: '>'
+                    name: 'Recipe Hero: Meat Lover'
+                teaserText:
+                  type: text
+                  value: Chicken and pasta meet in a great dish
+            - _id: cf879502-188b-4e66-a37b-4349d2a71e8c
+              type: recipeHero
+              parameters:
+                title:
+                  type: text
+                  value: Cheeses Pizza
+                byline:
+                  type: text
+                  value: Featured
+                recipe:
+                  type: contentfulEntry
+                  value:
+                    source: default
+                    entryId: 63zkW3nAH7z36PCRdewyeE
+                teaserText:
+                  type: text
+                  value: So cheesy i has to be good
+        parameters:
+          count:
+            type: number
+            value: '1'
+          trackingEventName:
+            type: text
+            value: homepageFeaturedRecipe
+    sections:
+      - _id: ff64df30-b646-4f3a-a2d6-3574a381c8e7
+        type: recipeList
+        parameters:
+          titel:
+            type: text
+            value: Latest recipes
+          recipes:
+            type: contentfulQuery
+            value:
+              count: 3
+              sortBy: sys.createdAt
+              source: default
+              sortOrder: desc
+              contentType: recipe
+      - _id: 8f914093-a66c-475a-ad83-63ec7410a73c
+        type: recipeList
+        parameters:
+          titel:
+            type: text
+            value: ' Quick recipes'
+          recipes:
+            type: contentfulQuery
+            value:
+              count: 3
+              sortBy: fields.totalTime
+              source: default
+              sortOrder: asc
+              contentType: recipe
+      - _id: 71510d6e-a08d-4017-916a-c6322343c1c1
+        type: productList
+        slots:
+          products:
+            - _id: ad6ef472-90ea-4a51-b449-44e47e25e977
+              type: productCard
+              parameters:
+                title:
+                  type: text
+                  value: On sale
+                product:
+                  type: bigcommerceProduct
+                  value: '97'
+            - _id: 81aacb26-0c5a-4512-9445-9ababa60aae0
+              type: productCard
+              parameters:
+                title:
+                  type: text
+                  value: Just in
+                product:
+                  type: bigcommerceProduct
+                  value: '80'
+            - _id: 135bab75-fdba-4ae6-99b1-30d6d8138813
+              type: productCard
+              parameters:
+                title:
+                  type: text
+                  value: Last chance
+                product:
+                  type: bigcommerceProduct
+                  value: '86'
+        parameters:
+          title:
+            type: text
+            value: Featured products
+    mainNavigation:
+      - _id: df17e68f-a959-4b4b-abdb-704761b90157
+        type: mainNavigation
+        _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+created: '2022-09-15T08:38:32.443699+00:00'
+modified: '2022-10-18T13:36:26.079655+00:00'
+pattern: false

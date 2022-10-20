@@ -1,0 +1,36 @@
+id: recipeHero
+name: Recipe Hero
+icon: smart-home-cooker
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: byline
+    name: Byline
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: teaserText
+    name: Teaser Text
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: recipe
+    name: Recipe
+    type: contentfulEntry
+    helpText: ''
+    typeConfig:
+      source: default
+      required: true
+      allowedContentTypes:
+        recipe:
+          id: recipe
+          name: Recipe
+useTeamPermissions: true
+slots: []
+titleParameter: title
+canBeComposition: false
+created: '2022-09-15T08:38:29.580033+00:00'
+updated: '2022-09-15T08:38:29.580033+00:00'

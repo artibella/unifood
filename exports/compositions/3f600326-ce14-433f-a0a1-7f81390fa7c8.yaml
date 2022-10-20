@@ -1,0 +1,151 @@
+composition:
+  _name: Restaurants
+  _id: 3f600326-ce14-433f-a0a1-7f81390fa7c8
+  _slug: /restaurants
+  type: landingpage
+  parameters: {}
+  slots:
+    sections:
+      - _id: cc59f6b9-a568-4de3-9530-e07cc00dcf0a
+        type: $loop
+        slots:
+          body:
+            - _id: ace8eb23-785a-499b-b5e7-79ebab4f8b32
+              type: genericCard
+              parameters:
+                body:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /Recipes entries/subtitle
+                    required: false
+                image:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /Recipes entries/featuredimage/url
+                    required: false
+                title:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /Recipes entries/title
+                    required: false
+                byline:
+                  type: text
+                  value: Recipe
+        _dataResources:
+          Recipes entries:
+            type: sys-reserved-loop
+            variables:
+              connectedData: /Recipes/entries
+      - _id: 702dd8af-5dc2-49da-8245-2d385ec9d7b4
+        type: $loop
+        slots:
+          body:
+            - _id: 7db6ec76-c1c1-4a99-bdaf-552e67ce1142
+              type: restaurantDetails
+              slots:
+                diets:
+                  - _id: 9f46d8f9-e84f-40d4-ab7d-8d3b0843419f
+                    type: $loop
+                    slots:
+                      body:
+                        - _id: 35bc5f4c-7480-4ebd-bf00-ea25d010a511
+                          type: tag
+                          parameters:
+                            label:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /diets/title
+                                required: false
+                    _dataResources:
+                      diets:
+                        type: sys-reserved-loop
+                        variables:
+                          connectedData: /restaurant/diets
+                cuisines:
+                  - _id: fc331e99-159f-473e-bdfc-01221e23e952
+                    type: $loop
+                    slots:
+                      body:
+                        - _id: fb56be4d-5018-46da-a0a3-bc0600492ac1
+                          type: tag
+                          parameters:
+                            label:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /cuisines/title
+                                required: false
+                    _dataResources:
+                      cuisines:
+                        type: sys-reserved-loop
+                        variables:
+                          connectedData: /restaurant/cuisines
+                openingHours:
+                  - _id: 15d28078-faab-4c83-a3be-0921d37c0c2b
+                    type: $loop
+                    slots:
+                      body:
+                        - _id: 7926e657-1054-41af-b2ef-c65561c10e53
+                          type: openingHours
+                          parameters:
+                            day:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /opening-hours/opening_hours/day
+                                required: false
+                            closingTime:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /opening-hours/opening_hours/closing_time
+                                required: false
+                            openingTime:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /opening-hours/opening_hours/opening_time
+                                required: false
+                    _dataResources:
+                      opening-hours:
+                        type: sys-reserved-loop
+                        variables:
+                          connectedData: /restaurant/opening_hours
+              parameters:
+                title:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /restaurant/title
+                    required: false
+        _dataResources:
+          restaurant:
+            type: sys-reserved-loop
+            variables:
+              connectedData: /Restaurants/entries
+  _dataResources:
+    Recipes:
+      type: recipesContentstack
+      variables: {}
+    Reviews:
+      type: recipesContentstack
+      variables: {}
+    Restaurants:
+      type: restaurants
+      variables: {}
+created: '2022-10-05T10:05:03.438145+00:00'
+modified: '2022-10-17T15:02:49.237784+00:00'
+pattern: false

@@ -1,0 +1,13 @@
+id: recipeByIdcontentstack
+displayName: Recipe by ID (Contentstack)
+path: /content_types/recipe/entries/${recipeID}
+method: GET
+archetype: default
+variables:
+  recipeID:
+    type: text
+    setBy: static
+    default: bltd58bc990b6e94759
+    displayName: Recipe ID
+dataSourceId: contentstackUnifood
+allowedOnComponents: []
