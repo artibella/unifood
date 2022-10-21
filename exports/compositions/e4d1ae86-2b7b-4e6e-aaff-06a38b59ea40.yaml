@@ -25,10 +25,10 @@ composition:
         parameters:
           url:
             type: text
-            value: /reviews/restaurants
+            value: /review/restaurant
           link:
             type: sitemap_link
-            value: /reviews/restaurants
+            value: ''
           title:
             type: text
             value: Reviews
@@ -45,5 +45,5 @@ composition:
             type: text
             value: Recipes
 created: '2022-09-15T08:38:31.50963+00:00'
-modified: '2022-10-17T23:46:57.671931+00:00'
+modified: '2022-10-20T17:00:49.562546+00:00'
 pattern: true

@@ -54,17 +54,6 @@ composition:
                     required: false
             - _id: 12782ea8-3423-4052-9732-b5c83924d797
               type: hero
-              slots:
-                ctas:
-                  - _id: 3f695ff0-362d-4813-9124-e56532638ae2
-                    type: callToAction
-                    parameters:
-                      link:
-                        type: text
-                        value: '#'
-                      title:
-                        type: text
-                        value: Read more
               parameters:
                 body:
                   type: text
@@ -98,30 +87,6 @@ composition:
           trackingEventName:
             type: text
             value: recipeHero
-      - _id: 95036a6b-7e42-42f5-b035-51ab05dec056
-        type: hero
-        parameters:
-          body:
-            type: text
-            value: unbound
-            connectedData:
-              syntax: jptr
-              pointer: /CF Recipe/fields/subtitle
-              required: false
-          title:
-            type: text
-            value: unbound
-            connectedData:
-              syntax: jptr
-              pointer: /CF Recipe/fields/title
-              required: false
-          imageUrl:
-            type: text
-            value: unbound
-            connectedData:
-              syntax: jptr
-              pointer: /CF Recipe/fields/image/fields/file/url
-              required: false
     sections:
       - _id: 8186df0e-1a5b-44fd-a1ad-6fa02ce60de2
         type: sectionContainer
@@ -209,5 +174,5 @@ composition:
         recipeID: bltc0e29f5dc145e52e
       isPatternParameter: true
 created: '2022-09-19T08:25:54.222034+00:00'
-modified: '2022-10-20T11:13:43.714103+00:00'
+modified: '2022-10-21T07:35:09.868888+00:00'
 pattern: false

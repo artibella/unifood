@@ -14,6 +14,26 @@ parameters:
     typeConfig: null
 useTeamPermissions: true
 slots: []
+titleParameter: title
 canBeComposition: false
 created: '2022-09-27T14:43:46.219491+00:00'
-updated: '2022-09-27T14:43:46.219491+00:00'
+updated: '2022-10-21T07:42:07.636846+00:00'
+variants:
+  - id: default
+    name: Default
+  - id: primary
+    name: Primary
+  - id: secondary
+    name: Secondary
+  - id: accent
+    name: Accent
+  - id: info
+    name: Info
+  - id: warning
+    name: Warning
+  - id: error
+    name: Error
+  - id: ghost
+    name: Ghost
+  - id: link
+    name: Link
