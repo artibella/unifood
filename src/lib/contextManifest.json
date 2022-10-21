@@ -72,6 +72,9 @@
         }
       }
     },
-    "test": {}
+    "test": {
+      "veganTest": {},
+      "pastaTest": {}
+    }
   }
 }

@@ -6,7 +6,11 @@ module.exports = {
     "node_modules/daisyui/dist/**/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        serif: ['Source Serif Pro', 'serif'],
+      }
+    },
   },
   daisyui: {
     themes: [

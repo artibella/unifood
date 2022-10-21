@@ -4,6 +4,7 @@ import manifest from "../lib/contextManifest.json";
 
 import "../styles/globals.css";
 import "../styles/page.css";
+import Layout from "../components/layout";
 
 const context = new Context({ 
   manifest,
@@ -17,7 +18,9 @@ const context = new Context({
 function MyApp({ Component, pageProps, scoring }) {
   return (
     <UniformContext context={context}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </UniformContext>
   );
 }
