@@ -24,7 +24,8 @@ const config = {
     contentfulEnvironment: process.env.CONTENTFUL_ENVIRONMENT,
     contentfulDeliveryToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
     contentfulPreviewToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
-    uniformContextOutputType: process.env.UNIFORM_CONTEXT_OUTPUT_TYPE || 'standard'
+    uniformContextOutputType: process.env.UNIFORM_CONTEXT_OUTPUT_TYPE || 'standard',
+    gtmStreamId: process.env.GTM_STREAM_ID
   },
   serverRuntimeConfig: {
     projectId: process.env.UNIFORM_PROJECT_ID,
@@ -37,6 +38,7 @@ const config = {
     contentfulPreviewToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
     canvasApiHost: process.env.UNIFORM_CLI_BASE_URL,
     previewSecret: process.env.UNIFORM_PREVIEW_SECRET,
+    gtmStreamId: process.env.GTM_STREAM_ID
   },
 };
 
