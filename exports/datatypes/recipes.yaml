@@ -3,6 +3,7 @@ displayName: Recipes
 body: ''
 path: /entries
 method: GET
+purgeKey: 0aea5bd9-8ec9-4a7f-9f06-1ec656edf90c
 archetype: contentfulQuery
 parameters:
   limit: '100'

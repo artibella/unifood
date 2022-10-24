@@ -1,7 +1,7 @@
 composition:
-  _name: Burgermeister
+  _name: Burgermeister Friedrichshain
   _id: fa603f6a-f087-45cb-be4a-12af800e903d
-  _slug: burgermeister-friedrichshain
+  _slug: /reviews/restaurants/burgermeister-friedrichshain
   type: restaurantReview
   parameters:
     title:
@@ -120,5 +120,5 @@ composition:
       variables:
         restaurantID: blt7e36a1246dbd8d06
 created: '2022-10-20T12:15:10.426197+00:00'
-modified: '2022-10-20T12:21:55.3663+00:00'
+modified: '2022-10-21T12:14:35.050251+00:00'
 pattern: false

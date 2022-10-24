@@ -14,13 +14,13 @@ parameters:
     typeConfig:
       options:
         - text: Default
-          value: default
+          value: light
         - text: Dark
           value: dark
         - text: Spring
           value: spring
-        - text: Vibrant
-          value: vibrant
+        - text: Ice
+          value: ice
 useTeamPermissions: true
 slots:
   - id: content
@@ -44,4 +44,4 @@ slots:
 titleParameter: title
 canBeComposition: false
 created: '2022-10-19T14:23:35.307515+00:00'
-updated: '2022-10-21T07:39:08.893908+00:00'
+updated: '2022-10-21T08:02:46.277595+00:00'

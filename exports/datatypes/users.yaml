@@ -1,8 +1,10 @@
 id: users
 displayName: Random Users
+body: ''
 path: /api
 method: GET
 headers: {}
+purgeKey: 6469f6f3-8391-4aaa-8374-cc94169b9944
 archetype: default
 variables:
   seed:

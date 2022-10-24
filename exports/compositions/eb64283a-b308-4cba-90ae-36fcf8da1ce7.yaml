@@ -88,6 +88,91 @@ composition:
             type: text
             value: recipeHero
     sections:
+      - _id: 0f43c798-a3a5-4dee-96af-6faa5f7e40c4
+        type: $test
+        slots:
+          test:
+            - _id: 14fcda5b-001f-41c8-9d82-58a2ee61bbd4
+              type: sectionContainer
+              slots:
+                content:
+                  - _id: 2a44c424-f11c-434c-9614-0db365224272
+                    type: hero
+                    parameters:
+                      body:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Vegan Recipe/entry/subtitle
+                          required: false
+                      title:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Vegan Recipe/entry/title
+                          required: false
+                      imageUrl:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Vegan Recipe/entry/featuredimage/url
+                          required: false
+              parameters:
+                theme:
+                  type: select
+                  value: spring
+                title:
+                  type: text
+                  value: Featured vegetarian pasta recipe
+            - _id: bdca9772-841e-4d40-8b62-98e9cefe4bb3
+              type: sectionContainer
+              slots:
+                content:
+                  - _id: 58590b2e-16ea-47f5-a928-2d092f792ce5
+                    type: hero
+                    parameters:
+                      body:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Meat pasta recipe/entry/subtitle
+                          required: false
+                      title:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Meat pasta recipe/entry/title
+                          required: false
+                      imageUrl:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Meat pasta recipe/entry/featuredimage/url
+                          required: false
+                      imageAltText:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Meat pasta recipe/entry/title
+                          required: false
+              parameters:
+                theme:
+                  type: select
+                  value: spring
+                title:
+                  type: text
+                  value: Featured pasta recipe
+        parameters:
+          test:
+            type: testSelect
+            value: pastaTest
       - _id: 8186df0e-1a5b-44fd-a1ad-6fa02ce60de2
         type: sectionContainer
         slots:
@@ -160,6 +245,10 @@ composition:
       type: recipecontentful
       variables:
         entryIds: SDBHzJ4LmFG7ctvtLAo3H
+    Vegan Recipe:
+      type: recipeByIdcontentstack
+      variables:
+        recipeID: bltc0e29f5dc145e52e
     CF Recipe Meat:
       type: recipecontentful
       variables:
@@ -168,11 +257,15 @@ composition:
       type: recipeByIdcontentstack
       variables:
         recipeID: bltd58bc990b6e94759
+    Meat pasta recipe:
+      type: recipeByIdcontentstack
+      variables:
+        recipeID: bltbc48227d876af7c0
     'Recipe in Recipe Card ':
       type: recipeByIdcontentstack
       variables:
         recipeID: bltc0e29f5dc145e52e
       isPatternParameter: true
 created: '2022-09-19T08:25:54.222034+00:00'
-modified: '2022-10-21T07:35:09.868888+00:00'
+modified: '2022-10-21T10:15:22.357189+00:00'
 pattern: false
