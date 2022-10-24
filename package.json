@@ -50,6 +50,7 @@
     "@uniformdev/context-next": "^17.3.0",
     "@uniformdev/context-react": "^17.3.0",
     "@uniformdev/optimize-tracker": "14.0.0",
+    "@uniformdev/project-map": "^17.3.1-alpha.194",
     "@uniformdev/sitemap": "^17.3.0",
     "classnames": "^2.3.1",
     "contentful": "^9.1.4",

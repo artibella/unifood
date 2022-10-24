@@ -1,12 +1,12 @@
 // components/layout.js
 
-import Navbar from './Navbar'
 import Sitefooter from './Sitefooter'
+import Siteheader from './Siteheader'
 
 export default function Layout({ children }) {
   return (
     <>
-      <Navbar />
+      <Siteheader />
       <main>{children}</main>
       <Sitefooter />
     </>
