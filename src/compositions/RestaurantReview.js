@@ -11,10 +11,14 @@ export default function RestaurantReview({title}) {
         <div className="my-8">
           <Slot name="authors" />
         </div>
-        <Slot name="restaurantDetails" />
       </section>
-      <section>
-        <Slot name="review" />
+      <section className="grid grid-cols-3 gap-4">
+        <div className="review col-span-2">
+          <Slot name="review" />
+        </div>
+        <aside className="restaurant">
+          <Slot name="restaurantDetails" />
+        </aside>
       </section>
     </div>
   )

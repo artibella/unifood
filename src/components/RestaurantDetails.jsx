@@ -1,14 +1,19 @@
 import { Fragment } from "react";
+import { LinkIcon, PhoneIcon, CurrencyEuroIcon, BanknotesIcon } from '@heroicons/react/24/outline';
 
-const renderPrice = function (priceRange) {
-    let priceString = '';
+const renderPriceRange = function (priceRange) {
+    let priceString = [];
     for (let i = 0; i < priceRange; i++) {
-        priceString += '€'
+        priceString.push(<CurrencyEuroIcon className="w-6 h-6" />)
     }
     return (
-        <span>
-            {priceString}
-        </span>
+        <div className="restaurant-pricerange flex flex-row gap-2">
+            <span className="font-bold" ><BanknotesIcon className="w-6 h6 inline-block" /> Price range:</span>
+            <span className="flex flex-row">
+                {priceString}
+            </span>
+            
+        </div>
     )
 }
 
@@ -52,19 +57,30 @@ const renderDiets = (diets) => {
 }
 
 
-export default function RestaurantDetails({ title, openingHours = [], cuisines = [], diets = [], priceRange = '', telephone = '' }) {
+export default function RestaurantDetails({ title, openingHours = [], cuisines = [], diets = [], priceRange = '', telephone = '', website = '' }) {
 
     return (
-        <section className="restaurant-details py-8">
+        <section className="restaurant-details pb-8">
             <div className="container mx-auto max-w-xxl">
                 <div className="">
                     <h2 className="text-xl text-left mb-4 font-bold text-gray-900">
                         {title}
                     </h2>
                     <div className="restaurant-meta">
-                        {renderPrice(priceRange)}
+                        {renderPriceRange(priceRange)}
+                        
+                        <div className="restaurant-contact mt-8 flex gap-6">
+                            <a href={website} target="_blank" className="flex flex-row hover:underline">
+                                <LinkIcon className="w-6 h-6 text-blue-500 inline-block mr-2" />
+                                <span>Website</span>
+                            </a>
+                            <span className="restaurant-phone">
+                                <PhoneIcon className="w-6 h-6 inline-block mr-2" />
+                                <span>{telephone}</span>
+                            </span>
+                        </div>
                         {renderOpeningHours(openingHours)}
-                        <div className="mt-8 flex flex-row">
+                        <div className="mt-8 flex flex-col">
                             <div>
                                 <span className="font-bold inline-block mr-2">Cuisines:</span> {renderCuisines(cuisines)}
                             </div>
@@ -73,6 +89,7 @@ export default function RestaurantDetails({ title, openingHours = [], cuisines =
                                 {renderDiets(diets)}
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -41,6 +41,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.12",
     "@uniformdev/canvas": "^17.3.0",
     "@uniformdev/canvas-contentful": "^17.3.0",
     "@uniformdev/canvas-react": "^17.3.0",
