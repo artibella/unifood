@@ -5,6 +5,12 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "node_modules/daisyui/dist/**/*.js"
   ],
+  safelist: [
+    {
+      pattern: /(grid)-(cols|rows)-./,
+      variants: ['sm', 'md', 'lg', 'hover', 'group-hover']
+    },
+  ],
   theme: {
     extend: {
       fontFamily: {
