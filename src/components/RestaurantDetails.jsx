@@ -64,9 +64,14 @@ export default function RestaurantDetails({ title, openingHours = [], cuisines =
                     <div className="restaurant-meta">
                         {renderPrice(priceRange)}
                         {renderOpeningHours(openingHours)}
-                        <div className="mt-8">
-                            {renderCuisines(cuisines)}
-                            {renderDiets(diets)}
+                        <div className="mt-8 flex flex-row">
+                            <div>
+                                <span className="font-bold inline-block mr-2">Cuisines:</span> {renderCuisines(cuisines)}
+                            </div>
+                            <div>
+                            <span className="font-bold inline-block mr-2">Suitable for diets:</span>  
+                                {renderDiets(diets)}
+                            </div>
                         </div>
                     </div>
                 </div>
