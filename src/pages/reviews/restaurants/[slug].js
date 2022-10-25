@@ -6,6 +6,7 @@ import { canvasClient, edgeCanvasClient, getCompositionList } from '../../../lib
 import { getEnhancers } from '../../../lib/enhancers/enhancers';
 import appRenderer from '../../../compositions/appRenderer';
 import { useLivePreviewNextStaticProps } from '../../../hooks/useLivePreviewNextStaticProps';
+import RestaurantReview from '../../../compositions/RestaurantReview';
 
 export default function CanvasComposition({ composition }) {
   useLivePreviewNextStaticProps({
@@ -21,19 +22,7 @@ export default function CanvasComposition({ composition }) {
   return (
     <Composition data={compositionInstance} resolveRenderer={appRenderer}>
       {({ title }) => (
-        <div className="container mx-auto px-16">
-          <section>
-            <h1 className='text-3xl mb-16'>{title}</h1>
-            <Slot name="hero" />
-          </section>
-          <section>
-            <Slot name="authors" />
-            <Slot name="restaurantDetails" />
-          </section>
-          <section>
-            <Slot name="review" />
-          </section>
-        </div>
+        <RestaurantReview title={title} />
       )}
     </Composition>
   )

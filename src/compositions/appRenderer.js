@@ -6,6 +6,8 @@ import Card from '../components/GenericCard';
 import GenericHero from '../components/GenericHero';
 import SectionContainer from '../components/SectionContainer';
 import GridContainer from '../components/GridContainer';
+import TextBlock from '../components/TextBlock';
+import ImageBlock from '../components/ImageBlock';
 
 
 const ComponentsMap = {
@@ -15,7 +17,9 @@ const ComponentsMap = {
   genericCard: Card,
   hero: GenericHero,
   sectionContainer: SectionContainer,
-  gridContainer: GridContainer
+  gridContainer: GridContainer,
+  textBlock: TextBlock,
+  imageBlock: ImageBlock
  
 };
 

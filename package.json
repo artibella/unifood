@@ -72,6 +72,7 @@
     "@storybook/manager-webpack5": "^6.5.12",
     "@storybook/react": "^6.5.12",
     "@storybook/testing-library": "^0.0.13",
+    "@tailwindcss/typography": "^0.5.7",
     "autoprefixer": "^10.4.12",
     "babel-loader": "^8.2.5",
     "cross-env": "^7.0.3",
