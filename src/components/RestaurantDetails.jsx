@@ -71,7 +71,7 @@ export default function RestaurantDetails({ title, openingHours = [], cuisines =
                         
                         <div className="restaurant-contact mt-8 flex gap-6">
                             <a href={website} target="_blank" className="flex flex-row hover:underline">
-                                <LinkIcon className="w-6 h-6 text-blue-500 inline-block mr-2" />
+                                <LinkIcon className="w-6 h-6 inline-block mr-2" />
                                 <span>Website</span>
                             </a>
                             <span className="restaurant-phone">
