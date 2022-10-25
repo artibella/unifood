@@ -12,8 +12,8 @@ export default function RestaurantReview({title}) {
           <Slot name="authors" />
         </div>
       </section>
-      <section className="grid grid-cols-3 gap-4">
-        <div className="review col-span-2">
+      <section className="lg:grid lg:grid-cols-3 lg:gap-4">
+        <div className="review lg:col-span-2">
           <Slot name="review" />
         </div>
         <aside className="restaurant">
