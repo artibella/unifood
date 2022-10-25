@@ -8,7 +8,9 @@ export default function RestaurantReview({title}) {
         <Slot name="hero" />
       </section>
       <section>
-        <Slot name="authors" />
+        <div className="my-8">
+          <Slot name="authors" />
+        </div>
         <Slot name="restaurantDetails" />
       </section>
       <section>

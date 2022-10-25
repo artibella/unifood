@@ -8,7 +8,8 @@ import SectionContainer from '../components/SectionContainer';
 import GridContainer from '../components/GridContainer';
 import TextBlock from '../components/TextBlock';
 import ImageBlock from '../components/ImageBlock';
-
+import ContributorList from '../components/ContributorList';
+import RestaurantDetails from '../components/RestaurantDetails';
 
 const ComponentsMap = {
   mainNavigation: MainNavigation,
@@ -19,7 +20,9 @@ const ComponentsMap = {
   sectionContainer: SectionContainer,
   gridContainer: GridContainer,
   textBlock: TextBlock,
-  imageBlock: ImageBlock
+  imageBlock: ImageBlock,
+  contributorList: ContributorList,
+  restaurantDetails: RestaurantDetails,
  
 };
 
