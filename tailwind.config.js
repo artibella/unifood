@@ -10,6 +10,10 @@ module.exports = {
       pattern: /(grid)-(cols|rows)-./,
       variants: ['sm', 'md', 'lg', 'hover', 'group-hover']
     },
+    {
+      pattern: /bg-./,
+      variants: ['sm', 'md', 'lg', 'hover', 'group-hover']
+    },
   ],
   theme: {
     extend: {
