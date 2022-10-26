@@ -70,14 +70,18 @@ export default function RestaurantDetails({ title, openingHours = [], cuisines =
                         {renderPriceRange(priceRange)}
                         
                         <div className="restaurant-contact mt-8 flex gap-6">
+                            { website ? (
                             <a href={website} target="_blank" className="flex flex-row hover:underline">
                                 <LinkIcon className="w-6 h-6 inline-block mr-2" />
                                 <span>Website</span>
                             </a>
-                            <span className="restaurant-phone">
-                                <PhoneIcon className="w-6 h-6 inline-block mr-2" />
-                                <span>{telephone}</span>
-                            </span>
+                            ) : ''}
+                            { telephone ? (
+                                <span className="restaurant-phone">
+                                    <PhoneIcon className="w-6 h-6 inline-block mr-2" />
+                                    <span>{telephone}</span>
+                                </span>
+                            ) : ''}
                         </div>
                         {renderOpeningHours(openingHours)}
                         <div className="mt-8 flex flex-col">
