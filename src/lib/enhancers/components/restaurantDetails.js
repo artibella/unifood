@@ -28,7 +28,7 @@ const extractCuisnesFromSlot = ({component}) => {
   return cuisines;
 }
 
-export default function restaurantDetailEnhancer (component) {
+export default function restaurantDetailsEnhancer (component) {
 
   return component
     .data('openingHours', extractOpeningHoursFromSlot)

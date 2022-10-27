@@ -10,6 +10,7 @@ import TextBlock from '../components/TextBlock';
 import ImageBlock from '../components/ImageBlock';
 import ContributorList from '../components/ContributorList';
 import RestaurantDetails from '../components/RestaurantDetails';
+import ScheduledContent from '../components/ScheduledContent';
 
 const ComponentsMap = {
   mainNavigation: MainNavigation,
@@ -23,6 +24,7 @@ const ComponentsMap = {
   imageBlock: ImageBlock,
   contributorList: ContributorList,
   restaurantDetails: RestaurantDetails,
+  scheduledContent: ScheduledContent
  
 };
 

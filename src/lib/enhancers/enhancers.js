@@ -7,7 +7,8 @@ import {
   CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES,
 } from "@uniformdev/canvas-contentful";
 import contributerListEnhancer from './components/contributerList.js';
-import restaurantDetailEnhancer from './components/restaurantDetails.js';
+import restaurantDetailsEnhancer from './components/restaurantDetails.js';
+import scheduledContentEnhancer from './components/scheduledContent.js';
 
 
 export const getEnhancers = () => {
@@ -29,6 +30,10 @@ export const getEnhancers = () => {
     )
     .component(
       'restaurantDetails',
-      restaurantDetailEnhancer
+      restaurantDetailsEnhancer
+    )
+    .component(
+      'scheduledContent',
+      scheduledContentEnhancer
     )
 };
