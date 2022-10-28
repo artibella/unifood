@@ -1,4 +1,4 @@
-export default function ContributorList({byline, contributors}) {
+export default function ContributorList({byline, contributors = []}) {
 
     const avatars = contributors.map(({name, image, link}, index) => (
         <img
