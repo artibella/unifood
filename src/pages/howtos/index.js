@@ -39,7 +39,7 @@ export const getStaticProps = async context => {
   const { preview } = context;
   // fetch the composition from Canvas
   const { composition } = await edgeCanvasClient.getCompositionBySlug({
-    slug: `/howtos`,
+    slug: `howtos`,
     state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
   });
 
