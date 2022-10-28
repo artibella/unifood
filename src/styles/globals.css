@@ -72,3 +72,17 @@ a {
   list-style: none;
   margin-right: 2rem
 }
+
+/* fake counter for steps */
+
+.howto-section-steps {
+  counter-reset: css-counter 0;
+}
+
+.howto-section-steps .howto-step {
+  counter-increment: css-counter 1; /* Increase the counter by 1. */
+}
+
+.howto-section-steps .howto-step:before {
+  content: counter(css-counter);
+}

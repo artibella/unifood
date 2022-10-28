@@ -24,6 +24,9 @@ const config = {
     contentfulEnvironment: process.env.CONTENTFUL_ENVIRONMENT,
     contentfulDeliveryToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
     contentfulPreviewToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
+    contentstackApiKey: process.env.CONTENTSTACK_API_KEY,
+    contentstackDeliveryToken: process.env.CONTENTSTACK_DELIVERY_TOKEN,
+    contentstackEnvironment: process.env.CONTENTSTACK_ENVIRONMENT,
     uniformContextOutputType: process.env.UNIFORM_CONTEXT_OUTPUT_TYPE || 'standard',
     gtmStreamId: process.env.GTM_STREAM_ID
   },
@@ -36,6 +39,9 @@ const config = {
     contentfulEnvironment: process.env.CONTENTFUL_ENVIRONMENT,
     contentfulDeliveryToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
     contentfulPreviewToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
+    contentstackApiKey: process.env.CONTENTSTACK_API_KEY,
+    contentstackDeliveryToken: process.env.CONTENTSTACK_DELIVERY_TOKEN,
+    contentstackEnvironment: process.env.CONTENTSTACK_ENVIRONMENT,
     canvasApiHost: process.env.UNIFORM_CLI_BASE_URL,
     previewSecret: process.env.UNIFORM_PREVIEW_SECRET,
     gtmStreamId: process.env.GTM_STREAM_ID

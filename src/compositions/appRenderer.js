@@ -11,6 +11,8 @@ import ImageBlock from '../components/ImageBlock';
 import ContributorList from '../components/ContributorList';
 import RestaurantDetails from '../components/RestaurantDetails';
 import ScheduledContent from '../components/ScheduledContent';
+import HowtoSection from '../components/HowtoSection';
+import HowtoStep from '../components/HowtoStep';
 
 const ComponentsMap = {
   mainNavigation: MainNavigation,
@@ -24,8 +26,9 @@ const ComponentsMap = {
   imageBlock: ImageBlock,
   contributorList: ContributorList,
   restaurantDetails: RestaurantDetails,
-  scheduledContent: ScheduledContent
- 
+  scheduledContent: ScheduledContent,
+  howtoSection: HowtoSection,
+  howtoStep: HowtoStep 
 };
 
 const appRenderer = (component)  => {
