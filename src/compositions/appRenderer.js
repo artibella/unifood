@@ -13,6 +13,7 @@ import RestaurantDetails from '../components/RestaurantDetails';
 import ScheduledContent from '../components/ScheduledContent';
 import HowtoSection from '../components/HowtoSection';
 import HowtoStep from '../components/HowtoStep';
+import CallToAction from '../components/CallToAction';
 
 const ComponentsMap = {
   mainNavigation: MainNavigation,
@@ -28,7 +29,8 @@ const ComponentsMap = {
   restaurantDetails: RestaurantDetails,
   scheduledContent: ScheduledContent,
   howtoSection: HowtoSection,
-  howtoStep: HowtoStep 
+  howtoStep: HowtoStep,
+  callToAction: CallToAction
 };
 
 const appRenderer = (component)  => {

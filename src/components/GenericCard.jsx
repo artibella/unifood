@@ -1,3 +1,4 @@
+import { Slot } from '@uniformdev/canvas-react';
 import Link from 'next/link'
 import { Card } from 'react-daisyui';
 
@@ -17,7 +18,7 @@ export default function GenericCard({ title, image, body, link = '#' }) {
         </Card.Title>
         <p>{body}</p>
         <Card.Actions>
-
+          <Slot name="actions" />
         </Card.Actions>
       </Card.Body>
     </Card>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Fragment } from "react/cjs/react.production.min";
+import { Fragment } from "react";
 
 const renderPrimaryCta = ({ title, link }) => {
   return (
