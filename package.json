@@ -56,6 +56,7 @@
     "contentful": "^9.1.4",
     "contentstack": "^3.15.4",
     "critters": "0.0.16",
+    "is-html": "^3.0.0",
     "next": "^12.2.5",
     "react": "17.0.2",
     "react-dom": "17.0.2"
