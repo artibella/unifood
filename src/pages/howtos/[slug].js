@@ -61,11 +61,7 @@ export const getStaticProps = async context => {
 };
 
 export async function getStaticPaths() {
-
-
   const articleSlugs = await getHowtoArticleSlugs();
-  console.dir(articleSlugs);
-
 
   const staticPaths = articleSlugs.map((article) => {
     return `/howtos/${article.url}`;

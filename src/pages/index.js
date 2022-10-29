@@ -3,7 +3,8 @@ import { enhance } from "@uniformdev/canvas";
 import { Composition, createApiEnhancer, Slot, useCompositionInstance } from "@uniformdev/canvas-react";
 import { useLivePreviewNextStaticProps } from "../hooks/useLivePreviewNextStaticProps";
 import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
-import { canvasClient } from "../lib/canvas";
+import { edgeCanvasClient } from "../lib/canvas";
+
 import appRenderer from "../compositions/appRenderer";
 
 
@@ -42,7 +43,7 @@ export default function Home({ composition }) {
 // read the value of preview from the Next.js context
 export async function getStaticProps({ preview }) {
   // create the Canvas client
-  const client = canvasClient;
+  const client = edgeCanvasClient;
 
   // fetch the composition from Canvas
   const { composition } = await client.getCompositionBySlug({
