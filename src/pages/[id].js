@@ -60,6 +60,7 @@ export const getStaticProps = async context => {
 export async function getStaticPaths() {
   const compositions = await getCompositionList();
   const pages = compositions || [];
+  const reservedSlugs = ['/howtos'];
 
   const paths = pages.filter((c) => {
     // eslint-disable-next-line no-underscore-dangle
@@ -67,8 +68,9 @@ export async function getStaticPaths() {
     const isPattern = c.pattern;
     const hasSlug = slug && slug.length > 0
     const isRoot = slug === '/';
+    const isReservedSlug = reservedSlugs.includes(slug);
     const isFirstLevel = slug?.split('/').length === 2;
-    return hasSlug && !isPattern && isFirstLevel && !isRoot;
+    return hasSlug && !isPattern && isFirstLevel && !isRoot && !isReservedSlug;
   })
 
   // eslint-disable-next-line no-underscore-dangle
