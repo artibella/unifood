@@ -19,12 +19,9 @@ export default function CanvasComposition({ composition }) {
       apiUrl: '/api/preview'
     }),
   });
+  
   return (
-    <Composition data={compositionInstance} resolveRenderer={appRenderer}>
-      {({ title }) => (
-        <RestaurantReview title={title} />
-      )}
-    </Composition>
+    <RestaurantReview composition={compositionInstance} />
   )
 };
 

@@ -2,7 +2,6 @@ import {
   enhance,
   EnhancerBuilder,
   generateHash,
-  RootComponentInstance,
   IN_CONTEXT_EDITOR_QUERY_STRING_PARAM,
 } from "@uniformdev/canvas";
 import getConfig from "next/config";
@@ -49,8 +48,6 @@ const handleGet = async (req, res) => {
   const urlToRedirectTo = newQuery.toString()
     ? `${slug}?${newQuery.toString()}`
     : slug;
-
-  console.log(urlToRedirectTo);
 
   res.redirect(urlToRedirectTo);
 };

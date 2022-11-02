@@ -14,6 +14,8 @@ import ScheduledContent from '../components/ScheduledContent';
 import HowtoSection from '../components/HowtoSection';
 import HowtoStep from '../components/HowtoStep';
 import CallToAction from '../components/CallToAction';
+import Linklist from '../components/LinkList';
+import LinklistItem from '../components/LinkListItem';
 
 const ComponentsMap = {
   mainNavigation: MainNavigation,
@@ -30,7 +32,9 @@ const ComponentsMap = {
   scheduledContent: ScheduledContent,
   howtoSection: HowtoSection,
   howtoStep: HowtoStep,
-  callToAction: CallToAction
+  callToAction: CallToAction,
+  linkList: Linklist,
+  linkListItem: LinklistItem
 };
 
 const appRenderer = (component)  => {

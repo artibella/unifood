@@ -9,6 +9,7 @@ import { getEnhancers } from '../lib/enhancers/enhancers';
 import appRenderer from '../compositions/appRenderer';
 import { projectMapClient } from '../lib/projectMap';
 import { } from '@uniformdev/project-map'
+import { compositionRenderer } from '../compositions/compositionRenderer';
 
 const {
   serverRuntimeConfig: {
@@ -18,7 +19,7 @@ const {
 } = getConfig();
 
 
-export default function CanvasComposition({ composition }) {
+export default function DynamicComposition({ composition }) {
   useLivePreviewNextStaticProps({
     compositionId: composition?._id,
     projectId: projectId,
@@ -29,24 +30,9 @@ export default function CanvasComposition({ composition }) {
       apiUrl: '/api/preview'
     }),
   });
+  const CompositionType = compositionRenderer(compositionInstance);
   return (
-    <>
-      <Head>
-        <title>{composition?._name}</title>
-      </Head>
-      <div>
-        <Composition data={compositionInstance} resolveRenderer={appRenderer}>
-          <section>
-            <Slot name="hero" />
-          </section>
-          <section>
-            <Slot name="sections" />
-          </section>
-        </Composition>
-      </div>
-    </>
-
-
+    <CompositionType composition={compositionInstance} />
   )
 };
 
@@ -108,7 +94,7 @@ export async function getStaticPaths() {
   const staticPaths = paths.map((node) => {
     return `${node.path}`;
   });
-  
+  console.log(staticPaths);
   return { 
     paths: staticPaths || [], 
     fallback: false 
