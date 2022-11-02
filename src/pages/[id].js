@@ -1,54 +1,80 @@
 import React from 'react';
-import { enhance, CanvasClient } from "@uniformdev/canvas";
+import Head from 'next/head';
+import getConfig from "next/config";
+import { enhance, CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
 import { Composition, createApiEnhancer, Slot, useCompositionInstance } from "@uniformdev/canvas-react";
 import { useLivePreviewNextStaticProps } from "../hooks/useLivePreviewNextStaticProps";
-import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
-import { canvasClient, edgeCanvasClient, getCompositionList } from '../lib/canvas';
+import { edgeCanvasClient, canvasClient, getCompositionList } from '../lib/canvas';
 import { getEnhancers } from '../lib/enhancers/enhancers';
 import appRenderer from '../compositions/appRenderer';
+import { projectMapClient } from '../lib/projectMap';
+import { } from '@uniformdev/project-map'
 
-export default function CanvasComposition ({ composition }) {
+const {
+  serverRuntimeConfig: {
+    projectId,
+    projectMapId,
+  },
+} = getConfig();
+
+
+export default function CanvasComposition({ composition }) {
   useLivePreviewNextStaticProps({
     compositionId: composition?._id,
-    projectId: process.env.UNIFORM_PROJECT_ID,
+    projectId: projectId,
   });
   const { composition: compositionInstance } = useCompositionInstance({
     composition,
     enhance: createApiEnhancer({
       apiUrl: '/api/preview'
     }),
-  });  
+  });
   return (
-    <Composition data={compositionInstance} resolveRenderer={appRenderer}>
-      <section>
-      <Slot name="hero" />
-      </section>
-      <section>
-        <Slot name="sections" />
-      </section>
-    </Composition>
+    <>
+      <Head>
+        <title>{composition?._name}</title>
+      </Head>
+      <div>
+        <Composition data={compositionInstance} resolveRenderer={appRenderer}>
+          <section>
+            <Slot name="hero" />
+          </section>
+          <section>
+            <Slot name="sections" />
+          </section>
+        </Composition>
+      </div>
+    </>
+
+
   )
 };
 
 export const getStaticProps = async context => {
   const slug = context?.params?.id;
+  const slugString = Array.isArray(slug) ? slug.join('/') : slug;  
   const { preview } = context;
 
-  // create the Canvas client
-  const client = canvasClient;
+  const { composition } = await canvasClient.getCompositionByProjectMapNodePath({
+    projectMapId,
+    projectMapNodePath: slugString ? `/${slugString}` : '/',
+    state:
+      process.env.NODE_ENV === "development" || preview
+        ? CANVAS_DRAFT_STATE
+        : CANVAS_PUBLISHED_STATE,
+    });
 
-  // fetch the composition from Canvas
-  const { composition } = await edgeCanvasClient.getCompositionBySlug({
-    slug: `/${slug}`,
-    state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
-  });
+  // return 404 if no composition is found
+  if (!composition) {
+    return { notFound: true };
+  }
 
-  
   await enhance({
     composition,
     enhancers: getEnhancers(),
     context: { preview },
   });
+
   return {
     props: {
       composition,
@@ -62,20 +88,29 @@ export async function getStaticPaths() {
   const pages = compositions || [];
   const reservedSlugs = ['/howtos'];
 
-  const paths = pages.filter((c) => {
-    // eslint-disable-next-line no-underscore-dangle
-    const slug = c.composition._slug;
-    const isPattern = c.pattern;
-    const hasSlug = slug && slug.length > 0
-    const isRoot = slug === '/';
-    const isReservedSlug = reservedSlugs.includes(slug);
-    const isFirstLevel = slug?.split('/').length === 2;
-    return hasSlug && !isPattern && isFirstLevel && !isRoot && !isReservedSlug;
+  const { nodes } = await projectMapClient.getNodes({
+    projectId,
+    projectMapId,
+  });  
+
+
+
+  const paths = nodes.filter((node) => {
+    const path = node.path;
+    const isRoot = path === '/';
+    const hasComposition = node.compositionId;
+    const isReservedSlug = reservedSlugs.includes(path);
+    const isFirstLevel = path?.split('/').length === 2;
+    return isFirstLevel && hasComposition && !isRoot && !isReservedSlug;
   })
 
-  // eslint-disable-next-line no-underscore-dangle
-  const staticPaths = paths.map((p) => {
-    return `${p.composition._slug}`;
+  
+  const staticPaths = paths.map((node) => {
+    return `${node.path}`;
   });
-  return { paths: staticPaths, fallback: false };
+  
+  return { 
+    paths: staticPaths || [], 
+    fallback: false 
+  };
 }

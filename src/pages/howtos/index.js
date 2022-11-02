@@ -1,8 +1,8 @@
 import React from 'react';
-import { enhance, CanvasClient } from "@uniformdev/canvas";
+import { enhance } from "@uniformdev/canvas";
 import { Composition, createApiEnhancer, Slot, useCompositionInstance } from "@uniformdev/canvas-react";
 import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
-import { canvasClient, edgeCanvasClient, getCompositionList } from '../../lib/canvas';
+import { edgeCanvasClient } from '../../lib/canvas';
 import { getEnhancers } from '../../lib/enhancers/enhancers';
 import appRenderer from '../../compositions/appRenderer';
 import { useLivePreviewNextStaticProps } from '../../hooks/useLivePreviewNextStaticProps';
