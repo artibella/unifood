@@ -1,4 +1,5 @@
-export default function LinklistItem({ title = "", description = "", url = "" }) {
+export default function LinklistItem({ title = "", description = "", linkPrefix="", link = "" }) {
+  const url = linkPrefix + link;
   return (
     <a href={url} className="block p-8 border-y-2 border-collapse hover:underline">
       <div className="md:grid md:grid-cols-12 md:gap-8">

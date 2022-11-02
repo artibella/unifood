@@ -7,6 +7,16 @@ import { getEnhancers } from '../../../lib/enhancers/enhancers';
 import appRenderer from '../../../compositions/appRenderer';
 import { useLivePreviewNextStaticProps } from '../../../hooks/useLivePreviewNextStaticProps';
 import RestaurantReview from '../../../compositions/RestaurantReview';
+import { projectMapClient } from '../../../lib/projectMap';
+import getConfig from 'next/config';
+
+const {
+  serverRuntimeConfig: {
+    projectId,
+    projectMapId,
+  },
+} = getConfig();
+
 
 export default function CanvasComposition({ composition }) {
   useLivePreviewNextStaticProps({
@@ -38,7 +48,6 @@ export const getStaticProps = async context => {
     state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
   });
 
-
   await enhance({
     composition,
     enhancers: getEnhancers(),
@@ -52,21 +61,28 @@ export const getStaticProps = async context => {
 
 };
 
-export async function getStaticPaths() {
-  const compositions = await getCompositionList({type: 'restaurantReview'});
-  const pages = compositions || [];
 
-  const paths = pages.filter((c) => {
-    // eslint-disable-next-line no-underscore-dangle
-    const slug = c.composition._slug;
-    const isPattern = c.pattern;
-    const hasSlug = slug && slug.length > 0
-    return hasSlug && !isPattern;
+export async function getStaticPaths() {
+  const startNode = '/reviews/restaurants';
+  const {nodes} = await projectMapClient.getNodes({
+    projectId,
+    projectMapId,
+    path: startNode,
+    depth: 1
+  });  
+
+  const paths = nodes.filter((node) => {
+    const isCompositonNode = node.type === 'composition';
+    const hasComposition = node.compositionId;
+    return isCompositonNode && hasComposition && node.path !== startNode
   })
 
-  // eslint-disable-next-line no-underscore-dangle
-  const staticPaths = paths.map((p) => {
-    return `${p.composition._slug}`;
+  const staticPaths = paths.map((node) => {
+    return `${node.path}`;
   });
-  return { paths: staticPaths, fallback: false };
+
+  return { 
+    paths: staticPaths || [], 
+    fallback: false 
+  };
 }
