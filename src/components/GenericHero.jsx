@@ -1,3 +1,4 @@
+import { Slot } from "@uniformdev/canvas-react";
 import Link from "next/link";
 import { Fragment } from "react";
 
@@ -39,7 +40,7 @@ const renderCtas = (ctas) => {
           })}
 
         </div>
-      ) : <Fragment />
+      ) : <></>
       }
     </>
   )
@@ -68,7 +69,7 @@ const renderImage = (imageUrl, title) => {
 export default function GenericHero({ title, body, imageUrl, ctas }) {
   const ctaComponents = renderCtas(ctas);
   const image = renderImage(imageUrl, title);
-
+  
   return (
 
     <div className="relative overflow-hidden bg-white">
@@ -84,7 +85,9 @@ export default function GenericHero({ title, body, imageUrl, ctas }) {
               <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
                 {body}
               </p>
-              {ctaComponents}
+              <div className="hero-actions flex gap-4 mt-4">
+                <Slot name="ctas" />
+              </div>
             </div>
           </div>
         </div>
