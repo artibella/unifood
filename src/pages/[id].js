@@ -8,7 +8,6 @@ import { edgeCanvasClient, canvasClient, getCompositionList } from '../lib/canva
 import { getEnhancers } from '../lib/enhancers/enhancers';
 import appRenderer from '../compositions/appRenderer';
 import { projectMapClient } from '../lib/projectMap';
-import { } from '@uniformdev/project-map'
 import { compositionRenderer } from '../compositions/compositionRenderer';
 
 const {
@@ -41,14 +40,22 @@ export const getStaticProps = async context => {
   const slugString = Array.isArray(slug) ? slug.join('/') : slug;  
   const { preview } = context;
 
-  const { composition } = await canvasClient.getCompositionByProjectMapNodePath({
-    projectMapId,
-    projectMapNodePath: slugString ? `/${slugString}` : '/',
-    state:
-      process.env.NODE_ENV === "development" || preview
-        ? CANVAS_DRAFT_STATE
-        : CANVAS_PUBLISHED_STATE,
-    });
+  // const { composition } = await canvasClient.getCompositionByProjectMapNodePath({
+  //   projectMapId,
+  //   projectMapNodePath: slugString ? `/${slugString}` : '/',
+  //   state:
+  //     process.env.NODE_ENV === "development" || preview
+  //       ? CANVAS_DRAFT_STATE
+  //       : CANVAS_PUBLISHED_STATE,
+  //   }
+  // );
+
+  // fetch the composition from Canvas
+  const { composition } = await edgeCanvasClient.getCompositionBySlug({
+    slug: `/${slugString}`,
+    state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
+  });
+
 
   // return 404 if no composition is found
   if (!composition) {
@@ -70,16 +77,12 @@ export const getStaticProps = async context => {
 };
 
 export async function getStaticPaths() {
-  const compositions = await getCompositionList();
-  const pages = compositions || [];
   const reservedSlugs = ['/howtos'];
 
   const { nodes } = await projectMapClient.getNodes({
     projectId,
     projectMapId,
   });  
-
-
 
   const paths = nodes.filter((node) => {
     const path = node.path;
@@ -94,9 +97,9 @@ export async function getStaticPaths() {
   const staticPaths = paths.map((node) => {
     return `${node.path}`;
   });
-  console.log(staticPaths);
+
   return { 
     paths: staticPaths || [], 
-    fallback: false 
+    fallback: true 
   };
 }
