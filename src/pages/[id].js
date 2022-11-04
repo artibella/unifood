@@ -35,6 +35,7 @@ export default function DynamicComposition({ composition }) {
   )
 };
 
+
 export const getStaticProps = async context => {
   const slug = context?.params?.id;
   const slugString = Array.isArray(slug) ? slug.join('/') : slug;  
@@ -77,7 +78,7 @@ export const getStaticProps = async context => {
 };
 
 export async function getStaticPaths() {
-  const reservedSlugs = ['/howtos'];
+  const reservedSlugs = [];
 
   const { nodes } = await projectMapClient.getNodes({
     projectId,

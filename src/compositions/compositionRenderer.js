@@ -6,6 +6,6 @@ const CompositionMap = {
 }
 
 export const compositionRenderer = (component)  => {
-  const componentName = component.type;
+  const componentName = component?.type;
   return CompositionMap[componentName] || DefaultComposition;
 };
