@@ -15,7 +15,7 @@ const renderPrimaryCta = (title, link) => {
   )
 }
 
-const renderSecondaryCta = ({ title, link }) => {
+const renderSecondaryCta = (title, link) => {
   return (
     <div className="mt-3 sm:mt-0 sm:ml-3">
       <Link href={link}>
@@ -29,9 +29,10 @@ const renderSecondaryCta = ({ title, link }) => {
   )
 }
 
-export default function CallToAction({ title='', link='', linkPrefix='' }) {
+export default function CallToAction({ title='', link='', linkPrefix='', component }) {
+  const variant = component.variant || 'primary'; 
   const url = linkPrefix + link;
-  const linkCta = renderPrimaryCta(title, url);
+  const linkCta = variant === 'primary' ? renderPrimaryCta(title, url) : renderSecondaryCta(title, url) ;
   
   return (
     <>
