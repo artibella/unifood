@@ -85,7 +85,7 @@ export default function RestaurantDetails({ title, openingHours = [], cuisines =
               ) : ''}
             </div>
 
-            {openingHours.lenght ? renderOpeningHours(openingHours) : ''}
+            {openingHours.length ? renderOpeningHours(openingHours) : ''}
             
             <div className="mt-8 flex flex-col">
               <div>
