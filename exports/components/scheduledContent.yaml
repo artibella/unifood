@@ -1,0 +1,35 @@
+id: scheduledContent
+name: Scheduled Content
+icon: timer
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: startDate
+    name: Start Date
+    type: text
+    helpText: 'Enter a date (format ISO8601): e.g. 2022-05-02 12:21'
+    typeConfig:
+      regex: >-
+        ^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+      regexMessage: Invalid ISO8601 date format
+  - id: endDate
+    name: End date
+    type: text
+    helpText: 'Enter a date (format ISO8601): e.g. 2022-05-02 12:21'
+    typeConfig:
+      regex: >-
+        ^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+      regexMessage: Invalid ISO8601 date format
+useTeamPermissions: true
+slots:
+  - id: content
+    name: Content
+    allowedComponents: []
+    inheritAllowedComponents: true
+titleParameter: title
+canBeComposition: false
+created: '2022-10-27T11:08:45.925564+00:00'
+updated: '2022-10-27T11:31:07.232965+00:00'

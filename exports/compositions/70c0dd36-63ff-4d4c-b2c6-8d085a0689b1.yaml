@@ -113,45 +113,75 @@ composition:
               source: default
               sortOrder: asc
               contentType: recipe
-      - _id: 71510d6e-a08d-4017-916a-c6322343c1c1
-        type: productList
+      - _id: 429ac701-875d-43b2-b25b-651b50865b22
+        type: sectionContainer
         slots:
-          products:
-            - _id: ad6ef472-90ea-4a51-b449-44e47e25e977
-              type: productCard
+          content:
+            - _id: 2d21bc07-61e7-42fe-b362-79bb45ee7288
+              type: gridContainer
+              slots:
+                items:
+                  - _id: 6b7e1a45-e857-4091-bfcc-10fdf9a34eda
+                    type: imageBlock
+                    parameters:
+                      altText:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Product 2/data/name
+                          required: false
+                      caption:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Product 2/data/primary_image/description
+                          required: false
+                      imageUrl:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Product 2/data/primary_image/url_standard
+                          required: false
+                  - _id: 6c447523-1759-408d-a06e-5e5f2ac5df3e
+                    type: textBlock
+                    parameters:
+                      body:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Product 2/data/description
+                          required: false
+                      title:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Product 2/data/name
+                          required: false
               parameters:
-                title:
-                  type: text
-                  value: On sale
-                product:
-                  type: bigcommerceProduct
-                  value: '97'
-            - _id: 81aacb26-0c5a-4512-9445-9ababa60aae0
-              type: productCard
-              parameters:
-                title:
-                  type: text
-                  value: Just in
-                product:
-                  type: bigcommerceProduct
-                  value: '80'
-            - _id: 135bab75-fdba-4ae6-99b1-30d6d8138813
-              type: productCard
-              parameters:
-                title:
-                  type: text
-                  value: Last chance
-                product:
-                  type: bigcommerceProduct
-                  value: '86'
+                columns:
+                  type: number
+                  value: '2'
         parameters:
+          theme:
+            type: select
+            value: spring
           title:
             type: text
-            value: Featured products
+            value: Featured Product
     mainNavigation:
       - _id: df17e68f-a959-4b4b-abdb-704761b90157
         type: mainNavigation
         _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+  _dataResources:
+    Product 2:
+      type: bigcommerceProduct
+      variables:
+        product_id: '86'
 created: '2022-09-15T08:38:32.443699+00:00'
-modified: '2022-10-18T13:36:26.079655+00:00'
+modified: '2022-11-04T14:18:48.895807+00:00'
 pattern: false

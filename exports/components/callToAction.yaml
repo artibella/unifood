@@ -7,9 +7,19 @@ parameters:
     type: text
     helpText: ''
     typeConfig: null
+  - id: linkPrefix
+    name: Link prefix
+    type: text
+    helpText: 'Used for dynamic pages: append any prefix for the link field'
+    typeConfig: null
   - id: link
     name: Link
     type: text
+    helpText: ''
+    typeConfig: null
+  - id: openInNewTab
+    name: Open in new tab
+    type: checkbox
     helpText: ''
     typeConfig: null
 useTeamPermissions: true
@@ -17,7 +27,7 @@ slots: []
 titleParameter: title
 canBeComposition: false
 created: '2022-09-27T14:43:46.219491+00:00'
-updated: '2022-10-21T07:42:07.636846+00:00'
+updated: '2022-11-07T18:10:12.066563+00:00'
 variants:
   - id: default
     name: Default

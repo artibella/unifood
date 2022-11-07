@@ -1,0 +1,613 @@
+id: kitchensink
+name: Kitchensink
+icon: layout-list
+parameters:
+  - id: text
+    name: Text
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: integer
+    name: Integer
+    type: number
+    helpText: Enter an integer
+    typeConfig: null
+  - id: decimalNumber
+    name: Decimal Number
+    type: number
+    helpText: ''
+    typeConfig:
+      decimal: true
+  - id: checkbox
+    name: Checkbox
+    type: checkbox
+    helpText: ''
+    typeConfig: null
+  - id: dropdown
+    name: Dropdown
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: Beginner
+          value: Beginner
+        - text: Hobby Cook
+          value: Hobby Cook
+        - text: Chef
+          value: Chef
+  - id: link
+    name: Link
+    type: project_map_link
+    helpText: ''
+    typeConfig: null
+  - id: recipe
+    name: Recipe
+    type: contentstackMultiEntrySelector
+    helpText: ''
+    typeConfig:
+      required: true
+      allowedContentTypes:
+        recipe:
+          uid: recipe
+          title: Recipe
+          schema:
+            - uid: title
+              unique: true
+              multiple: false
+              data_type: text
+              mandatory: true
+              display_name: Title
+              field_metadata:
+                version: 3
+                _default: true
+              non_localizable: false
+            - uid: url
+              unique: false
+              multiple: false
+              data_type: text
+              mandatory: false
+              display_name: URL
+              field_metadata:
+                version: 3
+                _default: true
+              non_localizable: false
+            - uid: subtitle
+              format: ''
+              unique: false
+              multiple: false
+              data_type: text
+              mandatory: false
+              display_name: Subtitle
+              error_messages:
+                format: ''
+              field_metadata:
+                version: 3
+                description: ''
+                default_value: ''
+              non_localizable: false
+            - uid: intro
+              unique: false
+              multiple: false
+              data_type: text
+              mandatory: false
+              display_name: Intro
+              field_metadata:
+                options: []
+                version: 3
+                multiline: false
+                description: ''
+                rich_text_type: advanced
+                allow_rich_text: true
+              non_localizable: false
+            - uid: description
+              unique: false
+              multiple: false
+              data_type: text
+              mandatory: false
+              display_name: Description
+              field_metadata:
+                options: []
+                version: 3
+                multiline: false
+                description: ''
+                rich_text_type: advanced
+                allow_rich_text: true
+              non_localizable: false
+            - uid: featuredimage
+              unique: false
+              multiple: false
+              data_type: file
+              dimension:
+                width:
+                  max: null
+                  min: null
+                height:
+                  max: null
+                  min: null
+              mandatory: false
+              display_name: Featured Image
+              field_metadata:
+                image: true
+                description: ''
+                rich_text_type: standard
+              non_localizable: false
+            - uid: additionalmedia
+              unique: false
+              multiple: false
+              data_type: file
+              mandatory: false
+              extensions: []
+              display_name: Additional Media
+              field_metadata:
+                description: ''
+                rich_text_type: standard
+              non_localizable: false
+            - uid: notes
+              unique: false
+              multiple: false
+              data_type: text
+              mandatory: false
+              display_name: Notes
+              field_metadata:
+                options: []
+                version: 3
+                multiline: false
+                description: ''
+                rich_text_type: advanced
+                allow_rich_text: true
+              non_localizable: false
+            - uid: cooking_times_group
+              schema:
+                - uid: preparation_time
+                  format: ''
+                  unique: false
+                  multiple: false
+                  data_type: text
+                  mandatory: false
+                  display_name: Preparation time
+                  error_messages:
+                    format: ''
+                  field_metadata:
+                    version: 3
+                    description: ''
+                    default_value: ''
+                  non_localizable: false
+                - uid: cooking_time
+                  format: ''
+                  unique: false
+                  multiple: false
+                  data_type: text
+                  mandatory: false
+                  display_name: Cooking time
+                  error_messages:
+                    format: ''
+                  field_metadata:
+                    version: 3
+                    description: Cooking time in minutes
+                    default_value: ''
+                  non_localizable: false
+                - uid: resting_time
+                  format: ''
+                  unique: false
+                  multiple: false
+                  data_type: text
+                  mandatory: false
+                  display_name: Resting time
+                  error_messages:
+                    format: ''
+                  field_metadata:
+                    version: 3
+                    description: Resting time in minutes
+                    default_value: ''
+                  non_localizable: false
+                - uid: total_time
+                  format: ''
+                  unique: false
+                  multiple: false
+                  data_type: text
+                  mandatory: false
+                  display_name: Total time
+                  error_messages:
+                    format: ''
+                  field_metadata:
+                    version: 3
+                    description: Total time in minutes
+                    default_value: ''
+                  non_localizable: false
+              unique: false
+              multiple: false
+              data_type: group
+              mandatory: false
+              display_name: Cooking times
+              field_metadata:
+                description: ''
+                instruction: ''
+              non_localizable: false
+            - uid: yield
+              format: ''
+              unique: false
+              multiple: false
+              data_type: text
+              mandatory: false
+              display_name: Recipe Yield
+              error_messages:
+                format: ''
+              field_metadata:
+                version: 3
+                description: How many servings does this recipe produce
+                default_value: ''
+              non_localizable: false
+            - uid: instructions
+              blocks:
+                - uid: HowtoSections
+                  title: Step Section
+                  schema:
+                    - uid: name
+                      format: ''
+                      unique: false
+                      multiple: false
+                      data_type: text
+                      mandatory: false
+                      display_name: Name
+                      error_messages:
+                        format: ''
+                      field_metadata:
+                        version: 3
+                        description: ''
+                        default_value: ''
+                      non_localizable: false
+                    - uid: description
+                      unique: false
+                      multiple: false
+                      data_type: text
+                      mandatory: false
+                      display_name: Description
+                      field_metadata:
+                        options: []
+                        version: 3
+                        multiline: false
+                        description: ''
+                        rich_text_type: advanced
+                        allow_rich_text: true
+                      non_localizable: false
+                    - uid: steps
+                      blocks:
+                        - uid: Steps
+                          title: Steps
+                          reference_to: howtostep
+                      unique: false
+                      multiple: true
+                      data_type: blocks
+                      mandatory: false
+                      display_name: Steps
+                      field_metadata:
+                        description: ''
+                        instruction: ''
+                      non_localizable: false
+                - uid: Step
+                  title: Step
+                  reference_to: howtostep
+              unique: false
+              multiple: true
+              data_type: blocks
+              mandatory: false
+              display_name: Instructions
+              field_metadata:
+                description: ''
+                instruction: ''
+              non_localizable: false
+            - uid: recipetips
+              blocks:
+                - uid: Recipe_Tips
+                  title: Recipe Tips
+                  reference_to: howtotip
+              unique: false
+              multiple: true
+              data_type: blocks
+              mandatory: false
+              display_name: Recipe tips
+              field_metadata:
+                description: ''
+                instruction: ''
+              non_localizable: false
+            - uid: nutrition_facts
+              blocks:
+                - uid: Nutrition_Information
+                  title: Nutrition Information
+                  schema:
+                    - uid: type
+                      enum:
+                        choices:
+                          - key: calories
+                            value: Calories
+                          - key: carbohydrate
+                            value: Carbohydrate
+                          - key: cholesterol
+                            value: Cholesterol
+                          - key: fat
+                            value: Fat
+                          - key: fiber
+                            value: Fiber
+                          - key: protein
+                            value: Protein
+                          - key: saturatedFat
+                            value: Saturated Fat
+                          - key: sodium
+                            value: Sodium
+                          - key: transfat
+                            value: Trans Fat
+                          - key: unsaturatedFat
+                            value: Unsaturated Fat
+                        advanced: true
+                      unique: false
+                      multiple: false
+                      data_type: text
+                      mandatory: false
+                      display_name: Type
+                      display_type: dropdown
+                      field_metadata:
+                        version: 3
+                        default_key: ''
+                        description: ''
+                        default_value: ''
+                      non_localizable: false
+                    - uid: amount
+                      unique: false
+                      multiple: false
+                      data_type: number
+                      mandatory: false
+                      display_name: Amount
+                      field_metadata:
+                        description: ''
+                        default_value: ''
+                      non_localizable: false
+                    - uid: unit
+                      unique: false
+                      multiple: false
+                      data_type: reference
+                      mandatory: false
+                      display_name: Unit
+                      reference_to:
+                        - unit
+                      field_metadata:
+                        ref_multiple: false
+                        ref_multiple_content_types: true
+                      non_localizable: false
+              unique: false
+              multiple: true
+              data_type: blocks
+              mandatory: false
+              display_name: Nutrition facts
+              field_metadata:
+                description: ''
+                instruction: ''
+              non_localizable: false
+            - uid: ingredients
+              blocks:
+                - uid: Ingredient
+                  title: Ingredient
+                  reference_to: recipe_ingredient
+                - uid: Ingredient_Set
+                  title: Ingredient Set
+                  schema:
+                    - uid: name
+                      format: ''
+                      unique: false
+                      multiple: false
+                      data_type: text
+                      mandatory: false
+                      display_name: Name
+                      error_messages:
+                        format: ''
+                      field_metadata:
+                        version: 3
+                        description: ''
+                        default_value: ''
+                      non_localizable: false
+                    - uid: ingredients
+                      blocks:
+                        - uid: Ingredient
+                          title: Ingredient
+                          reference_to: recipe_ingredient
+                      unique: false
+                      multiple: true
+                      data_type: blocks
+                      mandatory: false
+                      display_name: Ingredients
+                      field_metadata:
+                        description: ''
+                        instruction: ''
+                      non_localizable: false
+              unique: false
+              multiple: true
+              data_type: blocks
+              mandatory: false
+              display_name: Ingredients
+              field_metadata:
+                description: ''
+                instruction: ''
+              non_localizable: false
+            - uid: recipe_metadata
+              schema:
+                - uid: key_ingredients
+                  unique: false
+                  multiple: false
+                  data_type: reference
+                  mandatory: false
+                  display_name: Key ingredients
+                  reference_to:
+                    - ingredient
+                  field_metadata:
+                    ref_multiple: true
+                    ref_multiple_content_types: true
+                  non_localizable: false
+                - uid: cuisines
+                  unique: false
+                  multiple: false
+                  data_type: reference
+                  mandatory: false
+                  display_name: Cuisines
+                  reference_to:
+                    - cusine
+                  field_metadata:
+                    ref_multiple: true
+                    ref_multiple_content_types: true
+                  non_localizable: false
+                - uid: cooking_methods
+                  unique: false
+                  multiple: false
+                  data_type: reference
+                  mandatory: false
+                  display_name: Cooking methods
+                  reference_to:
+                    - cooking_method
+                  field_metadata:
+                    ref_multiple: true
+                    ref_multiple_content_types: true
+                  non_localizable: false
+                - uid: courses
+                  unique: false
+                  multiple: false
+                  data_type: reference
+                  mandatory: false
+                  display_name: Course(s)
+                  reference_to:
+                    - course
+                  field_metadata:
+                    ref_multiple: true
+                    ref_multiple_content_types: true
+                  non_localizable: false
+                - uid: seasons
+                  unique: false
+                  multiple: false
+                  data_type: reference
+                  mandatory: false
+                  display_name: Seasons
+                  reference_to:
+                    - season
+                  field_metadata:
+                    ref_multiple: true
+                    ref_multiple_content_types: true
+                  non_localizable: false
+                - uid: occasions
+                  unique: false
+                  multiple: false
+                  data_type: reference
+                  mandatory: false
+                  display_name: Occasions
+                  reference_to:
+                    - occassion
+                  field_metadata:
+                    ref_multiple: true
+                    ref_multiple_content_types: true
+                  non_localizable: false
+                - uid: diets
+                  unique: false
+                  multiple: false
+                  data_type: reference
+                  mandatory: false
+                  display_name: Diets
+                  reference_to:
+                    - diet
+                  field_metadata:
+                    ref_multiple: true
+                    ref_multiple_content_types: true
+                  non_localizable: false
+                - uid: categories
+                  unique: false
+                  multiple: false
+                  data_type: reference
+                  mandatory: false
+                  display_name: Categories
+                  reference_to:
+                    - recipe_cagegory
+                  field_metadata:
+                    ref_multiple: true
+                    ref_multiple_content_types: true
+                  non_localizable: false
+              unique: false
+              multiple: false
+              data_type: group
+              mandatory: false
+              display_name: Recipe metadata
+              field_metadata:
+                description: ''
+                instruction: ''
+              non_localizable: false
+          SYS_ACL:
+            roles:
+              - uid: bltf1d4fb33418bc71d
+                read: true
+                delete: true
+                update: true
+                sub_acl:
+                  read: true
+                  create: true
+                  delete: true
+                  update: true
+                  publish: true
+              - uid: bltf47b6eb6b4c20c54
+                read: true
+                sub_acl:
+                  read: true
+                  create: true
+                  delete: true
+                  update: true
+                  publish: true
+              - uid: blt41115198d221161c
+                read: true
+                delete: true
+                update: true
+                sub_acl:
+                  read: true
+                  create: true
+                  delete: true
+                  update: true
+                  publish: true
+            others:
+              read: false
+              create: false
+              delete: false
+              update: false
+              sub_acl:
+                read: false
+                create: false
+                delete: false
+                update: false
+                publish: false
+          options:
+            title: title
+            is_page: true
+            singleton: false
+            sub_title: []
+            url_prefix: /
+            url_pattern: /:title
+          _version: 14
+          abilities:
+            create_object: true
+            delete_object: true
+            update_object: true
+            get_one_object: true
+            get_all_objects: true
+            delete_all_objects: true
+          created_at: '2022-06-16T08:35:21.685Z'
+          updated_at: '2022-09-28T11:53:01.744Z'
+          DEFAULT_ACL:
+            users:
+              - uid: bltb83faf3e66eff79b
+                read: true
+                sub_acl:
+                  read: true
+            others:
+              read: false
+              create: false
+          description: ''
+          inbuilt_class: false
+          last_activity: {}
+          maintain_revisions: true
+useTeamPermissions: true
+slots: []
+titleParameter: text
+canBeComposition: false
+created: '2022-11-02T09:21:12.300268+00:00'
+updated: '2022-11-07T14:42:29.971432+00:00'

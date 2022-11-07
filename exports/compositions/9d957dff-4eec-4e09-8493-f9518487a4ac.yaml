@@ -1,7 +1,7 @@
 composition:
   _name: Yakitori Totto
   _id: 9d957dff-4eec-4e09-8493-f9518487a4ac
-  _slug: yakitori-totto
+  _slug: /reviews/restaurants/yakitori-totto
   type: restaurantReview
   parameters:
     title:
@@ -48,6 +48,9 @@ composition:
               syntax: jptr
               pointer: /Review/entry/review_html
               required: false
+          title:
+            type: text
+            value: Our review
       - _id: 02453fc0-d33a-4fe9-b3d7-121a299f66c3
         type: imageBlock
         parameters:
@@ -101,14 +104,14 @@ composition:
             type: text
             value: Written by
     restaurantDetails:
-      - _id: 6a9a3cbc-127c-4e4c-9bc8-325628360938
+      - _id: d7472902-19d2-46b3-8fdf-144a365ea148
         type: restaurantDetails
-        _pattern: 50b710a6-1715-4754-ab72-9e42acd4772c
+        _pattern: 3385c3e1-e3e4-4065-a6a7-241ae838439e
         _dataResources:
-          Restaurant:
-            type: restaurantByIdcontentstack
+          Review:
+            type: restaurantReviewByIdContentstack
             variables:
-              restaurantID: blt7e36a1246dbd8d06
+              reviewID: blt7990b866a55e83e0
             isPatternParameter: true
   _dataResources:
     Review:
@@ -120,5 +123,5 @@ composition:
       variables:
         restaurantID: blt7e36a1246dbd8d06
 created: '2022-09-30T17:56:15.551399+00:00'
-modified: '2022-10-12T15:12:38.838373+00:00'
+modified: '2022-10-25T16:14:41.515276+00:00'
 pattern: false

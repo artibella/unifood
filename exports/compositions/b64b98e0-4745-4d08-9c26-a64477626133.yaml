@@ -1,7 +1,7 @@
 composition:
   _name: Getting hot at chilli madness
   _id: b64b98e0-4745-4d08-9c26-a64477626133
-  _slug: /review-chili-madness
+  _slug: /reviews/restaurants/getting-hot-at-chili-madness
   type: restaurantReview
   parameters:
     title:
@@ -17,6 +17,13 @@ composition:
       connectedData:
         syntax: jptr
         pointer: /Review/entry/rating
+        required: false
+    priceRange:
+      type: number
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review/entry/restaurants/0/price_range
         required: false
   slots:
     hero:
@@ -101,14 +108,14 @@ composition:
             type: text
             value: Written by
     restaurantDetails:
-      - _id: 13ac920a-c573-4320-b1e2-6fbccaf9ce15
+      - _id: 0d24a917-19a3-4507-846c-f702f4f22957
         type: restaurantDetails
-        _pattern: 50b710a6-1715-4754-ab72-9e42acd4772c
+        _pattern: 3385c3e1-e3e4-4065-a6a7-241ae838439e
         _dataResources:
-          Restaurant:
-            type: restaurantByIdcontentstack
+          Review:
+            type: restaurantReviewByIdContentstack
             variables:
-              restaurantID: blt6fbd5b438ab4189f
+              reviewID: blt11a0103e6ce9e9db
             isPatternParameter: true
   _dataResources:
     Review:
@@ -120,5 +127,5 @@ composition:
       variables:
         restaurantID: blt6fbd5b438ab4189f
 created: '2022-09-30T12:43:45.985835+00:00'
-modified: '2022-10-17T15:03:32.410664+00:00'
+modified: '2022-11-02T18:59:54.838233+00:00'
 pattern: false

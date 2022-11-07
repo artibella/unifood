@@ -1,0 +1,37 @@
+composition:
+  _name: Recipe Card
+  _id: c0e26e88-3792-4da9-96f2-2b259577ff32
+  type: genericCard
+  parameters:
+    body:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Default Recipe/entry/subtitle
+        required: false
+    image:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Default Recipe/entry/featuredimage/url
+        required: false
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Default Recipe/entry/title
+        required: false
+    byline:
+      type: text
+      value: Recipe
+  _dataResources:
+    Default Recipe:
+      type: recipeByIdcontentstack
+      variables: {}
+      isPatternParameter: true
+created: '2022-11-07T11:06:06.897882+00:00'
+modified: '2022-11-07T11:10:09.630728+00:00'
+pattern: true

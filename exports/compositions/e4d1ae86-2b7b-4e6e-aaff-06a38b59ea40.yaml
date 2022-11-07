@@ -25,7 +25,7 @@ composition:
         parameters:
           url:
             type: text
-            value: /review/restaurant
+            value: /reviews/restaurants
           link:
             type: sitemap_link
             value: ''
@@ -44,6 +44,15 @@ composition:
           title:
             type: text
             value: Recipes
+      - _id: 7a2372e1-f70f-4981-a8dc-6e4d4144f904
+        type: navigationItem
+        parameters:
+          url:
+            type: text
+            value: /how-tos
+          title:
+            type: text
+            value: How tos
 created: '2022-09-15T08:38:31.50963+00:00'
-modified: '2022-10-20T17:00:49.562546+00:00'
+modified: '2022-11-07T11:04:40.244511+00:00'
 pattern: true

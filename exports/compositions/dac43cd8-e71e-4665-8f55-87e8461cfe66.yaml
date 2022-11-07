@@ -1,7 +1,7 @@
 composition:
-  _name: Burger joint review
+  _name: Burgers at Richard's burger joint
   _id: dac43cd8-e71e-4665-8f55-87e8461cfe66
-  _slug: /burger-joint-review
+  _slug: /reviews/restaurants/burgers-at-richards-burger-joint
   type: restaurantReview
   parameters:
     title:
@@ -17,6 +17,13 @@ composition:
       connectedData:
         syntax: jptr
         pointer: /Review/entry/rating
+        required: false
+    priceRange:
+      type: number
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review/entry/restaurants/0/price_range
         required: false
   slots:
     hero:
@@ -48,6 +55,9 @@ composition:
               syntax: jptr
               pointer: /Review/entry/review_html
               required: false
+          title:
+            type: text
+            value: 'Our review '
       - _id: 897d9f9b-3815-4c5b-8392-367aa44eb877
         type: imageBlock
         parameters:
@@ -101,15 +111,14 @@ composition:
             type: text
             value: Written by
     restaurantDetails:
-      - _id: dc650ec7-cc64-4d1e-9595-0293502a460e
+      - _id: 449d0fc9-5c75-4c04-97ef-8a45370ba45e
         type: restaurantDetails
-        _pattern: 50b710a6-1715-4754-ab72-9e42acd4772c
+        _pattern: 3385c3e1-e3e4-4065-a6a7-241ae838439e
         _dataResources:
-          Restaurant:
-            type: restaurantByIdcontentstack
+          Review Detail:
+            type: sys-reserved-alias
             variables:
-              restaurantID: blt918a81027408e2f2
-            isPatternParameter: true
+              data: Review
   _dataResources:
     Review:
       type: restaurantReviewByIdContentstack
@@ -120,5 +129,5 @@ composition:
       variables:
         restaurantID: blt918a81027408e2f2
 created: '2022-09-30T16:36:59.939103+00:00'
-modified: '2022-10-17T16:04:25.616958+00:00'
+modified: '2022-11-03T08:08:45.911454+00:00'
 pattern: false

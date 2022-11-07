@@ -1,0 +1,114 @@
+composition:
+  _name: How Tos
+  _id: 43bcf0a4-252e-4524-a577-302b7e1c9df6
+  _slug: /how-tos
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - _id: 95eef080-783c-4318-9391-e202671d3018
+        type: hero
+        parameters:
+          title:
+            type: text
+            value: Howtos
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Hero image/results/1/urls/regular
+              required: false
+          imageAltText:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Hero image/results/1/alt_description
+              required: false
+    sections:
+      - _id: b801dc27-86cc-420c-86f1-2c0695859a37
+        type: sectionContainer
+        slots:
+          content:
+            - _id: 61186ff7-f79d-4165-8119-2136aaacb866
+              type: gridContainer
+              slots:
+                items:
+                  - _id: 564acfb5-f62a-49d5-89d5-aa4cf3d76045
+                    type: $loop
+                    slots:
+                      body:
+                        - _id: a90ca82c-f8c1-46a6-807a-e7e7a9e8cf9c
+                          type: genericCard
+                          slots:
+                            actions:
+                              - _id: efca7c1a-c091-4b90-8d5c-dfd271512cf1
+                                type: callToAction
+                                parameters:
+                                  link:
+                                    type: text
+                                    value: unbound
+                                    connectedData:
+                                      syntax: jptr
+                                      pointer: /Howtos entries Loop Item/url
+                                      required: false
+                                  title:
+                                    type: text
+                                    value: Read more
+                                  linkPrefix:
+                                    type: text
+                                    value: /howtos/
+                          parameters:
+                            body:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /Howtos entries Loop Item/teaser_text
+                                required: false
+                            image:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /Howtos entries Loop Item/image/url
+                                required: false
+                            title:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /Howtos entries Loop Item/title
+                                required: false
+                            byline:
+                              type: text
+                              value: Howto
+                    _dataResources:
+                      Howtos entries Loop Item:
+                        type: sys-reserved-loop
+                        variables:
+                          connectedData: /Howtos/entries
+                          connectedDataRequired: 'false'
+              parameters:
+                columns:
+                  type: number
+                  value: '2'
+        parameters:
+          title:
+            type: text
+            value: Improve your cooking skills
+  _dataResources:
+    Howtos:
+      type: howtoArticles
+      variables: {}
+    Hero image:
+      type: unsplashPhotoSearch
+      variables:
+        page: '1'
+        query: cooking
+        per_page: '10'
+        orientation: landscape
+created: '2022-10-28T11:27:22.206645+00:00'
+modified: '2022-11-04T10:20:43.70399+00:00'
+pattern: false

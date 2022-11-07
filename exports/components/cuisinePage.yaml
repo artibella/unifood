@@ -1,7 +1,12 @@
 id: cuisinePage
 name: Cuisine Page
 icon: globe-alt
-parameters: []
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig: null
 useTeamPermissions: true
 slots:
   - id: hero
@@ -13,6 +18,15 @@ slots:
       - $test
       - $localization
     inheritAllowedComponents: false
+  - id: sections
+    name: Sections
+    allowedComponents:
+      - $loop
+      - $localization
+      - $test
+      - $personalization
+      - sectionContainer
+    inheritAllowedComponents: false
 canBeComposition: true
 created: '2022-09-15T08:38:28.545068+00:00'
-updated: '2022-09-28T08:43:15.99063+00:00'
+updated: '2022-10-25T12:08:30.364207+00:00'

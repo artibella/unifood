@@ -40,8 +40,12 @@ slots:
       - hero
       - genericCard
       - gridContainer
+      - scheduledContent
+      - howtoSection
+      - kitchensink
+      - linkList
     inheritAllowedComponents: false
 titleParameter: title
 canBeComposition: false
 created: '2022-10-19T14:23:35.307515+00:00'
-updated: '2022-10-21T08:02:46.277595+00:00'
+updated: '2022-11-02T15:22:04.311702+00:00'

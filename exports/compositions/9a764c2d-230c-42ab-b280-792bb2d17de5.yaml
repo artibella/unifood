@@ -1,0 +1,173 @@
+composition:
+  _name: Rembrandt Burger
+  _id: 9a764c2d-230c-42ab-b280-792bb2d17de5
+  _slug: /reviews/restaurants/rembrandt-burger
+  type: restaurantReview
+  parameters:
+    title:
+      type: text
+      value: Rembrandt Burger
+    rating:
+      type: number
+      value: '8'
+    priceRange:
+      type: number
+      value: '2'
+  slots:
+    hero:
+      - _id: e2c7e8a9-cb0c-4534-9655-88f10f2c7b2a
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: >-
+              Burger & holländische Pommes in Berlin Friedrichshain. Leckere
+              Süßkartoffelpommes und wöchentliche special Burger in kieziger
+              Restaurant Atmosphäre.
+          title:
+            type: text
+            value: 🇳🇱 Rembrandt Burger
+          imageUrl:
+            type: text
+            value: >-
+              https://www.rembrandt-burger.de/wp-content/uploads/2014/02/Rembradt-June-18th-2014-297.jpeg
+    review:
+      - _id: 90c56fb0-e3a4-4b39-ab59-794ce29ec756
+        type: textBlock
+        parameters:
+          body:
+            type: text
+            value: 'Todo: Add review'
+    authors:
+      - _id: bebe4d05-1fc3-45b2-93f7-8ea27df7d009
+        type: contributorList
+        slots:
+          contributors:
+            - _id: 6e00db60-9b54-460a-b0c5-518d059300e2
+              type: contributor
+              parameters:
+                name:
+                  type: text
+                  value: Richard
+                image:
+                  type: text
+                  value: >-
+                    https://lh3.googleusercontent.com/a/ALm5wu0xAvbyiKQrm7JGDmp5V1hZ2UNW0O-6eu9slhK-=s96-c
+    restaurantDetails:
+      - _id: 7265ab2b-017d-42ef-8cc3-a2d18a704e30
+        type: restaurantDetails
+        slots:
+          cuisines:
+            - _id: 462ff0af-a9b4-4102-8606-ff75ecf9e9a9
+              type: tag
+              parameters:
+                label:
+                  type: text
+                  value: Dutch
+            - _id: 127e4e30-1a16-46dc-8911-0e12ab8c1b7b
+              type: tag
+              parameters:
+                label:
+                  type: text
+                  value: American
+          openingHours:
+            - _id: 659a27dc-ac44-4b6c-824c-4f64285b83cc
+              type: openingHours
+              parameters:
+                day:
+                  type: text
+                  value: Monday
+                closingTime:
+                  type: text
+                  value: 10:00 pm
+                openingTime:
+                  type: text
+                  value: '12:00'
+            - _id: 39124b09-e725-4899-8f7f-4efa16473fd4
+              type: openingHours
+              parameters:
+                day:
+                  type: text
+                  value: Tuesday
+                closingTime:
+                  type: text
+                  value: 10:00 pm
+                openingTime:
+                  type: text
+                  value: '12:00'
+            - _id: 18782b4d-42ad-41a1-a407-a664615112bd
+              type: openingHours
+              parameters:
+                day:
+                  type: text
+                  value: Wednesday
+                closingTime:
+                  type: text
+                  value: 10:00 pm
+                openingTime:
+                  type: text
+                  value: '12:00'
+            - _id: e1e2a2ed-bcdf-41c7-91fc-a483329a9b4b
+              type: openingHours
+              parameters:
+                day:
+                  type: text
+                  value: Thursday
+                closingTime:
+                  type: text
+                  value: 10:00 pm
+                openingTime:
+                  type: text
+                  value: '12:00'
+            - _id: aaf32006-f03c-4414-8140-879f377d3e16
+              type: openingHours
+              parameters:
+                day:
+                  type: text
+                  value: Friday
+                closingTime:
+                  type: text
+                  value: 10:00 pm
+                openingTime:
+                  type: text
+                  value: '12:00'
+            - _id: 3ea9869d-d1bb-4030-bbc2-4d4ec01bca78
+              type: openingHours
+              parameters:
+                day:
+                  type: text
+                  value: Saturday
+                closingTime:
+                  type: text
+                  value: 10:00 pm
+                openingTime:
+                  type: text
+                  value: '12:00'
+            - _id: 7c4f4862-99be-4a22-8dca-e2f9d1aed452
+              type: openingHours
+              parameters:
+                day:
+                  type: text
+                  value: Sunday
+                closingTime:
+                  type: text
+                  value: 10:00 pm
+                openingTime:
+                  type: text
+                  value: '12:00'
+        parameters:
+          title:
+            type: text
+            value: Rembrandt burger
+          website:
+            type: text
+            value: http://www.rembrandt-burger.de
+          telephone:
+            type: text
+            value: 030 89997296
+          priceRange:
+            type: number
+            value: '2'
+created: '2022-10-27T14:05:15.93826+00:00'
+modified: '2022-10-27T14:50:59.865536+00:00'
+pattern: false

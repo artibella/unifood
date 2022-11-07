@@ -17,24 +17,9 @@ parameters:
         recipe:
           id: recipe
           name: Recipe
-  - id: selectedRecipes
-    name: Selected Recipes
-    type: contentfulMultiEntry
-    helpText: Choose which recipes should be displayed
-    typeConfig:
-      source: default
-      allowedContentTypes:
-        recipe:
-          id: recipe
-          name: Recipe
 useTeamPermissions: true
-slots:
-  - id: recipeQuery
-    name: Recipe Query
-    allowedComponents:
-      - dynamicRecipeList
-    inheritAllowedComponents: false
+slots: []
 titleParameter: titel
 canBeComposition: false
 created: '2022-09-15T08:38:28.835557+00:00'
-updated: '2022-09-15T08:38:28.835557+00:00'
+updated: '2022-11-04T12:01:10.709547+00:00'

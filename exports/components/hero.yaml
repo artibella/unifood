@@ -24,9 +24,9 @@ parameters:
     type: text
     helpText: ''
     typeConfig: null
-  - id: internalLink
-    name: Internal Link
-    type: sitemap_link
+  - id: link
+    name: Link
+    type: project_map_link
     helpText: ''
     typeConfig: null
 useTeamPermissions: true
@@ -39,4 +39,4 @@ slots:
 titleParameter: title
 canBeComposition: false
 created: '2022-09-27T14:42:05.444438+00:00'
-updated: '2022-09-29T09:30:33.166614+00:00'
+updated: '2022-10-26T08:19:16.621915+00:00'

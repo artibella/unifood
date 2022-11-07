@@ -1,0 +1,121 @@
+composition:
+  _name: Review Restaurant details
+  _id: 3385c3e1-e3e4-4065-a6a7-241ae838439e
+  _slug: review-restaurant-details
+  type: restaurantDetails
+  parameters:
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review Detail/entry/restaurants/0/title
+        required: false
+    website:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review Detail/entry/restaurants/0/website/href
+        required: false
+    telephone:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review Detail/entry/restaurants/0/telephone
+        required: false
+    priceRange:
+      type: number
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Review Detail/entry/restaurants/0/price_range
+        required: false
+  slots:
+    diets:
+      - _id: 20195a61-709c-4d30-a285-2ede1643d493
+        type: $loop
+        slots:
+          body:
+            - _id: 24c11965-1a1a-4d19-93fe-49f5adec07bb
+              type: tag
+              parameters:
+                label:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /Review diets Loop Item/title
+                    required: false
+        _dataResources:
+          Review diets Loop Item:
+            type: sys-reserved-loop
+            variables:
+              connectedData: /Review Detail/entry/restaurants/0/diets
+              connectedDataRequired: 'false'
+    cuisines:
+      - _id: c45dcb93-39c0-4f58-910e-97d198e5eddf
+        type: $loop
+        slots:
+          body:
+            - _id: a19f3ba4-d43c-4b6b-abe3-e457b7b3ebf1
+              type: tag
+              parameters:
+                label:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /Review cuisines Loop Item/title
+                    required: false
+        _dataResources:
+          Review cuisines Loop Item:
+            type: sys-reserved-loop
+            variables:
+              connectedData: /Review Detail/entry/restaurants/0/cuisines
+              connectedDataRequired: 'false'
+    openingHours:
+      - _id: 50e452d3-8925-4f91-9ffe-569533ce7e62
+        type: $loop
+        slots:
+          body:
+            - _id: f22df181-c0a2-457b-9483-091a3cf62a5d
+              type: openingHours
+              parameters:
+                day:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /Review opening_hours Loop Item/opening_hours/day
+                    required: false
+                closingTime:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /Review opening_hours Loop Item/opening_hours/closing_time
+                    required: false
+                openingTime:
+                  type: text
+                  value: unbound
+                  connectedData:
+                    syntax: jptr
+                    pointer: /Review opening_hours Loop Item/opening_hours/opening_time
+                    required: false
+        _dataResources:
+          Review opening_hours Loop Item:
+            type: sys-reserved-loop
+            variables:
+              connectedData: /Review Detail/entry/restaurants/0/opening_hours
+              connectedDataRequired: 'false'
+  _dataResources:
+    Review Detail:
+      type: restaurantReviewByIdContentstack
+      variables:
+        reviewID: blt11a0103e6ce9e9db
+      isPatternParameter: true
+created: '2022-10-25T12:12:30.710121+00:00'
+modified: '2022-11-02T10:06:01.839746+00:00'
+pattern: true

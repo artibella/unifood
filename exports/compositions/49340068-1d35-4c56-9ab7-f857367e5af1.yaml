@@ -1,0 +1,26 @@
+composition:
+  _name: X-mas special
+  _id: 49340068-1d35-4c56-9ab7-f857367e5af1
+  _slug: /features/x-mas-special
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - _id: e45058e3-2e82-4b28-9c9f-dd6c7015ddea
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: Replace me
+          title:
+            type: text
+            value: Hero title
+          imageUrl:
+            type: text
+            value: http://placekitten.com/800/600
+          imageAltText:
+            type: text
+            value: Replace me
+created: '2022-11-03T08:21:20.852968+00:00'
+modified: '2022-11-03T08:22:44.365315+00:00'
+pattern: false

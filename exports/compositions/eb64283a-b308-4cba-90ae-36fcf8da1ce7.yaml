@@ -23,6 +23,9 @@ composition:
                     syntax: jptr
                     pointer: /CF Recipe/fields/subtitle
                     required: false
+                link:
+                  type: project_map_link
+                  value: /reviews/restaurants
                 title:
                   type: text
                   value: unbound
@@ -54,6 +57,37 @@ composition:
                     required: false
             - _id: 12782ea8-3423-4052-9732-b5c83924d797
               type: hero
+              slots:
+                ctas:
+                  - _id: 3d360fbd-3b93-46ca-9611-4aaa03665f97
+                    type: callToAction
+                    parameters:
+                      link:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /CF Recipe Meat/fields/slug
+                          required: false
+                      title:
+                        type: text
+                        value: Read more
+                      linkPrefix:
+                        type: text
+                        value: /recipes/
+                  - _id: 772528b7-d6b4-4771-a249-d15ed7501b05
+                    type: callToAction
+                    variant: secondary
+                    parameters:
+                      link:
+                        type: text
+                        value: '#'
+                      title:
+                        type: text
+                        value: Order it
+                      openInNewTab:
+                        type: checkbox
+                        value: true
               parameters:
                 body:
                   type: text
@@ -98,6 +132,24 @@ composition:
                 content:
                   - _id: 2a44c424-f11c-434c-9614-0db365224272
                     type: hero
+                    slots:
+                      ctas:
+                        - _id: 114027cb-76eb-47ce-84a3-cb1b623853b2
+                          type: callToAction
+                          parameters:
+                            link:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /Vegan Recipe/entry/url
+                                required: false
+                            title:
+                              type: text
+                              value: Read more
+                            linkPrefix:
+                              type: text
+                              value: /recipes
                     parameters:
                       body:
                         type: text
@@ -127,12 +179,34 @@ composition:
                 title:
                   type: text
                   value: Featured vegetarian pasta recipe
+                $tstVrnt:
+                  type: testVariant
+                  value:
+                    id: allimone
             - _id: bdca9772-841e-4d40-8b62-98e9cefe4bb3
               type: sectionContainer
               slots:
                 content:
                   - _id: 58590b2e-16ea-47f5-a928-2d092f792ce5
                     type: hero
+                    slots:
+                      ctas:
+                        - _id: cb6181de-98f5-4e09-a59c-a2b2cba54cf8
+                          type: callToAction
+                          parameters:
+                            link:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: /Meat pasta recipe/entry/url
+                                required: false
+                            title:
+                              type: text
+                              value: Read more
+                            linkPrefix:
+                              type: text
+                              value: /recipes
                     parameters:
                       body:
                         type: text
@@ -165,10 +239,14 @@ composition:
               parameters:
                 theme:
                   type: select
-                  value: spring
+                  value: dark
                 title:
                   type: text
                   value: Featured pasta recipe
+                $tstVrnt:
+                  type: testVariant
+                  value:
+                    id: alrague
         parameters:
           test:
             type: testSelect
@@ -232,11 +310,27 @@ composition:
           recipes:
             type: contentfulQuery
             value:
-              count: 16
-              sortBy: sys.createdAt
+              count: 3
+              sortBy: sys.updatedAt
               source: default
               sortOrder: desc
               contentType: recipe
+      - _id: c263c890-aa7d-439f-a4c0-4b3f852fdc7c
+        type: genericCard
+        _pattern: 2c57c7a1-a8c1-4e04-a647-2118fca693fa
+        _dataResources:
+          Product:
+            type: sys-reserved-alias
+            variables:
+              data: Coffee maker
+      - _id: 7f36095f-d651-4ffe-87bb-914739d63f8a
+        type: genericCard
+        _pattern: c0e26e88-3792-4da9-96f2-2b259577ff32
+        _dataResources:
+          Default Recipe:
+            type: sys-reserved-alias
+            variables:
+              data: Lemon pasta
   _dataResources:
     recipes:
       type: recipesContentstack
@@ -244,11 +338,30 @@ composition:
     CF Recipe:
       type: recipecontentful
       variables:
-        entryIds: SDBHzJ4LmFG7ctvtLAo3H
+        entryIds: 6noZkJ3t9vpuTug4peSftT
+    Meat pasta:
+      type: recipeByIdcontentstack
+      variables:
+        recipeID: bltc0e29f5dc145e52e
+    Lemon pasta:
+      type: recipeByIdcontentstack
+      variables:
+        recipeID: bltc0e29f5dc145e52e
+    Coffee maker:
+      type: bigcommerceProduct
+      variables:
+        product_id: '86'
     Vegan Recipe:
       type: recipeByIdcontentstack
       variables:
         recipeID: bltc0e29f5dc145e52e
+    Australia Pics:
+      type: unsplashPhotoSearch
+      variables:
+        page: '1'
+        query: Australia
+        per_page: '10'
+        orientation: landscape
     CF Recipe Meat:
       type: recipecontentful
       variables:
@@ -267,5 +380,5 @@ composition:
         recipeID: bltc0e29f5dc145e52e
       isPatternParameter: true
 created: '2022-09-19T08:25:54.222034+00:00'
-modified: '2022-10-21T10:15:22.357189+00:00'
+modified: '2022-11-07T18:30:36.356092+00:00'
 pattern: false

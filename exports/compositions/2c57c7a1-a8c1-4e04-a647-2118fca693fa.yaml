@@ -1,0 +1,38 @@
+composition:
+  _name: Product Card
+  _id: 2c57c7a1-a8c1-4e04-a647-2118fca693fa
+  type: genericCard
+  parameters:
+    body:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Product/data/description
+        required: false
+    image:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Product/data/primary_image/url_standard
+        required: false
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Product/data/name
+        required: false
+    byline:
+      type: text
+      value: Product
+  _dataResources:
+    Product:
+      type: bigcommerceProduct
+      variables:
+        product_id: '88'
+      isPatternParameter: true
+created: '2022-10-25T13:19:06.07186+00:00'
+modified: '2022-11-04T11:45:15.725211+00:00'
+pattern: true

@@ -1,0 +1,142 @@
+composition:
+  _name: Howto Detail
+  _id: 29fb4eba-7207-44ef-8423-330ac749ecc7
+  _slug: /howtos/howto-detail
+  type: howtoTemplate
+  parameters:
+    body:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Howto Article/entries/0/body
+        required: false
+    intro:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Howto Article/entries/0/intro
+        required: false
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Howto Article/entries/0/title
+        required: false
+  slots:
+    hero:
+      - _id: 4599532e-890b-4111-a537-9d16fd2f35cb
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Howto Article/entries/0/teaser_text
+              required: false
+          title:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Howto Article/entries/0/title
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Howto Article/entries/0/image/url
+              required: false
+          imageAltText:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Howto Article/entries/0/image/title
+              required: false
+    sections:
+      - _id: 60c5ce4d-1ef0-4e5c-a68e-0000dbe30f66
+        type: sectionContainer
+        slots:
+          content:
+            - _id: 9f6bd0f0-7046-4344-a350-b4eacf0c01a0
+              type: $loop
+              slots:
+                body:
+                  - _id: a8616121-46e9-45e0-a6c0-e9022e83daf8
+                    type: howtoSection
+                    slots:
+                      steps:
+                        - _id: d1876d9b-d4e6-494c-ab49-e3b0e80214f6
+                          type: $loop
+                          slots:
+                            body:
+                              - _id: ce7c50a6-0612-47df-b749-b7a31e2aeaa0
+                                type: howtoStep
+                                parameters:
+                                  name:
+                                    type: text
+                                    value: unbound
+                                    connectedData:
+                                      syntax: jptr
+                                      pointer: /step loop item/step/name
+                                      required: false
+                                  description:
+                                    type: text
+                                    value: unbound
+                                    connectedData:
+                                      syntax: jptr
+                                      pointer: /step loop item/step/instruction
+                                      required: false
+                          _dataResources:
+                            step loop item:
+                              type: sys-reserved-loop
+                              variables:
+                                connectedData: /Howto Sections Loop/howto_section/steps
+                                connectedDataRequired: 'false'
+                    parameters:
+                      name:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Howto Sections Loop/howto_section/name
+                          required: false
+                      image:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Howto Sections Loop/howto_section/image/url
+                          required: false
+                      description:
+                        type: text
+                        value: unbound
+                        connectedData:
+                          syntax: jptr
+                          pointer: /Howto Sections Loop/howto_section/description
+                          required: false
+              _dataResources:
+                Howto Sections Loop:
+                  type: sys-reserved-loop
+                  variables:
+                    connectedData: /Howto Article/entries/0/howto_sections
+                    connectedDataRequired: 'false'
+        parameters:
+          theme:
+            type: select
+            value: light
+          title:
+            type: text
+            value: Instructions
+  _dataResources:
+    Howto Article:
+      type: howtoBySlugcsDynamic
+      variables: {}
+created: '2022-10-28T11:45:54.494793+00:00'
+modified: '2022-11-04T10:16:07.494319+00:00'
+pattern: false
