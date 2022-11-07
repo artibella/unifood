@@ -3,4 +3,5 @@ name: Knives
 type: placeholder
 order: 500
 path: /reviews/equipment/knives
+pathSegment: knives
 projectMapId: a1e46568-1d6a-4e1a-b223-574d5495fb84

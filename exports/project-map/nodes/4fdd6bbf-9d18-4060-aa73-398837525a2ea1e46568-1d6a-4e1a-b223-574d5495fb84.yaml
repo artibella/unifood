@@ -2,6 +2,7 @@ id: 4fdd6bbf-9d18-4060-aa73-398837525a2e
 name: Burger joint review
 type: composition
 order: 200
-path: /reviews/restaurants/burger-joint-review
+path: /reviews/restaurants/burgers-at-richards-burger-joint
 compositionId: dac43cd8-e71e-4665-8f55-87e8461cfe66
+pathSegment: burgers-at-richards-burger-joint
 projectMapId: a1e46568-1d6a-4e1a-b223-574d5495fb84

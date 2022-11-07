@@ -1,6 +1,7 @@
 id: 621d101e-865b-48d8-8167-2f1e61dbac79
 name: Tableware
 type: placeholder
-order: 300
+order: 600
 path: /reviews/equipment/tableware
+pathSegment: tableware
 projectMapId: a1e46568-1d6a-4e1a-b223-574d5495fb84

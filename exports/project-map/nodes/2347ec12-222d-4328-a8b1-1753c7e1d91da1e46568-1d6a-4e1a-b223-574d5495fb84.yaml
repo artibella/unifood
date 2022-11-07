@@ -1,6 +1,7 @@
 id: 2347ec12-222d-4328-a8b1-1753c7e1d91d
 name: Basic Kitchen Equipment
-type: composition
-order: 500
+type: placeholder
+order: 100
 path: /reviews/equipment/basic-kitchen-equipment
+pathSegment: basic-kitchen-equipment
 projectMapId: a1e46568-1d6a-4e1a-b223-574d5495fb84

@@ -1,7 +1,8 @@
 id: 36f19c1b-07ca-4603-9bf1-c21ff9aaa06d
 name: Restaurants
 type: composition
-order: 500
+order: 400
 path: /reviews/restaurants
 compositionId: 3f600326-ce14-433f-a0a1-7f81390fa7c8
+pathSegment: restaurants
 projectMapId: a1e46568-1d6a-4e1a-b223-574d5495fb84

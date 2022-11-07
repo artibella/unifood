@@ -4,4 +4,5 @@ type: composition
 order: 600
 path: /reviews/restaurants/rembrandt-burger
 compositionId: 9a764c2d-230c-42ab-b280-792bb2d17de5
+pathSegment: rembrandt-burger
 projectMapId: a1e46568-1d6a-4e1a-b223-574d5495fb84
