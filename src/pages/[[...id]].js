@@ -37,7 +37,7 @@ export default function DynamicComposition({ composition }) {
 
 
 export const getStaticProps = async context => {
-  const slug = context?.params?.id;
+  const slug = context?.params?.id || '';
   const slugString = Array.isArray(slug) ? slug.join('/') : slug;  
   const { preview } = context;
 
@@ -78,22 +78,30 @@ export const getStaticProps = async context => {
 };
 
 export async function getStaticPaths() {
-  const reservedSlugs = [];
+  const reservedSlugs = [
+    '/howtos',
+    '/reviews'
+  ];
 
   const { nodes } = await projectMapClient.getNodes({
     projectId,
     projectMapId,
-  });  
+  }); 
+  
+  // TODO: this needs improvement to scale beyond 100 compositions
+  const { compositions } = await canvasClient.getCompositionList({
+    projectId,
+    state: CANVAS_PUBLISHED_STATE
+  });
+  const compositonIds = compositions.map((item) => item.composition._id);
 
   const paths = nodes.filter((node) => {
     const path = node.path;
-    const isRoot = path === '/';
-    const hasComposition = node.compositionId;
-    const isReservedSlug = reservedSlugs.includes(path);
-    const isFirstLevel = path?.split('/').length === 2;
-    return isFirstLevel && hasComposition && !isRoot && !isReservedSlug;
+    const hasComposition = node.type === 'composition' && node.compositionId && 
+    compositonIds.includes(node.compositionId);
+    const isReservedSlug = reservedSlugs.filter(slug => path.includes(slug)).length > 0;
+    return hasComposition && !isReservedSlug;
   })
-
   
   const staticPaths = paths.map((node) => {
     return `${node.path}`;
