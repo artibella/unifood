@@ -1,0 +1,20 @@
+id: cuisineDetails
+displayName: Cuisine Details
+path: /entries
+custom:
+  allowedContentTypes:
+    cuisine:
+      id: cuisine
+      name: 🏷  - Cuisine
+method: GET
+purgeKey: 393eee76-edc7-4717-b07d-edac05d22878
+archetype: contentfulEntry
+variables:
+  entryIds:
+    type: string
+    setBy: static
+    default: n/a
+parameters:
+  sys.id[in]: ${entryIds}
+dataSourceId: contentful
+allowedOnComponents: []

@@ -1,0 +1,25 @@
+composition:
+  _name: South European
+  _id: 5510fdd6-13dd-4ed3-b262-b01dffbad39e
+  _slug: south-european
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - type: hero
+        parameters:
+          body:
+            type: text
+            value: Replace me
+          title:
+            type: text
+            value: Hero title
+          imageUrl:
+            type: text
+            value: http://placekitten.com/800/600
+          imageAltText:
+            type: text
+            value: Replace me
+created: '2022-11-08T14:11:41.487133+00:00'
+modified: '2022-11-08T14:11:41.487133+00:00'
+pattern: false

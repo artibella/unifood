@@ -3,10 +3,7 @@ composition:
   _id: ef2e110f-e2c9-4cc1-9f5c-9a72d05883a0
   _slug: /cuisines
   type: cuisinePage
-  parameters:
-    title:
-      type: text
-      value: asf
+  parameters: {}
 created: '2022-09-29T08:49:28.938651+00:00'
-modified: '2022-11-03T12:26:46.339102+00:00'
+modified: '2022-11-08T15:44:51.241064+00:00'
 pattern: false

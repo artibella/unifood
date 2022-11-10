@@ -1,7 +1,7 @@
 id: 585c2636-47e3-4c64-a7d0-84d35672a163
 name: Cuisines
 type: composition
-order: 325
+order: 100
 path: /cuisines
 compositionId: ef2e110f-e2c9-4cc1-9f5c-9a72d05883a0
 pathSegment: cuisines

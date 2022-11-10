@@ -1,14 +1,14 @@
-id: cuisines
-displayName: Cuisines
+id: contentfulRecipes
+displayName: Contentful Recipes
 body: ''
 path: /entries
 custom:
   allowedContentTypes:
-    cuisine:
-      id: cuisine
-      name: 🏷  - Cuisine
+    recipe:
+      id: recipe
+      name: Recipe
 method: GET
-purgeKey: db83ea95-cc2d-4d80-b8f1-a013c970bac0
+purgeKey: 88370ab8-712e-4159-9843-03ddd730fb98
 archetype: contentfulQuery
 variables:
   limit:
@@ -27,5 +27,5 @@ parameters:
   limit: ${limit}
   order: ${order}
   content_type: ${contentType}
-dataSourceId: unifood
+dataSourceId: contentful
 allowedOnComponents: []

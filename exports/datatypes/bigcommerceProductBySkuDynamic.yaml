@@ -1,0 +1,18 @@
+id: bigcommerceProductBySkuDynamic
+displayName: BigCommerce Product by SKU (Dynamic)
+body: ''
+path: /catalog/products/
+method: GET
+purgeKey: a92fde62-de67-408f-aafd-d67ddff9070e
+archetype: default
+variables:
+  sku:
+    type: text
+    setBy: dynamic
+    default: ABS
+    displayName: Product SKU
+parameters:
+  include: images,primary_image
+  keyword: ${sku}
+dataSourceId: bigcommerce
+allowedOnComponents: []

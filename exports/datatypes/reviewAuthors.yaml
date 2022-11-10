@@ -1,0 +1,9 @@
+id: reviewAuthors
+displayName: Review Authors
+body: ''
+path: /content_types/author/entries
+method: GET
+purgeKey: 2655d820-5760-415d-ad96-f4860792d6fe
+archetype: default
+dataSourceId: contentstackUnifood
+allowedOnComponents: []
