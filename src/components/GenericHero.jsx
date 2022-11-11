@@ -20,8 +20,11 @@ const renderImage = (imageUrl, title) => {
   )
 }
 
-export default function GenericHero({ title, body, imageUrl }) {
+export default function GenericHero({ title = '', body = '', imageUrl = '' }) {
   const image = renderImage(imageUrl, title);
+  const placeHolder = (
+    <div className="h-96"></div>
+  )
 
   return (
     <div className="relative overflow-hidden bg-white">
@@ -39,7 +42,7 @@ export default function GenericHero({ title, body, imageUrl }) {
               </p>
               
               <div className="hero-actions sm:inline-flex items-center justify-center gap-4 mt-8 lg:mt-12 text-center lg:text-left">
-                <Slot name="ctas" />
+                <Slot name="ctas" emptyPlaceholder={placeHolder} />
               </div>
             
             </div>
