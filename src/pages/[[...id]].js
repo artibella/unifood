@@ -41,19 +41,9 @@ export const getStaticProps = async context => {
   const slugString = Array.isArray(slug) ? slug.join('/') : slug;  
   const { preview } = context;
 
-  // const { composition } = await canvasClient.getCompositionByNodePath({
-  //   projectMapNodePath: slugString ? `/${slugString}` : '/',
-  //   state:
-  //     process.env.NODE_ENV === "development" || preview
-  //       ? CANVAS_DRAFT_STATE
-  //       : CANVAS_PUBLISHED_STATE,
-  //   unstable_resolveData: true
-      
-  //   }
-  // );
-
-  const { composition } = await canvasClient.getCompositionBySlug({
-    slug: slugString ? `/${slugString}` : '/',
+  const { composition } = await canvasClient.getCompositionByNodePath({
+    projectMapId, 
+    projectMapNodePath: slugString ? `/${slugString}` : '/',
     state:
       process.env.NODE_ENV === "development" || preview
         ? CANVAS_DRAFT_STATE
