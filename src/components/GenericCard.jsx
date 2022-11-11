@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Card } from 'react-daisyui';
 import isHtml from 'is-html';
 
-export default function GenericCard({ title, image, body }) {
+export default function GenericCard({ title = '', image, body = '' }) {
 
   return (
     <Card className='bg-white'>
@@ -20,7 +20,7 @@ export default function GenericCard({ title, image, body }) {
         ) : 
         <p>{body}</p> }
         <Card.Actions className="mt-8">
-          <Slot name="actions" />
+          <Slot name="actions" emptyPlaceholder={null} />
         </Card.Actions>
       </Card.Body>
     </Card>

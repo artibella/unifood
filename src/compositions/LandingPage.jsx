@@ -3,6 +3,9 @@ import Head from "next/head";
 import appRenderer from "./appRenderer";
 
 export default function LandingPage({ composition }) {
+  const placeHolder = (
+    <div className="h-96"></div>
+  )
   return (
     <>
       <Head>
@@ -11,10 +14,10 @@ export default function LandingPage({ composition }) {
       <div>
         <Composition data={composition} resolveRenderer={appRenderer}>
           <section>
-            <Slot name="hero" />
+            <Slot name="hero" emptyPlaceholder={placeHolder} />
           </section>
           <section>
-            <Slot name="sections" />
+            <Slot name="sections" emptyPlaceholder={placeHolder} />
           </section>
         </Composition>
       </div>

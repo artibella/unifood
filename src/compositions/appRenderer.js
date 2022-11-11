@@ -16,6 +16,8 @@ import HowtoStep from '../components/HowtoStep';
 import CallToAction from '../components/CallToAction';
 import Linklist from '../components/LinkList';
 import LinklistItem from '../components/LinkListItem';
+import OpeningHours from '../components/OpeningHours';
+import Tag from '../components/Tag';
 
 const ComponentsMap = {
   mainNavigation: MainNavigation,
@@ -34,7 +36,9 @@ const ComponentsMap = {
   howtoStep: HowtoStep,
   callToAction: CallToAction,
   linkList: Linklist,
-  linkListItem: LinklistItem
+  linkListItem: LinklistItem,
+  openingHours: OpeningHours,
+  tag: Tag
 };
 
 const appRenderer = (component)  => {

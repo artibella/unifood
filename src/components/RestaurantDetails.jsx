@@ -1,5 +1,7 @@
 import { Fragment } from "react";
 import { LinkIcon, PhoneIcon, CurrencyEuroIcon, BanknotesIcon } from '@heroicons/react/24/outline';
+import { Slot } from "@uniformdev/canvas-react";
+import { Badge } from "react-daisyui";
 
 const renderPriceRange = function (priceRange) {
   let priceString = [];
@@ -17,42 +19,23 @@ const renderPriceRange = function (priceRange) {
   )
 }
 
-const renderOpeningHours = (openingHours) => {
+const renderOpeningHours = () => {
   return (
     <ul className="mt-8">
-      {openingHours.map((item) => {
-        return (
-          <li key={item.day} className="flex">
-            <span className="mr-8 w-24">{item.day}</span>
-            <span> {item.openingTime} – {item.closingTime}</span>
-          </li>
-        )
-      })}
+      <Slot name="openingHours" />
     </ul>
   )
 }
 
-const renderCuisines = (cuisines) => {
+const renderCuisines = () => {
   return (
-    <Fragment>
-      {cuisines.map((item) => {
-        return (
-          <span key={item.label} className="badge badge-primary badge-outline badge-lg inline-block mr-2">{item.label}</span>
-        )
-      })}
-    </Fragment>
+    <Slot name="cuisines" emptyPlaceholder={null} />
   )
 }
 
-const renderDiets = (diets) => {
+const renderDiets = () => {
   return (
-    <Fragment>
-      {diets.map((item) => {
-        return (
-          <span key={item.label} className="badge badge-primary badge-outline badge-lg inline-block mr-2">{item.label}</span>
-        )
-      })}
-    </Fragment>
+    <Slot name="diets" emptyPlaceholder={null} />
   )
 }
 
@@ -89,12 +72,12 @@ export default function RestaurantDetails({ title, openingHours = [], cuisines =
             
             <div className="mt-8 flex flex-col">
               <div>
-                <span className="font-bold inline-block mr-2">Cuisines:</span> {renderCuisines(cuisines)}
+                <span className="font-bold inline-block mr-2">Cuisines:</span> {renderCuisines()}
               </div>
               {diets.length ? (
                 <div>
                   <span className="font-bold inline-block mr-2">Suitable for diets:</span>
-                  {renderDiets(diets)}
+                  {renderDiets()}
                 </div>
               ) : ''}
             </div>

@@ -17,7 +17,7 @@ export default function RestaurantReview({composition}) {
             </section>
             <section>
               <div className="my-8">
-                <Slot name="authors" />
+                <Slot name="authors" emptyPlaceholder={<div className="h-12 w-80"></div>}  />
               </div>
             </section>
             <section className="lg:grid lg:grid-cols-3 lg:gap-4">

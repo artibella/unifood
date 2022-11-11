@@ -3,6 +3,9 @@ import Head from "next/head";
 import appRenderer from "./appRenderer";
 
 export default function HomePage({ composition }) {
+  const placeHolder = (
+    <div className="h-96"></div>
+  )
   return (
     <>
       <Head>
@@ -17,11 +20,11 @@ export default function HomePage({ composition }) {
               <section>
                 <h1 className="text-8xl font-bold text-center mb-16">{title}</h1>
                 {/* add slot component */}
-                <Slot name="mainHero" />
+                <Slot name="mainHero" emptyPlaceholder={placeHolder} />
               </section>
 
               <section>
-                <Slot name="sections" />
+                <Slot name="sections" emptyPlaceholder={placeHolder} />
               </section>
             </div>
           )}

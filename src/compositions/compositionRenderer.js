@@ -5,7 +5,7 @@ import DefaultComposition from './DefaultComposition';
 
 const CompositionMap = {
   restaurantReview: RestaurantReview,
-  landingPage: LandingPage,
+  landingpage: LandingPage,
   homepage: HomePage
 }
 

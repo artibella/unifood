@@ -5,7 +5,7 @@ export default function SectionContainer({ title, theme }) {
 
   return (
     <Section title={title} theme={theme}>
-      <Slot name="content" />
+      <Slot name="content" emptyPlaceholder={null} />
     </Section>
   )
 }
