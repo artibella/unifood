@@ -6,7 +6,6 @@ archetype: default
 variables:
   seed:
     type: text
-    setBy: static
     default: bentobento
     displayName: Seed string (for stable results)
 parameters:

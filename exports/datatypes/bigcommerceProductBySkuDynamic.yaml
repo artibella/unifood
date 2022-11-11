@@ -8,7 +8,6 @@ archetype: default
 variables:
   sku:
     type: text
-    setBy: dynamic
     default: ABS
     displayName: Product SKU
 parameters:

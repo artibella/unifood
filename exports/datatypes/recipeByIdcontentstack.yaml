@@ -6,7 +6,6 @@ archetype: default
 variables:
   recipeID:
     type: text
-    setBy: static
     default: bltd58bc990b6e94759
     displayName: Recipe ID
 dataSourceId: contentstackUnifood

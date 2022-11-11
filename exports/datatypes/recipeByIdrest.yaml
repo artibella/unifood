@@ -8,7 +8,6 @@ archetype: default
 variables:
   recipeID:
     type: text
-    setBy: static
     default: 63zkW3nAH7z36PCRdewyeE
     displayName: Recipe ID
 parameters:

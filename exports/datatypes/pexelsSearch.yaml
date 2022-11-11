@@ -7,12 +7,10 @@ archetype: default
 variables:
   query:
     type: text
-    setBy: static
     default: food
     displayName: Search term
   orientation:
     type: text
-    setBy: static
     default: landscape
     displayName: Desired photo orientation (landscape, portrait or square)
 parameters:

@@ -6,7 +6,6 @@ archetype: default
 variables:
   slug:
     type: text
-    setBy: static
     default: /watermelon-salad-with-mint-and-feta
     displayName: Recipe slug
 dataSourceId: contentstackUnifood
