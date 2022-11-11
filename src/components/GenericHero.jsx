@@ -23,7 +23,7 @@ const renderImage = (imageUrl, title) => {
 export default function GenericHero({ title = '', body = '', imageUrl = '' }) {
   const image = renderImage(imageUrl, title);
   const placeHolder = (
-    <div className="h-32"></div>
+    <div className="h-16 w-48"></div>
   )
 
   return (
