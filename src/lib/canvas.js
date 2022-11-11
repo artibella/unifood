@@ -1,16 +1,10 @@
-import { CanvasClient, EdgeCanvasClient, CANVAS_PUBLISHED_STATE, CANVAS_DRAFT_STATE } from "@uniformdev/canvas";
+import { CanvasClient, CANVAS_PUBLISHED_STATE, CANVAS_DRAFT_STATE } from "@uniformdev/canvas";
 import getConfig from "next/config";
 const {
   publicRuntimeConfig: { projectId, canvasApiHost, canvasApiKey },
 } = getConfig();
 
 export const canvasClient = new CanvasClient({
-  apiKey: canvasApiKey,
-  projectId: projectId,
-  apiHost: canvasApiHost
-});
-
-export const edgeCanvasClient = new EdgeCanvasClient({
   apiKey: canvasApiKey,
   projectId: projectId,
   apiHost: canvasApiHost

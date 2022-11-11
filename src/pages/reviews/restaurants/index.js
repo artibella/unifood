@@ -2,7 +2,7 @@ import React from 'react';
 import { enhance, CanvasClient } from "@uniformdev/canvas";
 import { Composition, createApiEnhancer, Slot, useCompositionInstance } from "@uniformdev/canvas-react";
 import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
-import { canvasClient, edgeCanvasClient, getCompositionList } from '../../../lib/canvas';
+import { canvasClient, getCompositionList } from '../../../lib/canvas';
 import { getEnhancers } from '../../../lib/enhancers/enhancers';
 import appRenderer from '../../../compositions/appRenderer';
 import { useLivePreviewNextStaticProps } from '../../../hooks/useLivePreviewNextStaticProps';
@@ -38,9 +38,10 @@ export default function CanvasComposition({ composition }) {
 export const getStaticProps = async context => {
   const { preview } = context;
   // fetch the composition from Canvas
-  const { composition } = await edgeCanvasClient.getCompositionBySlug({
+  const { composition } = await canvasClient.getCompositionBySlug({
     slug: `/reviews/restaurants`,
     state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
+    unstable_resolveData: true
   });
 
   await enhance({

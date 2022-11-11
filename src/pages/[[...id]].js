@@ -4,7 +4,7 @@ import getConfig from "next/config";
 import { enhance, CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
 import { Composition, createApiEnhancer, Slot, useCompositionInstance } from "@uniformdev/canvas-react";
 import { useLivePreviewNextStaticProps } from "../hooks/useLivePreviewNextStaticProps";
-import { edgeCanvasClient, canvasClient, getCompositionList } from '../lib/canvas';
+import { canvasClient, getCompositionList } from '../lib/canvas';
 import { getEnhancers } from '../lib/enhancers/enhancers';
 import appRenderer from '../compositions/appRenderer';
 import { projectMapClient } from '../lib/projectMap';
@@ -41,22 +41,27 @@ export const getStaticProps = async context => {
   const slugString = Array.isArray(slug) ? slug.join('/') : slug;  
   const { preview } = context;
 
-  // const { composition } = await canvasClient.getCompositionByProjectMapNodePath({
-  //   projectMapId,
+  // const { composition } = await canvasClient.getCompositionByNodePath({
   //   projectMapNodePath: slugString ? `/${slugString}` : '/',
   //   state:
   //     process.env.NODE_ENV === "development" || preview
   //       ? CANVAS_DRAFT_STATE
   //       : CANVAS_PUBLISHED_STATE,
+  //   unstable_resolveData: true
+      
   //   }
   // );
 
-  // fetch the composition from Canvas
-  const { composition } = await edgeCanvasClient.getCompositionBySlug({
-    slug: `/${slugString}`,
-    state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
-  });
-
+  const { composition } = await canvasClient.getCompositionBySlug({
+    slug: slugString ? `/${slugString}` : '/',
+    state:
+      process.env.NODE_ENV === "development" || preview
+        ? CANVAS_DRAFT_STATE
+        : CANVAS_PUBLISHED_STATE,
+    unstable_resolveData: true
+      
+    }
+  );
 
   // return 404 if no composition is found
   if (!composition) {
