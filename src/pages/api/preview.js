@@ -6,22 +6,45 @@ import {
 } from "@uniformdev/canvas";
 import getConfig from "next/config";
 import { getEnhancers } from "../../lib/enhancers/enhancers";
+import { projectMapClient } from "../../lib/projectMap";
 
 const queryParamsToPreserve = [IN_CONTEXT_EDITOR_QUERY_STRING_PARAM];
 
 const handleGet = async (req, res) => {
   const {
-    serverRuntimeConfig: { previewSecret },
+    serverRuntimeConfig: { 
+      previewSecret,
+      projectId,
+      projectMapId
+    },
   } = getConfig();
+
+  if (!req.query.id) {
+    return res.status(400).json({ message: "Missing composition ID" });
+  }
 
   if (!req.query.slug) {
     return res.status(400).json({ message: "Missing slug" });
   }
 
+  // get node path from composition ID
+  const compositionId = req.query.id; 
+  const  { nodes } = await projectMapClient.getNodes({
+    projectId,
+    projectMapId,
+    compositionId
+  });
+  
+  if(!nodes.length) {
+    return res.status(400).json({ message: `Composition with ID '${compositionId}' is not attached to a project map node` });
+  }
+
+  const slug = nodes[0].path;
+
   // raw string of the incoming slug
-  const slug = Array.isArray(req.query.slug)
-    ? req.query.slug[0]
-    : req.query.slug;
+  // const slug = Array.isArray(req.query.slug)
+  //   ? req.query.slug[0]
+  //   : req.query.slug;
 
   if (req.query.disable) {
     res.clearPreviewData();
@@ -51,6 +74,8 @@ const handleGet = async (req, res) => {
 
   res.redirect(urlToRedirectTo);
 };
+
+
 
 const handlePost = async (req, res) => {
   const body = req.body;
@@ -99,6 +124,8 @@ const handlePost = async (req, res) => {
     composition,
   });
 };
+
+
 
 const handler = async (req, res) => {
   const method = req.method?.toLocaleLowerCase();
