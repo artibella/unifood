@@ -35,20 +35,28 @@ const handleGet = async (req, res) => {
     compositionId
   });
   
-  if(!nodes.length) {
-    return res.status(400).json({ message: `Composition with ID '${compositionId}' is not attached to a project map node` });
+  let path = '';
+
+  if(nodes.length) {
+    path = nodes[0].path;
   }
 
-  const slug = nodes[0].path;
+  let slug = Array.isArray(req.query.slug)
+    ? req.query.slug[0]
+    : req.query.slug;
+  
+  // add slash to slug if missing
+  slug = slug.startsWith('/') ? slug : `/${slug}`;
+  // add prefix for slug based preview route
+  slug = `/preview/${slug}`;
 
-  // raw string of the incoming slug
-  // const slug = Array.isArray(req.query.slug)
-  //   ? req.query.slug[0]
-  //   : req.query.slug;
+  // decide how to redirect: 
+  // if project map path is set use it otherwise fallback to slug
+  const url = path.length ? path : slug;
 
   if (req.query.disable) {
     res.clearPreviewData();
-    res.redirect(slug);
+    res.redirect(url);
     return;
   }
 
@@ -59,7 +67,7 @@ const handleGet = async (req, res) => {
   }
 
   // enable preview mode and redirect to the slug to preview
-  res.setPreviewData({});
+  res.setPreviewData({'isPreview': true});
 
   const newQuery = new URLSearchParams();
   queryParamsToPreserve.forEach((param) => {
@@ -69,8 +77,8 @@ const handleGet = async (req, res) => {
     }
   });
   const urlToRedirectTo = newQuery.toString()
-    ? `${slug}?${newQuery.toString()}`
-    : slug;
+    ? `${url}?${newQuery.toString()}`
+    : url;
 
   res.redirect(urlToRedirectTo);
 };

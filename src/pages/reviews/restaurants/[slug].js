@@ -1,10 +1,9 @@
 import React from 'react';
-import { enhance, CanvasClient } from "@uniformdev/canvas";
-import { Composition, createApiEnhancer, Slot, useCompositionInstance } from "@uniformdev/canvas-react";
+import { enhance } from "@uniformdev/canvas";
+import { createApiEnhancer, useCompositionInstance } from "@uniformdev/canvas-react";
 import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
-import { canvasClient, getCompositionList } from '../../../lib/canvas';
+import { canvasClient } from '../../../lib/canvas';
 import { getEnhancers } from '../../../lib/enhancers/enhancers';
-import appRenderer from '../../../compositions/appRenderer';
 import { useLivePreviewNextStaticProps } from '../../../hooks/useLivePreviewNextStaticProps';
 import RestaurantReview from '../../../compositions/RestaurantReview';
 import { projectMapClient } from '../../../lib/projectMap';
@@ -18,7 +17,7 @@ const {
 } = getConfig();
 
 
-export default function CanvasComposition({ composition }) {
+export default function RestaurantReviewComposition({ composition }) {
   useLivePreviewNextStaticProps({
     compositionId: composition?._id,
     projectId: process.env.UNIFORM_PROJECT_ID,
@@ -42,12 +41,17 @@ export const getStaticProps = async context => {
   // create the Canvas client
   const client = canvasClient;
 
-  // fetch the composition from Canvas
-  const { composition } = await canvasClient.getCompositionBySlug({
-    slug: `/reviews/restaurants/${slug}`,
-    state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
+  const { composition } = await canvasClient.getCompositionByNodePath({
+    projectMapId, 
+    projectMapNodePath: `/reviews/restaurants/${slug}`,
+    state:
+      process.env.NODE_ENV === "development" || preview
+        ? CANVAS_DRAFT_STATE
+        : CANVAS_PUBLISHED_STATE,
     unstable_resolveData: true
-  });
+      
+    }
+  );
 
   await enhance({
     composition,

@@ -39,8 +39,8 @@ export const getStaticProps = async context => {
 
   // fetch the composition from Canvas
   const { composition } = await canvasClient.getCompositionBySlug({
-    slug: `/howtos/howto-detail`,
-    state: preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
+    slug: `howto-detail`,
+    state: process.env.NODE_ENV === "development" || preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
     unstable_resolveData: true,
     unstable_dynamicVariables: {
       slug: slug
