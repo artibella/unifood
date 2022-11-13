@@ -40,7 +40,20 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@layer base {
+  :root {
+    --Mango-900: 157 132 2;
+    --Mango-800: 177 149 2;
+    --Mango-700: 196 166 2;
+    --Mango-600: 216 183 3;
+    --Mango-500: 235 199 3;
+    --Mango-400: 255 216 3;
+    --Mango-300: 255 224 56;
+    --Mango-200: 255 232 108;
+    --Mango-100: 255 240 161;
+    --Mango-50: 255 249 213;
+  }
+}
 
 html,
 body {

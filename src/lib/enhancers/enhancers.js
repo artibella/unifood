@@ -14,7 +14,6 @@ import {
   CANVAS_CONTENTSTACK_QUERY_PARAMETER_TYPES
 } from "@uniformdev/canvas-contentstack";
 import contributerListEnhancer from './components/contributerList.js';
-import restaurantDetailsEnhancer from './components/restaurantDetails.js';
 import scheduledContentEnhancer from './components/scheduledContent.js';
 
 
@@ -50,10 +49,6 @@ export const getEnhancers = () => {
     .component(
       'contributorList',
       contributerListEnhancer
-    )
-    .component(
-      'restaurantDetails',
-      restaurantDetailsEnhancer
     )
     .component(
       'scheduledContent',

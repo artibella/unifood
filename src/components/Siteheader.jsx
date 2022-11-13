@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Footer } from "react-daisyui"
 import NavBar from "./Navbar"
 
 export default function Siteheader({ children }) {

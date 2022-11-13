@@ -77,7 +77,8 @@ export const getStaticProps = async context => {
 export async function getStaticPaths() {
   const reservedSlugs = [
     '/howtos',
-    '/reviews'
+    '/reviews/restaurants',
+    '/fonts' // seems like static assets also get caught
   ];
 
   const { nodes } = await projectMapClient.getNodes({

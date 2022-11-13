@@ -7,8 +7,8 @@ export default function Section({ title = '', theme = 'light', children }) {
   const sectionClasses = classNames(
     'section', 'py-8', 'lg:py-16',
     { ['bg-black']: theme === 'dark' },
-    { 'bg-green-300': theme === 'spring' },
-    { 'bg-slate-100': theme === 'light' },
+    { 'bg-mango-400': theme === 'spring' },
+    { 'bg-ice-100': theme === 'light' },
   );
 
   const headingClasses = classNames(

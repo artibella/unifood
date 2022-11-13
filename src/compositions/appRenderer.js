@@ -18,6 +18,8 @@ import Linklist from '../components/LinkList';
 import LinklistItem from '../components/LinkListItem';
 import OpeningHours from '../components/OpeningHours';
 import Tag from '../components/Tag';
+import TabContainer from '../components/TabContainer';
+import TabPanel from '../components/TabPanel';
 
 const ComponentsMap = {
   mainNavigation: MainNavigation,
@@ -38,7 +40,9 @@ const ComponentsMap = {
   linkList: Linklist,
   linkListItem: LinklistItem,
   openingHours: OpeningHours,
-  tag: Tag
+  tag: Tag,
+  tabContainer: TabContainer,
+  tabPanel: TabPanel
 };
 
 const appRenderer = (component)  => {
