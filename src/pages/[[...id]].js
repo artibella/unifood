@@ -41,8 +41,6 @@ export const getStaticProps = async context => {
   const slugString = Array.isArray(slug) ? slug.join('/') : slug;  
   const { preview } = context;
 
-  console.log('preview context', context);
-
   const { composition } = await canvasClient.getCompositionByNodePath({
     projectMapId, 
     projectMapNodePath: slugString ? `/${slugString}` : '/',
@@ -77,8 +75,7 @@ export const getStaticProps = async context => {
 export async function getStaticPaths() {
   const reservedSlugs = [
     '/howtos',
-    '/reviews/restaurants',
-    '/fonts' // seems like static assets also get caught
+    '/reviews/restaurants'
   ];
 
   const { nodes } = await projectMapClient.getNodes({
