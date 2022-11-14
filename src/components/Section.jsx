@@ -6,15 +6,15 @@ export default function Section({ title = '', theme = 'light', children }) {
   const id = slugify(title);
   const sectionClasses = classNames(
     'section', 'py-8', 'lg:py-16',
-    { ['bg-black']: theme === 'dark' },
+    { ['bg-aqua-900']: theme === 'dark' },
     { 'bg-mango-400': theme === 'spring' },
-    { 'bg-ice-100': theme === 'light' },
+    { 'bg-ice-50': theme === 'ice' },
   );
 
   const headingClasses = classNames(
-    'text-4xl', 'text-left', 'mb-16', 'font-bold',
+    'font-bold', 'font-serif', 'text-4xl', 'text-left', 'mb-16',
     { 'text-white': theme === 'dark' },
-    { 'text-gray-900': theme !== 'dark' },
+    { 'text-aqua-900': theme !== 'dark' },
   );
 
 

@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
-const withPlugins = require('next-compose-plugins');
 const withPackages = require('next-transpile-modules')(['react-daisyui']);
 
-const config = {
+const config = withPackages({
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
@@ -48,6 +47,6 @@ const config = {
     contentstackEnvironment: process.env.CONTENTSTACK_ENVIRONMENT,
     gtmStreamId: process.env.GTM_STREAM_ID
   },
-};
+});
 
-module.exports = withPlugins([[withPackages]], config);
+module.exports = config;

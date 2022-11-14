@@ -14,7 +14,7 @@ const renderImage = (imageUrl, title) => {
           />
         </div>
 
-      ) : <></>
+      ) : null
       }
     </>
   )
@@ -22,27 +22,24 @@ const renderImage = (imageUrl, title) => {
 
 export default function GenericHero({ title = '', body = '', imageUrl = '' }) {
   const image = renderImage(imageUrl, title);
-  const placeHolder = (
-    <div className="h-16 w-48"></div>
-  )
 
   return (
     <div className="relative overflow-hidden bg-white">
       <div className="mx-auto max-w-7xl">
-        <div className="relative z-10 bg-white pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
+        <div className="relative z-10 bg-white py-8 sm:py-16 md:py-20 lg:py-28 xl:py-32 lg:w-full lg:max-w-2xl">
 
           <div className="mx-auto mt-10 px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
 
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl font-bold font-serif tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+              <h2 className="text-4xl font-bold font-serif tracking-tight text-aqua-900 sm:text-5xl md:text-6xl">
                 {title}
-              </h1>
+              </h2>
               <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
                 {body}
               </p>
               
               <div className="hero-actions sm:inline-flex items-center justify-center gap-4 mt-8 lg:mt-12 text-center lg:text-left">
-                <Slot name="ctas" emptyPlaceholder={placeHolder} />
+                <Slot name="ctas" emptyPlaceholder={null} />
               </div>
             
             </div>

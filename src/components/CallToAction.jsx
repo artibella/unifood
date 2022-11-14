@@ -6,7 +6,7 @@ const renderPrimaryCta = (title, link, openInNewTab) => {
     <div className="rounded-md shadow">
       <Link href={link}>
         <a
-          className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
+          className="flex w-full items-center justify-center rounded-md border border-transparent bg-mango px-8 py-3 text-base font-medium text-aqua-900 hover:bg-mango-200 md:py-4 md:px-10 md:text-lg"
           target={openInNewTab ? "_blank" : "_self"}
         >
           {title}
@@ -21,7 +21,7 @@ const renderSecondaryCta = (title, link, openInNewTab) => {
     <div className="mt-3 sm:mt-0 sm:ml-3">
       <Link href={link}>
         <a
-          className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-100 px-8 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-200 md:py-4 md:px-10 md:text-lg"
+          className="flex w-full items-center justify-center rounded-md border border-transparent bg-ice px-8 py-3 text-base font-medium text-aqua-900 hover:bg-ice-200 md:py-4 md:px-10 md:text-lg"
           target={openInNewTab ? "_blank" : "_self"}
         >
           {title}
