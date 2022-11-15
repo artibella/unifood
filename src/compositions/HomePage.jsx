@@ -13,13 +13,10 @@ export default function HomePage({ composition }) {
       </Head>
       <div>
         <Composition data={composition} resolveRenderer={appRenderer}>
-          {({ title }) => (
             <div className="container mx-auto px-16">
               <Slot name="mainNavigation" />
 
               <section>
-                <h1 className="text-8xl font-bold text-center mb-16">{title}</h1>
-                {/* add slot component */}
                 <Slot name="mainHero" emptyPlaceholder={placeHolder} />
               </section>
 
@@ -27,7 +24,6 @@ export default function HomePage({ composition }) {
                 <Slot name="sections" emptyPlaceholder={placeHolder} />
               </section>
             </div>
-          )}
         </Composition>
       </div>
     </>
