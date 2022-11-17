@@ -20,6 +20,7 @@ import OpeningHours from '../components/OpeningHours';
 import Tag from '../components/Tag';
 import TabContainer from '../components/TabContainer';
 import TabPanel from '../components/TabPanel';
+import LottieAnimation from '../components/LottieAnimation';
 
 const ComponentsMap = {
   mainNavigation: MainNavigation,
@@ -42,7 +43,8 @@ const ComponentsMap = {
   openingHours: OpeningHours,
   tag: Tag,
   tabContainer: TabContainer,
-  tabPanel: TabPanel
+  tabPanel: TabPanel,
+  lottieAnimation: LottieAnimation
 };
 
 const appRenderer = (component)  => {
