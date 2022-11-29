@@ -41,7 +41,7 @@ export const getStaticProps = async context => {
   // create the Canvas client
   const client = canvasClient;
 
-  const { composition } = await canvasClient.getCompositionByNodePath({
+  const { composition } = await canvasClient.unstable_getCompositionByNodePath({
     projectMapId, 
     projectMapNodePath: `/reviews/restaurants/${slug}`,
     state:
