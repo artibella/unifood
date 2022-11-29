@@ -1,0 +1,13 @@
+composition:
+  _name: Orientation
+  _id: ee458ec5-0960-4278-a01b-a9093f0b0b55
+  _slug: orientation
+  type: recipe
+  parameters: {}
+  slots:
+    mainNavigation:
+      - type: mainNavigation
+        _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+created: '2022-11-11T01:29:47.460418+00:00'
+modified: '2022-11-11T01:29:47.460418+00:00'
+pattern: false

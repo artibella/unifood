@@ -1,0 +1,9 @@
+composition:
+  _name: Cuisine Orientation
+  _id: 737db24a-ca0c-49c7-a5ed-7c6a0184c59d
+  _slug: /cuisine-orientation
+  type: cuisinePage
+  parameters: {}
+created: '2022-11-11T01:38:20.495281+00:00'
+modified: '2022-11-11T09:50:27.116755+00:00'
+pattern: false

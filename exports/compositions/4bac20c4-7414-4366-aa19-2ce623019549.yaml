@@ -1,9 +1,9 @@
 composition:
   _name: Ingredients
   _id: 4bac20c4-7414-4366-aa19-2ce623019549
-  _slug: /ingredients
+  _slug: ingredients
   type: landingpage
   parameters: {}
 created: '2022-11-08T13:39:19.809913+00:00'
-modified: '2022-11-08T13:40:40.77428+00:00'
+modified: '2022-11-12T13:35:20.511884+00:00'
 pattern: false

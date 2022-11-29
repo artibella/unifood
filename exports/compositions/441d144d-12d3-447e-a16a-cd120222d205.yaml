@@ -1,26 +1,41 @@
 composition:
   _name: Northern European
   _id: 441d144d-12d3-447e-a16a-cd120222d205
-  _slug: northern-european
+  _slug: /cuisines/european/northern-european
   type: landingpage
-  parameters: {}
+  parameters:
+    title:
+      type: text
+      value: adfdfd
   slots:
     hero:
-      - _id: 17cf1525-6c79-484d-9750-02076d34accb
+      - _id: 189263eb-bac5-44d6-803f-82853299cbb6
         type: hero
+        slots:
+          ctas:
+            - _id: e23a7aed-c94d-43e8-b0ec-78340d58db73
+              type: callToAction
+              variant: secondary
+              parameters:
+                title:
+                  type: text
+                  value: Buy me
         parameters:
           body:
             type: text
-            value: Replace me
+            value: how are you doing
+          link:
+            type: project_map_link
+            value: /features/x-mas-special
           title:
             type: text
-            value: Hero title
+            value: Hello world
           imageUrl:
             type: text
-            value: http://placekitten.com/800/600
+            value: http://placekitten.com/600/600
           imageAltText:
             type: text
-            value: Replace me
+            value: Kitten
 created: '2022-11-08T14:14:28.008621+00:00'
-modified: '2022-11-08T15:49:03.911329+00:00'
+modified: '2022-11-11T20:50:58.977316+00:00'
 pattern: false

@@ -1,0 +1,43 @@
+composition:
+  _name: Chinese Cuisine
+  _id: 95e6b208-fc43-4b57-a487-6522bd12bcb3
+  _slug: chinese
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - _id: 801c62ec-b95e-4135-99a4-13e8f8ed374d
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/teaserText
+              required: false
+          title:
+            type: text
+            value: Chinese Cuisine
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/image/fields/file/url
+              required: false
+          imageAltText:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/image/fields/description
+              required: false
+  _dataResources:
+    Cuisine:
+      type: cuisineDetails
+      variables:
+        entryIds: 1pJyZbXL8clbOVBsxwppr0
+created: '2022-11-14T09:12:02.572821+00:00'
+modified: '2022-11-14T09:24:57.913609+00:00'
+pattern: false

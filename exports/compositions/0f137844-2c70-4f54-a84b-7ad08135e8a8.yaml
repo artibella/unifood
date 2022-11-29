@@ -1,0 +1,124 @@
+composition:
+  _name: Asian
+  _id: 0f137844-2c70-4f54-a84b-7ad08135e8a8
+  _slug: asian
+  type: cuisinePage
+  parameters: {}
+  slots:
+    hero:
+      - _id: f6044023-e743-4851-b255-ab10336d06ae
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/teaserText
+              required: false
+          title:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/name
+              required: false
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Hero Image/results/2/urls/regular
+              required: false
+    sections:
+      - _id: 96001b17-f8de-405b-963f-7501740ae81c
+        type: sectionContainer
+        slots:
+          content:
+            - _id: ddf3252d-d00c-46f1-a872-13777caf086c
+              type: gridContainer
+              slots:
+                items:
+                  - _id: b20d669f-a98a-4629-a081-0bad8ee9aebe
+                    type: $loop
+                    slots:
+                      body:
+                        - _id: 8929cf8e-d60c-47f3-8ac6-8371165bf56f
+                          type: genericCard
+                          slots:
+                            actions:
+                              - _id: 93b1fd6c-1b10-4628-945c-6ac93c80a6ad
+                                type: callToAction
+                                parameters:
+                                  link:
+                                    type: text
+                                    value: unbound
+                                    connectedData:
+                                      syntax: jptr
+                                      pointer: >-
+                                        /Cuisine narrowerCuisines Loop
+                                        Item/fields/cuisine_slug
+                                      required: false
+                                  title:
+                                    type: text
+                                    value: Read more
+                                  linkPrefix:
+                                    type: text
+                                    value: /cuisines/asian/
+                          parameters:
+                            body:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: >-
+                                  /Cuisine narrowerCuisines Loop
+                                  Item/fields/teaserText
+                                required: false
+                            image:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: >-
+                                  /Cuisine narrowerCuisines Loop
+                                  Item/fields/image/fields/file/url
+                                required: false
+                            title:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: >-
+                                  /Cuisine narrowerCuisines Loop
+                                  Item/fields/name
+                                required: false
+                    _dataResources:
+                      Cuisine narrowerCuisines Loop Item:
+                        type: sys-reserved-loop
+                        variables:
+                          connectedData: /Cuisine/fields/narrowerCuisines
+                          connectedDataRequired: 'false'
+              parameters:
+                columns:
+                  type: number
+                  value: '2'
+        parameters:
+          theme:
+            type: select
+            value: mango
+          title:
+            type: text
+            value: Taste of Asia
+  _dataResources:
+    Cuisine:
+      type: cuisineDetails
+      variables:
+        entryIds: 5VGTtwFn9NGiPsB8T4cmtK
+    Hero Image:
+      type: unsplashPhotoSearch
+      variables:
+        query: ramen
+created: '2022-11-11T15:43:19.592871+00:00'
+modified: '2022-11-16T18:11:33.304403+00:00'
+pattern: false

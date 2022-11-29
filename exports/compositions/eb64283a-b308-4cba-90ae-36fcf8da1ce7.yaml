@@ -1,7 +1,7 @@
 composition:
   _name: Recipes
   _id: eb64283a-b308-4cba-90ae-36fcf8da1ce7
-  _slug: /recipes
+  _slug: recipes
   type: landingpage
   parameters:
     title:
@@ -175,7 +175,7 @@ composition:
               parameters:
                 theme:
                   type: select
-                  value: spring
+                  value: dark
                 title:
                   type: text
                   value: Featured vegetarian pasta recipe
@@ -298,39 +298,12 @@ composition:
                   type: number
                   value: '3'
         parameters:
+          theme:
+            type: select
+            value: spring
           title:
             type: text
-            value: Recipes from Contentstack
-      - _id: b05d254b-5be1-4a03-8d42-4c5351487dee
-        type: recipeList
-        parameters:
-          titel:
-            type: text
             value: Latest recipes
-          recipes:
-            type: contentfulQuery
-            value:
-              count: 3
-              sortBy: sys.updatedAt
-              source: default
-              sortOrder: desc
-              contentType: recipe
-      - _id: c263c890-aa7d-439f-a4c0-4b3f852fdc7c
-        type: genericCard
-        _pattern: 2c57c7a1-a8c1-4e04-a647-2118fca693fa
-        _dataResources:
-          Product:
-            type: sys-reserved-alias
-            variables:
-              data: Coffee maker
-      - _id: 7f36095f-d651-4ffe-87bb-914739d63f8a
-        type: genericCard
-        _pattern: c0e26e88-3792-4da9-96f2-2b259577ff32
-        _dataResources:
-          Default Recipe:
-            type: sys-reserved-alias
-            variables:
-              data: Lemon pasta
   _dataResources:
     recipes:
       type: recipesContentstack
@@ -343,6 +316,9 @@ composition:
       type: recipeByIdcontentstack
       variables:
         recipeID: bltc0e29f5dc145e52e
+    Food images:
+      type: pexelsSearch
+      variables: {}
     Lemon pasta:
       type: recipeByIdcontentstack
       variables:
@@ -355,6 +331,10 @@ composition:
       type: recipeByIdcontentstack
       variables:
         recipeID: bltc0e29f5dc145e52e
+    Other product:
+      type: bigcommerceProduct
+      variables:
+        Product ID: '86'
     Australia Pics:
       type: unsplashPhotoSearch
       variables:
@@ -380,5 +360,5 @@ composition:
         recipeID: bltc0e29f5dc145e52e
       isPatternParameter: true
 created: '2022-09-19T08:25:54.222034+00:00'
-modified: '2022-11-07T18:30:36.356092+00:00'
+modified: '2022-11-15T13:37:51.733823+00:00'
 pattern: false

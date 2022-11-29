@@ -11,6 +11,7 @@ archetype: contentfulEntry
 variables:
   entryIds:
     type: string
+    setBy: static
     default: n/a
 parameters:
   sys.id[in]: ${entryIds}

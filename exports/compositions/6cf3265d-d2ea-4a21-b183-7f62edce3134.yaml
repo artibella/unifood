@@ -1,0 +1,28 @@
+composition:
+  _name: Indian
+  _id: 6cf3265d-d2ea-4a21-b183-7f62edce3134
+  _slug: indian
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - _id: 53bbdf10-a4e9-4353-93e8-0f62e1ead4bc
+        type: hero
+        _pattern: 69a2a2bf-583a-4fb4-bdfe-26a4e1a4dade
+        _dataResources:
+          Hero Cuisine:
+            type: sys-reserved-alias
+            variables:
+              data: Cuisine
+  _dataResources:
+    Cuisine:
+      type: cuisineDetails
+      variables:
+        entryIds: 2UZs1dEXHV8rPjzzeFdpg9
+    Hero Image:
+      type: unsplashPhotoSearch
+      variables:
+        query: curry
+created: '2022-11-12T11:27:57.710654+00:00'
+modified: '2022-11-14T11:17:04.6868+00:00'
+pattern: false

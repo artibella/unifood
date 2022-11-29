@@ -36,6 +36,7 @@ slots:
       - genericCard
       - sectionContainer
       - gridContainer
+      - tabContainer
     inheritAllowedComponents: false
 defaults:
   type: homepage
@@ -68,4 +69,4 @@ defaults:
 titleParameter: title
 canBeComposition: true
 created: '2022-09-15T08:38:28.317895+00:00'
-updated: '2022-10-19T15:34:16.971313+00:00'
+updated: '2022-11-13T17:55:11.817191+00:00'

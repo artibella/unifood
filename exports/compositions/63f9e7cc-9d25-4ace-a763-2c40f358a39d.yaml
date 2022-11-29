@@ -1,0 +1,43 @@
+composition:
+  _name: Japanese
+  _id: 63f9e7cc-9d25-4ace-a763-2c40f358a39d
+  _slug: /cuisines/asion/japanese
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - _id: 4e47d3e2-247d-49f7-be8c-e059d18677d5
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/teaserText
+              required: false
+          title:
+            type: text
+            value: Japanese Cuisine
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/image/fields/file/url
+              required: false
+          imageAltText:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/image/fields/title
+              required: false
+  _dataResources:
+    Cuisine:
+      type: cuisineDetails
+      variables:
+        entryIds: 3A4XB84TOM6iuMTSQLGx5L
+created: '2022-11-11T16:46:11.57626+00:00'
+modified: '2022-11-14T09:50:10.558311+00:00'
+pattern: false

@@ -1,0 +1,18 @@
+composition:
+  _name: Test review
+  _id: 49adf271-c688-450e-937b-8593bbf3cff2
+  _slug: /reviews/restaurants/test-review
+  type: restaurantReview
+  parameters:
+    title:
+      type: text
+      value: Test review
+    rating:
+      type: number
+      value: '8'
+    priceRange:
+      type: number
+      value: '2'
+created: '2022-11-11T13:16:11.176894+00:00'
+modified: '2022-11-13T20:06:23.821768+00:00'
+pattern: false

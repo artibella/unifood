@@ -76,6 +76,9 @@ composition:
                           connectedData: /Review List/entries
                           connectedDataRequired: 'false'
         parameters:
+          theme:
+            type: select
+            value: ice
           title:
             type: text
             value: Reviews
@@ -267,5 +270,5 @@ composition:
       variables:
         query: restaurant
 created: '2022-10-05T10:05:03.438145+00:00'
-modified: '2022-11-04T13:14:27.121347+00:00'
+modified: '2022-11-13T23:40:44.227265+00:00'
 pattern: false

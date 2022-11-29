@@ -1,0 +1,43 @@
+composition:
+  _name: Vietnamese
+  _id: 9c24f80c-9702-4744-8a2e-e718b707862f
+  _slug: vietnamese
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - _id: 36b987a8-cf8d-4cbb-9b81-4c1083fe5203
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/teaserText
+              required: false
+          title:
+            type: text
+            value: Vietnamese Cuisine
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/image/fields/file/url
+              required: false
+          imageAltText:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/image/fields/title
+              required: false
+  _dataResources:
+    Cuisine:
+      type: cuisineDetails
+      variables:
+        entryIds: 3xOM42QskFKpYZnazYaSEh
+created: '2022-11-11T21:04:21.75256+00:00'
+modified: '2022-11-14T09:33:57.790386+00:00'
+pattern: false

@@ -10,6 +10,7 @@ archetype: default
 variables:
   slug:
     type: text
+    setBy: static
     default: how-to-peel-grate-and-chop-ginger
     displayName: Howto slug
 dataSourceId: contentstackUnifood

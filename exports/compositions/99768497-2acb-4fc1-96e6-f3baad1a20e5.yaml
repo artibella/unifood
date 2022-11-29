@@ -1,0 +1,47 @@
+composition:
+  _name: Austrian Cuisine
+  _id: 99768497-2acb-4fc1-96e6-f3baad1a20e5
+  _slug: austrian-cuisine
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - _id: 40fc639e-6991-453a-bf15-206e4e54d837
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/teaserText
+              required: false
+          title:
+            type: text
+            value: Austrian cuisine
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Hero Image/results/2/urls/regular
+              required: false
+          imageAltText:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Hero Image/results/2/alt_description
+              required: false
+  _dataResources:
+    Cuisine:
+      type: cuisineDetails
+      variables:
+        entryIds: 6JSWyD5baOCTnijaZyc0E8
+    Hero Image:
+      type: unsplashPhotoSearch
+      variables:
+        query: Schnitzel
+created: '2022-11-14T01:42:33.434939+00:00'
+modified: '2022-11-14T01:49:42.747403+00:00'
+pattern: false

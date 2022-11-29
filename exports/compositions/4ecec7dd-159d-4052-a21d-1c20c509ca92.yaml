@@ -1,0 +1,43 @@
+composition:
+  _name: Thai
+  _id: 4ecec7dd-159d-4052-a21d-1c20c509ca92
+  _slug: thai
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - _id: 448b124d-78e3-4c08-934a-1da03c7c620a
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/teaserText
+              required: false
+          title:
+            type: text
+            value: Thai Cuisine
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/image/fields/file/url
+              required: false
+          imageAltText:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/image/fields/title
+              required: false
+  _dataResources:
+    Cuisine:
+      type: cuisineDetails
+      variables:
+        entryIds: 47rAJhE6M6bunMJPBQA6lk
+created: '2022-11-11T20:32:12.184884+00:00'
+modified: '2022-11-14T09:49:51.415253+00:00'
+pattern: false

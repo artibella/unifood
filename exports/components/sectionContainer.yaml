@@ -21,6 +21,8 @@ parameters:
           value: spring
         - text: Ice
           value: ice
+        - text: Mango
+          value: mango
 useTeamPermissions: true
 slots:
   - id: content
@@ -44,8 +46,10 @@ slots:
       - howtoSection
       - kitchensink
       - linkList
+      - tabContainer
+      - lottieAnimation
     inheritAllowedComponents: false
 titleParameter: title
 canBeComposition: false
 created: '2022-10-19T14:23:35.307515+00:00'
-updated: '2022-11-02T15:22:04.311702+00:00'
+updated: '2022-11-17T09:25:24.626465+00:00'

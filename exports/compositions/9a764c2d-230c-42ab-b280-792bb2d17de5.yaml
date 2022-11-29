@@ -1,7 +1,7 @@
 composition:
   _name: Rembrandt Burger
   _id: 9a764c2d-230c-42ab-b280-792bb2d17de5
-  _slug: /reviews/restaurants/rembrandt-burger
+  _slug: rembrandt-burger
   type: restaurantReview
   parameters:
     title:
@@ -169,5 +169,5 @@ composition:
             type: number
             value: '2'
 created: '2022-10-27T14:05:15.93826+00:00'
-modified: '2022-10-27T14:50:59.865536+00:00'
+modified: '2022-11-12T11:41:45.186286+00:00'
 pattern: false

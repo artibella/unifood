@@ -6,12 +6,8 @@ method: GET
 purgeKey: a92fde62-de67-408f-aafd-d67ddff9070e
 archetype: default
 variables:
-  sku:
+  Product SKU:
     type: text
     default: ABS
-    displayName: Product SKU
-parameters:
-  include: images,primary_image
-  keyword: ${sku}
 dataSourceId: bigcommerce
 allowedOnComponents: []

@@ -24,11 +24,6 @@ parameters:
     type: text
     helpText: ''
     typeConfig: null
-  - id: reservationLink
-    name: Reservation Link
-    type: sitemap_link
-    helpText: e.g. Opentable link
-    typeConfig: null
 useTeamPermissions: true
 slots:
   - id: openingHours
@@ -52,4 +47,4 @@ slots:
 titleParameter: title
 canBeComposition: false
 created: '2022-09-30T12:09:05.076485+00:00'
-updated: '2022-10-05T10:16:51.450219+00:00'
+updated: '2022-11-11T13:27:19.489755+00:00'

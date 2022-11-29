@@ -1,0 +1,13 @@
+composition:
+  _name: Orientation2
+  _id: 98ca6e90-f4eb-4d7a-bbec-33a07f1e70bf
+  _slug: orientation2
+  type: recipe
+  parameters: {}
+  slots:
+    mainNavigation:
+      - type: mainNavigation
+        _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
+created: '2022-11-11T01:36:23.26384+00:00'
+modified: '2022-11-11T01:36:23.26384+00:00'
+pattern: false

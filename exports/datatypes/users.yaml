@@ -9,10 +9,12 @@ archetype: default
 variables:
   seed:
     type: text
+    setBy: static
     default: bentobento
     displayName: Seed string (for stable results)
   results:
     type: number
+    setBy: static
     default: '100'
     displayName: Number of results
 parameters:

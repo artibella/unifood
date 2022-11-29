@@ -11,16 +11,77 @@ composition:
         parameters:
           body:
             type: text
-            value: Replace me
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/teaserText
+              required: false
           title:
             type: text
-            value: Hero title
+            value: Western European
           imageUrl:
             type: text
-            value: http://placekitten.com/800/600
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Hero Image/results/1/urls/regular
+              required: false
           imageAltText:
             type: text
             value: Replace me
+    sections:
+      - _id: 2ab6f6e4-9819-4ce8-95aa-0962e3a583ce
+        type: sectionContainer
+        slots:
+          content:
+            - _id: 32aaa88b-9bdd-457e-b16c-2252e0744874
+              type: tabContainer
+              slots:
+                tabs:
+                  - _id: 2b83e79d-3d77-4147-bc08-3a0e04bb9c8d
+                    type: tabPanel
+                    slots:
+                      content:
+                        - _id: 8b707ef5-41b6-4640-9f43-6a8a1b7cfdfa
+                          type: textBlock
+                          parameters:
+                            title:
+                              type: text
+                              value: Content for 🇫🇷
+                    parameters:
+                      title:
+                        type: text
+                        value: 🇫🇷 French Cuisine
+                  - _id: 68888b29-753e-429e-8de2-3d007f3e98fe
+                    type: tabPanel
+                    slots:
+                      content:
+                        - _id: 4f507a1f-6355-4c2d-aaa3-3d6f77581ec9
+                          type: textBlock
+                          parameters:
+                            body:
+                              type: text
+                              value: Hello tab 2
+                            title:
+                              type: text
+                              value: Content for 🇦🇹
+                    parameters:
+                      title:
+                        type: text
+                        value: 🇦🇹 Austrian Cuisine
+        parameters:
+          theme:
+            type: select
+            value: ice
+  _dataResources:
+    Cuisine:
+      type: cuisineDetails
+      variables:
+        entryIds: nvfDbBGXHYw5RzDrBSKrk
+    Hero Image:
+      type: unsplashPhotoSearch
+      variables:
+        query: french cuisine
 created: '2022-11-08T14:12:10.048211+00:00'
-modified: '2022-11-08T15:49:17.688128+00:00'
+modified: '2022-11-14T01:35:32.464663+00:00'
 pattern: false

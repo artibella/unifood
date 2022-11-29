@@ -1,14 +1,17 @@
 id: bigcommerceProduct
 displayName: BigCommerce Product
+ttl: 100
 body: ''
-path: /catalog/products/${product_id}?include=primary_image,images
+path: /catalog/products/${Product ID}
 method: GET
 purgeKey: a92fde62-de67-408f-aafd-d67ddff9070e
 archetype: default
 variables:
-  product_id:
+  Product ID:
     type: text
     default: '88'
-    displayName: Product ID
+parameters:
+  - key: include
+    value: primary_image,images
 dataSourceId: bigcommerce
 allowedOnComponents: []

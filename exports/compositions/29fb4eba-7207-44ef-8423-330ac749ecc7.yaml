@@ -1,7 +1,7 @@
 composition:
   _name: Howto Detail
   _id: 29fb4eba-7207-44ef-8423-330ac749ecc7
-  _slug: /howtos/howto-detail
+  _slug: howto-detail
   type: howtoTemplate
   parameters:
     body:
@@ -138,5 +138,5 @@ composition:
       type: howtoBySlugcsDynamic
       variables: {}
 created: '2022-10-28T11:45:54.494793+00:00'
-modified: '2022-11-04T10:16:07.494319+00:00'
+modified: '2022-11-14T11:35:24.688437+00:00'
 pattern: false

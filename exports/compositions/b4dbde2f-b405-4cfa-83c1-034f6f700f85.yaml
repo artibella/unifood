@@ -1,0 +1,43 @@
+composition:
+  _name: Korean
+  _id: b4dbde2f-b405-4cfa-83c1-034f6f700f85
+  _slug: korean
+  type: landingpage
+  parameters: {}
+  slots:
+    hero:
+      - _id: 84a6cee7-929b-4ca7-adcc-64dd6f0fefe6
+        type: hero
+        parameters:
+          body:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/teaserText
+              required: false
+          title:
+            type: text
+            value: Korean Cuisine
+          imageUrl:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/image/fields/file/url
+              required: false
+          imageAltText:
+            type: text
+            value: unbound
+            connectedData:
+              syntax: jptr
+              pointer: /Cuisine/fields/image/fields/title
+              required: false
+  _dataResources:
+    Cuisine:
+      type: cuisineDetails
+      variables:
+        entryIds: 6LRsaVlPFLqlQwVuGybzDY
+created: '2022-11-14T13:36:04.424459+00:00'
+modified: '2022-11-14T13:37:21.119991+00:00'
+pattern: false

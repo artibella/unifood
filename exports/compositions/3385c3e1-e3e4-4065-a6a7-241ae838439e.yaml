@@ -38,9 +38,16 @@ composition:
         type: $loop
         slots:
           body:
-            - _id: 24c11965-1a1a-4d19-93fe-49f5adec07bb
+            - _id: 1b242d6e-3c0f-49ab-8a50-fa06290808b5
               type: tag
+              variant: outline
               parameters:
+                size:
+                  type: select
+                  value: lg
+                color:
+                  type: select
+                  value: 'primary '
                 label:
                   type: text
                   value: unbound
@@ -59,9 +66,16 @@ composition:
         type: $loop
         slots:
           body:
-            - _id: a19f3ba4-d43c-4b6b-abe3-e457b7b3ebf1
+            - _id: 3c0e2f13-5132-4528-bbef-cccc470f1b7a
               type: tag
+              variant: outline
               parameters:
+                size:
+                  type: select
+                  value: lg
+                color:
+                  type: select
+                  value: 'primary '
                 label:
                   type: text
                   value: unbound
@@ -117,5 +131,5 @@ composition:
         reviewID: blt11a0103e6ce9e9db
       isPatternParameter: true
 created: '2022-10-25T12:12:30.710121+00:00'
-modified: '2022-11-02T10:06:01.839746+00:00'
+modified: '2022-11-11T14:09:20.74708+00:00'
 pattern: true

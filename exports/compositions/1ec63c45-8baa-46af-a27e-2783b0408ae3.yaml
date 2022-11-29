@@ -1,0 +1,9 @@
+composition:
+  _name: Reviews
+  _id: 1ec63c45-8baa-46af-a27e-2783b0408ae3
+  _slug: reviews
+  type: landingpage
+  parameters: {}
+created: '2022-11-13T19:32:22.023203+00:00'
+modified: '2022-11-13T19:33:01.525903+00:00'
+pattern: false

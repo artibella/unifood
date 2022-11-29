@@ -13,7 +13,6 @@ slots:
     name: Hero
     allowedComponents:
       - hero
-      - recipeHero
       - $personalization
       - $test
       - $localization
@@ -29,4 +28,4 @@ slots:
     inheritAllowedComponents: false
 canBeComposition: true
 created: '2022-09-15T08:38:28.545068+00:00'
-updated: '2022-10-25T12:08:30.364207+00:00'
+updated: '2022-11-15T11:48:36.729199+00:00'

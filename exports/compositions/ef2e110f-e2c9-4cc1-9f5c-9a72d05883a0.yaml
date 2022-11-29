@@ -4,6 +4,84 @@ composition:
   _slug: /cuisines
   type: cuisinePage
   parameters: {}
+  slots:
+    sections:
+      - _id: 87b74193-7345-4687-853a-401cc50a3f43
+        type: sectionContainer
+        slots:
+          content:
+            - _id: a1d5113f-8ed7-4fd3-9670-5bb04fd2161a
+              type: gridContainer
+              slots:
+                items:
+                  - _id: 28adc803-a975-4ee2-b876-d142b843690d
+                    type: lottieAnimation
+                    parameters:
+                      id:
+                        type: text
+                        value: loader
+                      src:
+                        type: text
+                        value: /animations/food-loader.json
+                      loop:
+                        type: checkbox
+                        value: true
+                      width:
+                        type: text
+                        value: 400px
+                      height:
+                        type: text
+                        value: 400px
+                      autoplay:
+                        type: checkbox
+                        value: true
+                  - _id: 7c07651b-2917-4fd8-a24a-6ffe0e4d6437
+                    type: lottieAnimation
+                    parameters:
+                      src:
+                        type: text
+                        value: https://assets9.lottiefiles.com/temp/lf20_nXwOJj.json
+                      loop:
+                        type: checkbox
+                        value: true
+                      autoplay:
+                        type: checkbox
+                        value: true
+                  - _id: b10024e9-ee78-47dd-82d1-f657fba483d2
+                    type: lottieAnimation
+                    parameters:
+                      id:
+                        type: text
+                        value: burger
+                      src:
+                        type: text
+                        value: >-
+                          https://assets10.lottiefiles.com/packages/lf20_qhrekn5q.json
+                      loop:
+                        type: checkbox
+                        value: true
+                      width:
+                        type: text
+                        value: 300px
+                      height:
+                        type: text
+                        value: 300px
+                      autoplay:
+                        type: checkbox
+                        value: true
+              parameters:
+                columns:
+                  type: number
+                  value: '2'
+  _dataResources:
+    Asian:
+      type: cuisineDetails
+      variables:
+        entryIds: 5VGTtwFn9NGiPsB8T4cmtK
+    European:
+      type: cuisineDetails
+      variables:
+        entryIds: 122hxaYxWvEw47PPRgw1zS
 created: '2022-09-29T08:49:28.938651+00:00'
-modified: '2022-11-08T15:44:51.241064+00:00'
+modified: '2022-11-17T12:31:47.322944+00:00'
 pattern: false

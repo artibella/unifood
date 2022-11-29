@@ -1,0 +1,42 @@
+composition:
+  _name: Cuisine Hero
+  _id: 69a2a2bf-583a-4fb4-bdfe-26a4e1a4dade
+  type: hero
+  parameters:
+    body:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Hero Cuisine/fields/teaserText
+        required: false
+    title:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Hero Cuisine/fields/name
+        required: false
+    imageUrl:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Hero Cuisine/fields/image/fields/file/url
+        required: false
+    imageAltText:
+      type: text
+      value: unbound
+      connectedData:
+        syntax: jptr
+        pointer: /Hero Cuisine/fields/image/fields/title
+        required: false
+  _dataResources:
+    Hero Cuisine:
+      type: cuisineDetails
+      variables:
+        entryIds: 47rAJhE6M6bunMJPBQA6lk
+      isPatternParameter: true
+created: '2022-11-14T11:09:09.89437+00:00'
+modified: '2022-11-14T18:28:19.575276+00:00'
+pattern: true

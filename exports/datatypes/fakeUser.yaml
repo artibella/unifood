@@ -55,6 +55,7 @@ custom:
       age: 18
       date: '2004-05-10T19:56:41.879Z'
 method: GET
+purgeKey: 97248307-ad6c-4cdc-aa23-6f5b21aba182
 archetype: staticData
 dataSourceId: fakeUserJson
 allowedOnComponents: []

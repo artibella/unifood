@@ -39,25 +39,8 @@ slots:
       - contributorList
       - gridContainer
       - linkList
+      - tabContainer
     inheritAllowedComponents: false
-defaults:
-  type: landingpage
-  slots:
-    hero:
-      - type: hero
-        parameters:
-          body:
-            type: text
-            value: Replace me
-          title:
-            type: text
-            value: Hero title
-          imageUrl:
-            type: text
-            value: http://placekitten.com/800/600
-          imageAltText:
-            type: text
-            value: Replace me
 canBeComposition: true
 created: '2022-09-15T08:38:28.644659+00:00'
-updated: '2022-11-03T08:20:42.71148+00:00'
+updated: '2022-11-13T19:39:03.106088+00:00'
