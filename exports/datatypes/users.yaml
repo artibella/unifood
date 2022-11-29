@@ -1,25 +1,24 @@
 id: users
 displayName: Random Users
-body: ''
 path: /api
 method: GET
-headers: {}
 purgeKey: 6469f6f3-8391-4aaa-8374-cc94169b9944
 archetype: default
 variables:
   seed:
     type: text
-    setBy: static
-    default: bentobento
-    displayName: Seed string (for stable results)
+    default: unifood
+    helpText: Seed string (for stable results)
   results:
-    type: number
-    setBy: static
+    type: text
     default: '100'
-    displayName: Number of results
+    helpText: Number of results
 parameters:
-  inc: name,picture,gender,nat
-  seed: ${seed}
-  results: ${results}
+  - key: inc
+    value: name,picture,gender,nat
+  - key: seed
+    value: ${seed}
+  - key: results
+    value: ${results}
 dataSourceId: randomUsers
 allowedOnComponents: []

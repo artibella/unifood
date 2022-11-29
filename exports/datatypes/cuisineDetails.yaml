@@ -2,6 +2,7 @@ id: cuisineDetails
 displayName: Cuisine Details
 path: /entries
 custom:
+  multiSelect: false
   allowedContentTypes:
     cuisine:
       id: cuisine
@@ -12,9 +13,9 @@ archetype: contentfulEntry
 variables:
   entryIds:
     type: string
-    setBy: static
     default: n/a
 parameters:
+  include: '1'
   sys.id[in]: ${entryIds}
 dataSourceId: contentful
 allowedOnComponents: []

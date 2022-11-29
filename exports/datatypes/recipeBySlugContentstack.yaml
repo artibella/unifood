@@ -1,13 +1,16 @@
 id: recipeBySlugContentstack
 displayName: Recipe by Slug (Contentstack)
-path: '/content_types/recipe/entries/?query={"url": "${slug}"}'
+path: /content_types/recipe/entries/
 method: GET
+purgeKey: 7cf6b884-0b94-4a64-bacc-1e310a174efd
 archetype: default
 variables:
   slug:
     type: text
-    setBy: static
     default: /watermelon-salad-with-mint-and-feta
-    displayName: Recipe slug
+    helpText: Recipe Slug
+parameters:
+  - key: query
+    value: '{"url": "${slug}"}'
 dataSourceId: contentstackUnifood
 allowedOnComponents: []

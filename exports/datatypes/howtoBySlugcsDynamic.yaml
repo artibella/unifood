@@ -1,16 +1,21 @@
 id: howtoBySlugcsDynamic
 displayName: Howto by Slug (CS, dynamic)
-path: >-
-  /content_types/howto_article/entries/?query={"url":
-  "${slug}"}&include[]=related_ingredient&include[]=related_howtos
+body: ''
+path: /content_types/howto_article/entries/
 method: GET
 purgeKey: f1b4019f-f7b8-415a-a9b3-2b0ab00cc868
 archetype: default
 variables:
   slug:
     type: text
-    setBy: dynamic
     default: how-to-peel-grate-and-chop-ginger
-    displayName: Howto slug
+    helpText: Howto slug
+parameters:
+  - key: query
+    value: '{"url": "${slug}"}'
+  - key: include[]
+    value: related_ingredient
+  - key: include[]
+    value: related_howtos
 dataSourceId: contentstackUnifood
 allowedOnComponents: []

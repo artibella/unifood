@@ -1,6 +1,5 @@
 id: recipeByIdrest
 displayName: Recipe by ID (REST)
-body: ''
 path: /entries/${recipeID}
 method: GET
 purgeKey: f72002f4-dcd4-4e6f-9bd4-b2f64484066b
@@ -8,10 +7,10 @@ archetype: default
 variables:
   recipeID:
     type: text
-    setBy: static
     default: 63zkW3nAH7z36PCRdewyeE
-    displayName: Recipe ID
+    helpText: Recipe ID
 parameters:
-  content_type: recipe
+  - key: content_type
+    value: recipe
 dataSourceId: contentfulRest
 allowedOnComponents: []

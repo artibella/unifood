@@ -2,12 +2,12 @@ id: recipeByIdcontentstack
 displayName: Recipe by ID (Contentstack)
 path: /content_types/recipe/entries/${recipeID}
 method: GET
+purgeKey: 05dddfc4-8f1d-4964-b0c0-91a32dfb3e73
 archetype: default
 variables:
   recipeID:
     type: text
-    setBy: static
     default: bltd58bc990b6e94759
-    displayName: Recipe ID
+    helpText: Recipe ID
 dataSourceId: contentstackUnifood
 allowedOnComponents: []

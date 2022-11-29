@@ -1,15 +1,18 @@
 id: restaurantByIdcontentstack
 displayName: Restaurant by ID (Contentstack)
-body: ''
-path: >-
-  /content_types/restaurant/entries/${restaurantID}?include[]=cuisines&include[]=diets
+path: /content_types/restaurant/entries/${restaurantID}
 method: GET
+purgeKey: c4957ef0-e121-4330-ab7b-1c296d0af6d9
 archetype: default
 variables:
   restaurantID:
     type: text
-    setBy: static
     default: blt918a81027408e2f2
-    displayName: Restaurant ID
+    helpText: Restaurant ID
+parameters:
+  - key: include[]
+    value: cuisines
+  - key: include[]
+    value: diets
 dataSourceId: contentstackUnifood
 allowedOnComponents: []

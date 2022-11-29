@@ -2,18 +2,20 @@ id: recipecontentful
 displayName: Recipe (Contentful)
 path: /entries
 custom:
+  multiSelect: false
   allowedContentTypes:
     recipe:
       id: recipe
-      name: Recipe
+      name: 🥣 - Recipe
 method: GET
+purgeKey: 420efbec-0261-491b-ba78-caeeaf29e29e
 archetype: contentfulEntry
 variables:
   entryIds:
     type: string
-    setBy: static
     default: n/a
 parameters:
+  include: '1'
   sys.id[in]: ${entryIds}
 dataSourceId: contentful
 allowedOnComponents: []

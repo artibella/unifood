@@ -2,14 +2,15 @@ id: randomUser
 displayName: Random User
 path: /api/
 method: GET
+purgeKey: 4aa8543b-5906-4c10-812c-e5d5872374c7
 archetype: default
 variables:
   seed:
     type: text
-    setBy: static
-    default: bentobento
-    displayName: Seed string (for stable results)
+    default: Unifood
+    helpText: Seed string (for stable results)
 parameters:
-  seed: ${seed}
+  - key: seed
+    value: ${seed}
 dataSourceId: randomUsers
 allowedOnComponents: []

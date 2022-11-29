@@ -6,7 +6,7 @@ custom:
   allowedContentTypes:
     recipe:
       id: recipe
-      name: Recipe
+      name: 🥣 - Recipe
 method: GET
 purgeKey: 88370ab8-712e-4159-9843-03ddd730fb98
 archetype: contentfulQuery

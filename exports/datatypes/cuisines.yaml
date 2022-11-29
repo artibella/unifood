@@ -1,6 +1,5 @@
 id: cuisines
 displayName: Cuisines
-body: ''
 path: /entries
 custom:
   allowedContentTypes:
@@ -13,15 +12,12 @@ archetype: contentfulQuery
 variables:
   limit:
     type: string
-    setBy: static
     default: '5'
   order:
     type: string
-    setBy: static
     default: '-sys.updatedAt'
   contentType:
     type: string
-    setBy: static
     default: __any__
 parameters:
   limit: ${limit}
