@@ -1,9 +1,9 @@
 import { Slot } from '@uniformdev/canvas-react';
 import Link from 'next/link'
-import { Card } from 'react-daisyui';
+import { Badge, Card } from 'react-daisyui';
 import isHtml from 'is-html';
 
-export default function GenericCard({ title = '', image, body = '' }) {
+export default function GenericCard({ title = '', byline = '', image, body = ''}) {
 
   return (
     <Card className='bg-white hover:-translate-y-2 transition-transform ease-in-out delay-150 duration-300'>
@@ -12,6 +12,11 @@ export default function GenericCard({ title = '', image, body = '' }) {
         alt={title}
       />
       <Card.Body>
+        { byline && (
+          <Badge variant='outline' className='block'>
+            {byline}
+          </Badge>
+        ) }
         <Card.Title 
           tag="h4" 
           className="text-xl hover:underline hover:underline-offset-1"

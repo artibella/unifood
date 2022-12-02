@@ -2,17 +2,17 @@
   "project": {
     "pz": {
       "agg": {
-        "meatLovers": {
-          "inputs": [
-            {
-              "dim": "meatLoverQuerystring"
-            }
-          ]
-        },
         "vegetarianAudience": {
           "inputs": [
             {
               "dim": "vegetarian"
+            }
+          ]
+        },
+        "meatLovers": {
+          "inputs": [
+            {
+              "dim": "meatLoverQuerystring"
             }
           ]
         },
@@ -72,6 +72,9 @@
         }
       }
     },
-    "test": {}
+    "test": {
+      "veganTest": {},
+      "pastaTest": {}
+    }
   }
 }

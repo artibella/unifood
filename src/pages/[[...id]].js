@@ -1,12 +1,9 @@
 import React from 'react';
-import Head from 'next/head';
 import getConfig from "next/config";
 import { enhance, CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
-import { Composition, createApiEnhancer, Slot, useCompositionInstance } from "@uniformdev/canvas-react";
-import { useLivePreviewNextStaticProps } from "../hooks/useLivePreviewNextStaticProps";
-import { canvasClient, getCompositionList } from '../lib/canvas';
+import { useContextualEditing, createApiEnhancer } from "@uniformdev/canvas-react";
+import { canvasClient } from '../lib/canvas';
 import { getEnhancers } from '../lib/enhancers/enhancers';
-import appRenderer from '../compositions/appRenderer';
 import { projectMapClient } from '../lib/projectMap';
 import { compositionRenderer } from '../compositions/compositionRenderer';
 
@@ -18,20 +15,18 @@ const {
 } = getConfig();
 
 
-export default function DynamicComposition({ composition }) {
-  useLivePreviewNextStaticProps({
-    compositionId: composition?._id,
-    projectId: projectId,
-  });
-  const { composition: compositionInstance } = useCompositionInstance({
-    composition,
+export default function DynamicComposition({ composition: initialCompositionValue }) {
+  // enable contextual editing
+  const { composition } = useContextualEditing({ 
+    initialCompositionValue,
     enhance: createApiEnhancer({
-      apiUrl: '/api/preview'
-    }),
+      apiUrl: '/api/preview',
+    })
   });
-  const CompositionType = compositionRenderer(compositionInstance);
+  // get composition type
+  const CompositionType = compositionRenderer(composition);
   return (
-    <CompositionType composition={compositionInstance} />
+    <CompositionType composition={composition} />
   )
 };
 
@@ -49,9 +44,7 @@ export const getStaticProps = async context => {
         ? CANVAS_DRAFT_STATE
         : CANVAS_PUBLISHED_STATE,
     unstable_resolveData: true
-      
-    }
-  );
+  });
 
   // return 404 if no composition is found
   if (!composition) {

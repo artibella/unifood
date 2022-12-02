@@ -1,10 +1,9 @@
 import React from 'react';
 import { enhance } from "@uniformdev/canvas";
-import { createApiEnhancer, useCompositionInstance } from "@uniformdev/canvas-react";
+import { useContextualEditing, createApiEnhancer } from "@uniformdev/canvas-react";
 import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
 import { canvasClient } from '../../../lib/canvas';
 import { getEnhancers } from '../../../lib/enhancers/enhancers';
-import { useLivePreviewNextStaticProps } from '../../../hooks/useLivePreviewNextStaticProps';
 import RestaurantReview from '../../../compositions/RestaurantReview';
 import { projectMapClient } from '../../../lib/projectMap';
 import getConfig from 'next/config';
@@ -17,20 +16,17 @@ const {
 } = getConfig();
 
 
-export default function RestaurantReviewComposition({ composition }) {
-  useLivePreviewNextStaticProps({
-    compositionId: composition?._id,
-    projectId: process.env.UNIFORM_PROJECT_ID,
-  });
-  const { composition: compositionInstance } = useCompositionInstance({
-    composition,
+export default function RestaurantReviewComposition({ composition: initialCompositionValue }) {
+  // enable contextual editing
+  const { composition } = useContextualEditing({ 
+    initialCompositionValue,
     enhance: createApiEnhancer({
-      apiUrl: '/api/preview'
-    }),
+      apiUrl: '/api/preview',
+    })
   });
-  
+
   return (
-    <RestaurantReview composition={compositionInstance} />
+    <RestaurantReview composition={composition} />
   )
 };
 

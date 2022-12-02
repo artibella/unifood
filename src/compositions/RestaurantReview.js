@@ -9,27 +9,24 @@ export default function RestaurantReview({composition}) {
         <title>{composition.parameters.title?.value}</title>
       </Head>
       <Composition data={composition} resolveRenderer={appRenderer}>
-        {({ title }) => (
-
-          <div className="container mx-auto px-16">
-            <section>
-              <Slot name="hero" />
-            </section>
-            <section>
-              <div className="my-8">
-                <Slot name="authors" emptyPlaceholder={<div className="h-12 w-80"></div>}  />
-              </div>
-            </section>
-            <section className="lg:grid lg:grid-cols-3 lg:gap-4">
-              <div className="review lg:col-span-2">
-                <Slot name="review" />
-              </div>
-              <aside className="restaurant">
-                <Slot name="restaurantDetails" />
-              </aside>
-            </section>
-          </div>
-        )}
+        <div className="container mx-auto px-16">
+          <section>
+            <Slot name="hero" />
+          </section>
+          <section>
+            <div className="my-8">
+              <Slot name="authors" emptyPlaceholder={<div className="h-12 w-80"></div>}  />
+            </div>
+          </section>
+          <section className="lg:grid lg:grid-cols-3 lg:gap-4">
+            <div className="review lg:col-span-2">
+              <Slot name="review" />
+            </div>
+            <aside className="restaurant">
+              <Slot name="restaurantDetails" />
+            </aside>
+          </section>
+        </div>
       </Composition>
     </>
   )
