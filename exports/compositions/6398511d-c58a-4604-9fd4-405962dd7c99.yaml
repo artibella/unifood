@@ -3,7 +3,6 @@ composition:
   _id: 6398511d-c58a-4604-9fd4-405962dd7c99
   _slug: /cuisines/european
   type: cuisinePage
-  parameters: {}
   slots:
     sections:
       - _id: e3c4647a-420e-42f3-9da2-10919e02a25d

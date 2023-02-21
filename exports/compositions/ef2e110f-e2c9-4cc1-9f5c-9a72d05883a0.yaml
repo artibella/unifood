@@ -3,7 +3,6 @@ composition:
   _id: ef2e110f-e2c9-4cc1-9f5c-9a72d05883a0
   _slug: /cuisines
   type: cuisinePage
-  parameters: {}
   slots:
     sections:
       - _id: 87b74193-7345-4687-853a-401cc50a3f43

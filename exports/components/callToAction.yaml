@@ -27,7 +27,7 @@ slots: []
 titleParameter: title
 canBeComposition: false
 created: '2022-09-27T14:43:46.219491+00:00'
-updated: '2022-11-07T18:10:12.066563+00:00'
+updated: '2023-01-18T19:01:17.592452+00:00'
 variants:
   - id: default
     name: Default

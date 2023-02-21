@@ -3,7 +3,6 @@ composition:
   _id: e567d8cb-b18d-4d71-a9b0-17dba837c575
   _slug: test-page
   type: landingpage
-  parameters: {}
 created: '2022-10-18T16:43:31.646217+00:00'
 modified: '2022-11-12T13:27:35.200069+00:00'
 pattern: false

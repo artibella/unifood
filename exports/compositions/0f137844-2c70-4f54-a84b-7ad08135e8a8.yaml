@@ -3,7 +3,6 @@ composition:
   _id: 0f137844-2c70-4f54-a84b-7ad08135e8a8
   _slug: asian
   type: cuisinePage
-  parameters: {}
   slots:
     hero:
       - _id: f6044023-e743-4851-b255-ab10336d06ae
@@ -43,11 +42,11 @@ composition:
                     type: $loop
                     slots:
                       body:
-                        - _id: 8929cf8e-d60c-47f3-8ac6-8371165bf56f
-                          type: genericCard
+                        - _id: e7d2e5d5-c776-44ef-a5a2-09bf1980e16d
+                          type: hero
                           slots:
-                            actions:
-                              - _id: 93b1fd6c-1b10-4628-945c-6ac93c80a6ad
+                            ctas:
+                              - _id: 08572fb5-9554-438c-b598-8866820b2cbd
                                 type: callToAction
                                 parameters:
                                   link:
@@ -65,6 +64,9 @@ composition:
                                   linkPrefix:
                                     type: text
                                     value: /cuisines/asian/
+                                  openInNewTab:
+                                    type: checkbox
+                                    value: true
                           parameters:
                             body:
                               type: text
@@ -75,15 +77,6 @@ composition:
                                   /Cuisine narrowerCuisines Loop
                                   Item/fields/teaserText
                                 required: false
-                            image:
-                              type: text
-                              value: unbound
-                              connectedData:
-                                syntax: jptr
-                                pointer: >-
-                                  /Cuisine narrowerCuisines Loop
-                                  Item/fields/image/fields/file/url
-                                required: false
                             title:
                               type: text
                               value: unbound
@@ -92,6 +85,15 @@ composition:
                                 pointer: >-
                                   /Cuisine narrowerCuisines Loop
                                   Item/fields/name
+                                required: false
+                            imageUrl:
+                              type: text
+                              value: unbound
+                              connectedData:
+                                syntax: jptr
+                                pointer: >-
+                                  /Cuisine narrowerCuisines Loop
+                                  Item/fields/image/fields/file/url
                                 required: false
                     _dataResources:
                       Cuisine narrowerCuisines Loop Item:
@@ -102,11 +104,11 @@ composition:
               parameters:
                 columns:
                   type: number
-                  value: '2'
+                  value: '1'
         parameters:
           theme:
             type: select
-            value: mango
+            value: ice
           title:
             type: text
             value: Taste of Asia
@@ -120,5 +122,5 @@ composition:
       variables:
         query: ramen
 created: '2022-11-11T15:43:19.592871+00:00'
-modified: '2022-11-16T18:11:33.304403+00:00'
+modified: '2023-01-26T14:26:47.352046+00:00'
 pattern: false

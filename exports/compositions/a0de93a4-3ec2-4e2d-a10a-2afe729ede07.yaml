@@ -1,8 +1,7 @@
 composition:
   _name: Causa
   _id: a0de93a4-3ec2-4e2d-a10a-2afe729ede07
-  _slug: >-
-    /recipes/causa-peruvian-cold-mashed-potato-casserole-with-tuna-or-chicken-recipe
+  _slug: causa-peruvian-cold-mashed-potato-casserole-with-tuna-or-chicken-recipe
   type: recipe
   parameters:
     title:
@@ -19,5 +18,5 @@ composition:
         type: mainNavigation
         _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
 created: '2022-09-15T08:38:31.237636+00:00'
-modified: '2022-11-02T09:32:02.837054+00:00'
+modified: '2022-12-14T15:21:03.529939+00:00'
 pattern: false

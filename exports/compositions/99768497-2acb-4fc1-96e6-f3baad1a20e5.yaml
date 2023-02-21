@@ -3,7 +3,6 @@ composition:
   _id: 99768497-2acb-4fc1-96e6-f3baad1a20e5
   _slug: austrian-cuisine
   type: landingpage
-  parameters: {}
   slots:
     hero:
       - _id: 40fc639e-6991-453a-bf15-206e4e54d837

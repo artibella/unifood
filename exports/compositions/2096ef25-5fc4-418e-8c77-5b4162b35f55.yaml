@@ -3,7 +3,6 @@ composition:
   _id: 2096ef25-5fc4-418e-8c77-5b4162b35f55
   _slug: french-cuisine
   type: landingpage
-  parameters: {}
   slots:
     hero:
       - _id: c2617789-c5f1-4150-8257-cccbf29f2359

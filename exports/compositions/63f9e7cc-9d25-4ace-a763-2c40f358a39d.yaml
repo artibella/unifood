@@ -3,7 +3,6 @@ composition:
   _id: 63f9e7cc-9d25-4ace-a763-2c40f358a39d
   _slug: /cuisines/asion/japanese
   type: landingpage
-  parameters: {}
   slots:
     hero:
       - _id: 4e47d3e2-247d-49f7-be8c-e059d18677d5

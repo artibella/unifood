@@ -3,7 +3,6 @@ composition:
   _id: 49340068-1d35-4c56-9ab7-f857367e5af1
   _slug: /features/x-mas-special
   type: landingpage
-  parameters: {}
   slots:
     hero:
       - _id: e45058e3-2e82-4b28-9c9f-dd6c7015ddea

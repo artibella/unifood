@@ -3,7 +3,6 @@ composition:
   _id: 4ecec7dd-159d-4052-a21d-1c20c509ca92
   _slug: thai
   type: landingpage
-  parameters: {}
   slots:
     hero:
       - _id: 448b124d-78e3-4c08-934a-1da03c7c620a

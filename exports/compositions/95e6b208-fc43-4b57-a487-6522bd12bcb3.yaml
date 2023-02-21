@@ -3,7 +3,6 @@ composition:
   _id: 95e6b208-fc43-4b57-a487-6522bd12bcb3
   _slug: chinese
   type: landingpage
-  parameters: {}
   slots:
     hero:
       - _id: 801c62ec-b95e-4135-99a4-13e8f8ed374d

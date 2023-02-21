@@ -1,7 +1,7 @@
 composition:
-  _name: Recipes
-  _id: eb64283a-b308-4cba-90ae-36fcf8da1ce7
-  _slug: recipes
+  _name: Recipes (copy)
+  _id: 22b3c013-2630-4e68-b171-2f37a3e2b4d5
+  _slug: recipes-copy
   type: landingpage
   parameters:
     title:
@@ -9,11 +9,11 @@ composition:
       value: Recipes
   slots:
     hero:
-      - _id: 12782ea8-3423-4052-9732-b5c83924d797
+      - _id: 7c1c12b4-a157-486e-95b8-488e6734fab1
         type: hero
         slots:
           ctas:
-            - _id: 3d360fbd-3b93-46ca-9611-4aaa03665f97
+            - _id: dd66c01d-c6ff-438e-8448-81cb154af757
               type: callToAction
               parameters:
                 title:
@@ -22,7 +22,7 @@ composition:
                 linkPrefix:
                   type: text
                   value: /recipes/
-            - _id: 772528b7-d6b4-4771-a249-d15ed7501b05
+            - _id: c7802179-289d-4881-946a-991e918488fe
               type: callToAction
               variant: secondary
               parameters:
@@ -52,25 +52,45 @@ composition:
               required: false
           imageUrl:
             type: text
-            value: unbound
-            connectedData:
-              syntax: jptr
-              pointer: /CF Recipe/fields/image/fields/file/url
-              required: false
+            value: >-
+              https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Close_up_of_slice_of_lasagna.jpg/640px-Close_up_of_slice_of_lasagna.jpg
     sections:
-      - _id: 0f43c798-a3a5-4dee-96af-6faa5f7e40c4
+      - _id: 73fab3f4-8bc2-4fd7-b05e-b03591a38ceb
+        type: $localization
+        slots:
+          localized:
+            - _id: 0fd643cb-e2d7-4641-8202-11770eae642f
+              type: textBlock
+              parameters:
+                body:
+                  type: text
+                  value: >-
+                    Whether you want a hearty bowl of pasta, a steak, or a
+                    vegetarian curry, there's something out there that will
+                    leave you wanting more. Use fresh, seasonal ingredients and
+                    you can create dinners that will make your taste buds sing.
+                    Explore new cuisines, try new ingredients, and let your
+                    creativity shine with dinner ideas that will have everyone
+                    at the table asking for seconds. 
+                title:
+                  type: text
+                  value: Dinner they'll crave
+                locale:
+                  type: localeSelect
+                  value: en-US
+      - _id: e06cb4c2-e93d-4b23-bcda-975b9e642a49
         type: $test
         slots:
           test:
-            - _id: 14fcda5b-001f-41c8-9d82-58a2ee61bbd4
+            - _id: 90967a01-f9ff-4a7f-b8ec-84423bcfd97f
               type: sectionContainer
               slots:
                 content:
-                  - _id: 2a44c424-f11c-434c-9614-0db365224272
+                  - _id: 5fcf6ca7-cc5f-4c3d-8115-04e746dbd81e
                     type: hero
                     slots:
                       ctas:
-                        - _id: 114027cb-76eb-47ce-84a3-cb1b623853b2
+                        - _id: 14e02302-f01a-48ab-867d-7aac987fe63c
                           type: callToAction
                           parameters:
                             link:
@@ -120,15 +140,15 @@ composition:
                   value:
                     id: allimone
                     testDistribution: 0
-            - _id: bdca9772-841e-4d40-8b62-98e9cefe4bb3
+            - _id: cd61636e-de9d-41ec-bd1c-d70073a1bec9
               type: sectionContainer
               slots:
                 content:
-                  - _id: 58590b2e-16ea-47f5-a928-2d092f792ce5
+                  - _id: 7ebc2a7a-13f7-420d-931c-5dfc8513c56e
                     type: hero
                     slots:
                       ctas:
-                        - _id: cb6181de-98f5-4e09-a59c-a2b2cba54cf8
+                        - _id: ea2dea44-7c37-4aca-ab5f-7d01a53e0558
                           type: callToAction
                           parameters:
                             link:
@@ -189,19 +209,19 @@ composition:
           test:
             type: testSelect
             value: pastaTest
-      - _id: 8186df0e-1a5b-44fd-a1ad-6fa02ce60de2
+      - _id: 75046c48-aa11-469f-a4d9-f8cc8175da06
         type: sectionContainer
         slots:
           content:
-            - _id: 34b1f112-ba9c-4652-84e3-8948d768b69d
+            - _id: f1f5f821-88a0-47e3-872c-c3d8bc3255ae
               type: gridContainer
               slots:
                 items:
-                  - _id: 7f3ac768-8f14-4f64-8dba-f2c9f363ff43
+                  - _id: c6c86736-f6a7-46ca-b6c9-537e6806913b
                     type: $loop
                     slots:
                       body:
-                        - _id: 63ea251b-db7e-4428-b50f-4058110d5234
+                        - _id: 2f445a6c-ef72-47f2-a4a9-7b87a1639dc8
                           type: genericCard
                           parameters:
                             body:
@@ -297,6 +317,6 @@ composition:
       variables:
         recipeID: bltc0e29f5dc145e52e
       isPatternParameter: true
-created: '2022-09-19T08:25:54.222034+00:00'
-modified: '2023-02-06T13:54:06.415375+00:00'
+created: '2023-02-17T23:26:10.857487+00:00'
+modified: '2023-02-19T20:32:31.250518+00:00'
 pattern: false

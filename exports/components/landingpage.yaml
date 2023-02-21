@@ -41,6 +41,11 @@ slots:
       - linkList
       - tabContainer
     inheritAllowedComponents: false
+slugSettings:
+  unique: 'no'
+  required: disabled
+  regularExpression: ''
+  regularExpressionMessage: ''
 canBeComposition: true
 created: '2022-09-15T08:38:28.644659+00:00'
-updated: '2022-11-13T19:39:03.106088+00:00'
+updated: '2023-01-05T16:00:42.93081+00:00'

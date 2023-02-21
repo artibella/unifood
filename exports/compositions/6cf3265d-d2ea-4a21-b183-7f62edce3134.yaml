@@ -3,7 +3,6 @@ composition:
   _id: 6cf3265d-d2ea-4a21-b183-7f62edce3134
   _slug: indian
   type: landingpage
-  parameters: {}
   slots:
     hero:
       - _id: 53bbdf10-a4e9-4353-93e8-0f62e1ead4bc

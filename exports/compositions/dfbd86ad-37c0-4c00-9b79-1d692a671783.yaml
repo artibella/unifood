@@ -3,7 +3,6 @@ composition:
   _id: dfbd86ad-37c0-4c00-9b79-1d692a671783
   _slug: /cuisines/european/western-european
   type: landingpage
-  parameters: {}
   slots:
     hero:
       - _id: 4e84a23a-cf18-4e02-8d18-2f256ad576d9

@@ -3,7 +3,6 @@ composition:
   _id: 3f600326-ce14-433f-a0a1-7f81390fa7c8
   _slug: /reviews/restaurants
   type: landingpage
-  parameters: {}
   slots:
     hero:
       - _id: d023a650-af31-4bd8-a88b-bda1d25c01da

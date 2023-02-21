@@ -178,10 +178,13 @@ composition:
         type: mainNavigation
         _pattern: e4d1ae86-2b7b-4e6e-aaff-06a38b59ea40
   _dataResources:
+    Hero:
+      type: hero
+      variables: {}
     Product 2:
       type: bigcommerceProduct
       variables:
         product_id: '86'
 created: '2022-09-15T08:38:32.443699+00:00'
-modified: '2022-11-04T14:18:48.895807+00:00'
+modified: '2022-12-09T16:22:15.262522+00:00'
 pattern: false

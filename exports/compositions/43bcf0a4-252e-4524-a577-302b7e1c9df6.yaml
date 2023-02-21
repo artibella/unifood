@@ -3,7 +3,6 @@ composition:
   _id: 43bcf0a4-252e-4524-a577-302b7e1c9df6
   _slug: /how-tos
   type: landingpage
-  parameters: {}
   slots:
     hero:
       - _id: 95eef080-783c-4318-9391-e202671d3018

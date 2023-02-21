@@ -3,7 +3,6 @@ composition:
   _id: b4dbde2f-b405-4cfa-83c1-034f6f700f85
   _slug: korean
   type: landingpage
-  parameters: {}
   slots:
     hero:
       - _id: 84a6cee7-929b-4ca7-adcc-64dd6f0fefe6
