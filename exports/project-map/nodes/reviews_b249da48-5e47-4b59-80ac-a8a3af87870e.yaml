@@ -1,6 +1,7 @@
 id: b249da48-5e47-4b59-80ac-a8a3af87870e
 name: Reviews
 type: composition
+data: {}
 order: 421
 path: /reviews
 compositionId: 1ec63c45-8baa-46af-a27e-2783b0408ae3

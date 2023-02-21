@@ -1,5 +1,6 @@
 id: recipecontentful
 displayName: Recipe (Contentful)
+ttl: 30
 path: /entries
 custom:
   multiSelect: false
@@ -15,7 +16,12 @@ variables:
     type: string
     default: n/a
 parameters:
-  include: '1'
-  sys.id[in]: ${entryIds}
+  - key: sys.id[in]
+    value: ${entryIds}
+  - key: include
+    value: '1'
+longTermCache:
+  enabled: false
+  ttlInHours: 24
 dataSourceId: contentful
 allowedOnComponents: []
