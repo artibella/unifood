@@ -13,11 +13,11 @@ export default function RecipeCard({ recipe }) {
       />
       <Card.Body>
         <Card.Title tag="h2">
-          <Link href={`/recipes/${recipe.fields.slug}`}>
-            <a className="hover:underline">{recipe.fields.title}</a>
+          <Link href={`/recipes/${recipe.fields.slug}`} className="hover:underline">
+            {recipe.fields.title}
           </Link>
           </Card.Title>
       </Card.Body>
     </Card>
-  )
+  );
 }
