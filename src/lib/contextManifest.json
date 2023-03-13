@@ -1,6 +1,77 @@
 {
   "project": {
-    "pz": {},
+    "pz": {
+      "agg": {
+        "meatLovers": {
+          "inputs": [
+            {
+              "dim": "meatLoverQuerystring"
+            }
+          ]
+        },
+        "vegetarianAudience": {
+          "inputs": [
+            {
+              "dim": "vegetarian"
+            }
+          ]
+        },
+        "vegetarian": {
+          "inputs": [
+            {
+              "dim": "vegetarianQuerystring"
+            }
+          ]
+        }
+      },
+      "enr": {
+        "1": {
+          "cap": 100
+        }
+      },
+      "sig": {
+        "meatLoverQuerystring": {
+          "str": 50,
+          "cap": 100,
+          "dur": "p",
+          "crit": {
+            "op": "&",
+            "type": "G",
+            "clauses": [
+              {
+                "type": "QS",
+                "match": {
+                  "cs": false,
+                  "op": "=",
+                  "rhs": "true"
+                },
+                "queryName": "meatlover"
+              }
+            ]
+          }
+        },
+        "vegetarianQuerystring": {
+          "str": 50,
+          "cap": 100,
+          "dur": "p",
+          "crit": {
+            "op": "&",
+            "type": "G",
+            "clauses": [
+              {
+                "type": "QS",
+                "match": {
+                  "cs": false,
+                  "op": "=",
+                  "rhs": "true"
+                },
+                "queryName": "vegetarian"
+              }
+            ]
+          }
+        }
+      }
+    },
     "test": {}
   }
 }
