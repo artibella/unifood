@@ -9,8 +9,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link href="/favicon/favicon.ico" rel="icon" />
-        <link href="/favicon/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/favicon.ico" rel="icon" />
         <meta name="description" content="Unifood, a Uniform cooking demo site" />
       </Head>
       {tagManagerSrc && (
