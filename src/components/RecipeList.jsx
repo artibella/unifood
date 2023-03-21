@@ -1,9 +1,6 @@
 import RecipeCard from './RecipeCard';
 
 export default function RecipeList({ titel = '', recipes = [] }) {
-  console.log('----------------------------');
-  console.log('recipes', recipes);
-  console.log('----------------------------');
   return (
     <section className="bg-ice-50 p-8">
       <h2 className="text-4xl text-center mb-16 font-serif font-bold text-aqua-900">{titel}</h2>
