@@ -1,26 +1,31 @@
-import { Composition, Slot } from "@uniformdev/canvas-react";
-import Head from "next/head";
-import appRenderer from "./appRenderer";
+import { UniformComposition, UniformSlot, createUniformApiEnhancer } from '@uniformdev/canvas-react';
+import Head from 'next/head';
+import appRenderer from './appRenderer';
 
 export default function LandingPage({ composition }) {
-  const placeHolder = (
-    <div className="h-96"></div>
-  )
+  const placeHolder = <div className="h-96"></div>;
+  const contextualEditingEnhancer = createUniformApiEnhancer({
+    apiUrl: '/api/preview',
+  });
   return (
     <>
       <Head>
         <title>{composition?._name}</title>
       </Head>
       <div>
-        <Composition data={composition} resolveRenderer={appRenderer}>
+        <UniformComposition
+          data={composition}
+          resolveRenderer={appRenderer}
+          contextualEditingEnhancer={contextualEditingEnhancer}
+        >
           <section>
-            <Slot name="hero" emptyPlaceholder={placeHolder} />
+            <UniformSlot name="hero" emptyPlaceholder={placeHolder} />
           </section>
           <section>
-            <Slot name="sections" emptyPlaceholder={placeHolder} />
+            <UniformSlot name="sections" emptyPlaceholder={placeHolder} />
           </section>
-        </Composition>
+        </UniformComposition>
       </div>
     </>
-  )
+  );
 }

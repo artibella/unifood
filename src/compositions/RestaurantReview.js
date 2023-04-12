@@ -1,33 +1,40 @@
-import { Composition, Slot } from "@uniformdev/canvas-react";
-import Head from "next/head";
-import appRenderer from "./appRenderer";
+import { UniformComposition, UniformSlot, createUniformApiEnhancer } from '@uniformdev/canvas-react';
+import Head from 'next/head';
+import appRenderer from './appRenderer';
 
-export default function RestaurantReview({composition}) {
+export default function RestaurantReview({ composition }) {
+  const contextualEditingEnhancer = createUniformApiEnhancer({
+    apiUrl: '/api/preview',
+  });
   return (
     <>
       <Head>
         <title>{composition.parameters.title?.value}</title>
       </Head>
-      <Composition data={composition} resolveRenderer={appRenderer}>
+      <UniformComposition
+        data={composition}
+        resolveRenderer={appRenderer}
+        contextualEditingEnhancer={contextualEditingEnhancer}
+      >
         <div className="container mx-auto px-16">
           <section>
-            <Slot name="hero" />
+            <UniformSlot name="hero" />
           </section>
           <section>
             <div className="my-8">
-              <Slot name="authors" emptyPlaceholder={<div className="h-12 w-80"></div>}  />
+              <UniformSlot name="authors" emptyPlaceholder={<div className="h-12 w-80"></div>} />
             </div>
           </section>
           <section className="lg:grid lg:grid-cols-3 lg:gap-4">
             <div className="review lg:col-span-2">
-              <Slot name="review" />
+              <UniformSlot name="review" />
             </div>
             <aside className="restaurant">
-              <Slot name="restaurantDetails" />
+              <UniformSlot name="restaurantDetails" />
             </aside>
           </section>
         </div>
-      </Composition>
+      </UniformComposition>
     </>
-  )
+  );
 }
